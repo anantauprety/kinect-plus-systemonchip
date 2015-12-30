@@ -1,0 +1,288 @@
+
+----------------------------------------------------------------------
+
+Verifying bitstream.
+
+-----------------------------------------------------------------------
+
+
+---------Mapping jacks.---------
+
+
+---------Processing bitstream.---------
+
+Utilized "udb_hv_b@[UDB Pair=(1,0)]"
+Utilized "udb_hc@[UDB Pair=(1,0)]"
+Utilized "udb_hc@[UDB Pair=(1,1)]"
+Utilized "dsi_hc@[DSI=(0,0)][side=top]"
+Utilized "dsi_hv_b@[DSI=(0,0)][side=top]"
+Utilized "dsi_hc@[DSI=(1,0)][side=bottom]"
+Utilized "dsi_hv_a@[DSI=(1,0)][side=bottom]"
+
+---------Propagating signals.---------
+
+Found signal "\SPIM:BSPIM:rx_status_6\" on jack "pld0:out1[UDB=(2,0)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "statctrl:inout2[UDB=(2,1)]"
+    
+    
+
+Found signal "Net_11" on jack "pld1:out0[UDB=(2,0)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "io_ijack_6[IOP=(1)]"
+    
+    2. Connected jack name: "pld1:in4[UDB=(2,0)]"
+    
+    
+
+Found signal "Net_12" on jack "pld1:out2[UDB=(2,0)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "io_ijack_7[IOP=(2)]"
+    
+    2. Connected jack name: "pld1:in0[UDB=(2,0)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:load_rx_data\" on jack "pld1:out3[UDB=(2,0)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "dp:in0[UDB=(2,0)]"
+    
+    2. Connected jack name: "statctrl:in3[UDB=(3,0)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:tx_status_2\" on jack "dp:out0[UDB=(2,0)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "statctrl:in2[UDB=(3,0)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:tx_status_1\" on jack "dp:out1[UDB=(2,0)]".
+Number of connected bvjacks: 3.
+
+    1. Connected jack name: "pld1:in8[UDB=(2,1)]"
+    
+    2. Connected jack name: "pld0:in0[UDB=(3,0)]"
+    
+    3. Connected jack name: "statctrl:in1[UDB=(3,0)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:rx_status_5\" on jack "dp:out3[UDB=(2,0)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "statctrl:inout1[UDB=(2,1)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:mosi_from_dp\" on jack "dp:out4[UDB=(2,0)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld1:in10[UDB=(3,0)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:rx_status_4\" on jack "dp:out5[UDB=(2,0)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "pld0:in4[UDB=(2,0)]"
+    
+    2. Connected jack name: "statctrl:inout0[UDB=(2,1)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:count_0\" on jack "statctrl:out0[UDB=(2,0)]".
+Number of connected bvjacks: 4.
+
+    1. Connected jack name: "pld0:in3[UDB=(2,0)]"
+    
+    2. Connected jack name: "pld1:in3[UDB=(2,0)]"
+    
+    3. Connected jack name: "pld0:in8[UDB=(3,0)]"
+    
+    4. Connected jack name: "pld1:in3[UDB=(3,0)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:count_1\" on jack "statctrl:out1[UDB=(2,0)]".
+Number of connected bvjacks: 4.
+
+    1. Connected jack name: "pld0:in2[UDB=(2,0)]"
+    
+    2. Connected jack name: "pld0:in9[UDB=(3,0)]"
+    
+    3. Connected jack name: "pld1:in5[UDB=(2,0)]"
+    
+    4. Connected jack name: "pld1:in5[UDB=(3,0)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:count_2\" on jack "statctrl:out2[UDB=(2,0)]".
+Number of connected bvjacks: 4.
+
+    1. Connected jack name: "pld0:in1[UDB=(2,0)]"
+    
+    2. Connected jack name: "pld0:in10[UDB=(3,0)]"
+    
+    3. Connected jack name: "pld1:in6[UDB=(2,0)]"
+    
+    4. Connected jack name: "pld1:in6[UDB=(3,0)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:count_3\" on jack "statctrl:out3[UDB=(2,0)]".
+Number of connected bvjacks: 4.
+
+    1. Connected jack name: "pld0:in0[UDB=(2,0)]"
+    
+    2. Connected jack name: "pld1:in7[UDB=(2,0)]"
+    
+    3. Connected jack name: "pld0:in7[UDB=(3,0)]"
+    
+    4. Connected jack name: "pld1:in7[UDB=(3,0)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:count_4\" on jack "statctrl:out4[UDB=(2,0)]".
+Number of connected bvjacks: 4.
+
+    1. Connected jack name: "pld0:in7[UDB=(2,0)]"
+    
+    2. Connected jack name: "pld0:in11[UDB=(3,0)]"
+    
+    3. Connected jack name: "pld1:in8[UDB=(2,0)]"
+    
+    4. Connected jack name: "pld1:in4[UDB=(3,0)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:count_5\" on jack "statctrl:out5[UDB=(2,0)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "pld1:in10[UDB=(2,0)]"
+    
+    2. Connected jack name: "pld0:in6[UDB=(2,0)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:count_6\" on jack "statctrl:out6[UDB=(2,0)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "pld1:in1[UDB=(2,0)]"
+    
+    2. Connected jack name: "pld0:in5[UDB=(2,0)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:state_2\" on jack "pld0:out0[UDB=(3,0)]".
+Number of connected bvjacks: 5.
+
+    1. Connected jack name: "pld1:in0[UDB=(2,1)]"
+    
+    2. Connected jack name: "pld1:in11[UDB=(3,0)]"
+    
+    3. Connected jack name: "pld0:in3[UDB=(3,0)]"
+    
+    4. Connected jack name: "pld1:in11[UDB=(2,0)]"
+    
+    5. Connected jack name: "dp:in4[UDB=(2,0)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:state_1\" on jack "pld0:out2[UDB=(3,0)]".
+Number of connected bvjacks: 5.
+
+    1. Connected jack name: "pld0:in6[UDB=(3,0)]"
+    
+    2. Connected jack name: "pld1:in9[UDB=(3,0)]"
+    
+    3. Connected jack name: "pld1:in6[UDB=(2,1)]"
+    
+    4. Connected jack name: "pld1:in9[UDB=(2,0)]"
+    
+    5. Connected jack name: "dp:in1[UDB=(2,0)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:ld_ident\" on jack "pld0:out3[UDB=(3,0)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "pld0:in2[UDB=(3,0)]"
+    
+    2. Connected jack name: "pld1:in8[UDB=(3,0)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:tx_status_0\" on jack "pld1:out0[UDB=(3,0)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "statctrl:in0[UDB=(3,0)]"
+    
+    
+
+Found signal "Net_10" on jack "pld1:out1[UDB=(3,0)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "io_ijack_7[IOP=(1)]"
+    
+    2. Connected jack name: "pld1:in1[UDB=(3,0)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:tx_status_4\" on jack "pld1:out3[UDB=(3,0)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "statctrl:inout0[UDB=(3,0)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:state_0\" on jack "pld1:out1[UDB=(2,1)]".
+Number of connected bvjacks: 5.
+
+    1. Connected jack name: "pld0:in5[UDB=(3,0)]"
+    
+    2. Connected jack name: "pld1:in2[UDB=(2,0)]"
+    
+    3. Connected jack name: "pld1:in2[UDB=(3,0)]"
+    
+    4. Connected jack name: "dp:in2[UDB=(2,0)]"
+    
+    5. Connected jack name: "pld1:in2[UDB=(2,1)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:cnt_enable\" on jack "pld1:out2[UDB=(2,1)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "statctrl:inout1[UDB=(2,0)]"
+    
+    2. Connected jack name: "pld1:in1[UDB=(2,1)]"
+    
+    
+
+Found signal "Net_13" on jack "io_ojack_4[IOP=(1)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "dp:in5[UDB=(2,0)]"
+    
+    
+
+
+---------Verifying signals (routing).---------
+
+
+---------Verifying configuration.---------
+
+
+
+----------------------------------------------------------------------
+
+Bitstream verification passed.
+
+-----------------------------------------------------------------------
+

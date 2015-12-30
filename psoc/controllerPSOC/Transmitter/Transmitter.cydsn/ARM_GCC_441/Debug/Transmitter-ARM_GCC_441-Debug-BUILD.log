@@ -1,0 +1,64 @@
+--------------- Build Started: 01/03/2012 17:30:08 Project: Transmitter, Configuration: ARM GCC 4.4.1 Debug ---------------
+cydsfit.exe "-.appdatapath" "C:\Users\awkward\AppData\Local\Cypress Semiconductor\PSoC Creator\2.0" "-.fdsnotice" "-.fdswarpdepfile=warp_dependencies.txt" "-.fdselabdepfile=elab_dependencies.txt" "-.fdsbldfile=generated_files.txt" "-p" "I:\ControllerKinect\Transmitter\Transmitter.cydsn\Transmitter.cyprj" "-d" "CY8C5588AXI-060ES1" "-s" "I:\ControllerKinect\Transmitter\Transmitter.cydsn\Generated_Source\PSoC5" "-w" "0" "--" "-yv2" "-w" "0" "-v3" "-ygs" "-q10" "-o2" "-.fftcfgtype=LE"
+Note: This project targets evaluation silicon (ES) that is not available for purchase. Be sure to use production-approved parts to ensure future support.
+Note: The PSoC 5 FirstTouch Kit (CY8CKIT-014) uses the XTAL pins as GPIO to the accelerometer, which is not allowed in production devices. Do not re-target kit projects if you wish to use the accelerometer.
+Elaborating Design...
+ADD: sdb.M0060: warning: Warning in component: cy_boot. The cy_boot_v2_21 component (cy_boot) is a Prototype component. It has not been tested to production quality and care should be taken if used in a shipping product.
+HDL Generation ...
+Synthesis ...
+Place and Route ...
+Tech mapping ...
+ADD: pft.M0040: information: The following 8 pin(s) will be assigned a location by the fitter: \CapSense:CmodCH0(0)\, \CapSense:PortCH0(0)\, \CapSense:PortCH0(1)\, \CapSense:PortCH0(2)\, \CapSense:PortCH0(3)\, \CapSense:PortCH0(4)\, \CapSense:PortCH0(5)\, \CapSense:PortCH0(6)\
+Info: mpr.M0037: Unused pieces of the design have been optimized out. See the Tech mapping section of the report file for details. (App=cydsfit)
+Analog Placement ...
+Log: apr.M0058: The analog placement iterative improvement is 64% done. (App=cydsfit)
+Analog Routing ...
+Digital Placement ...
+Digital Routing ...
+Bitstream Generation ...
+Static timing analysis ...
+API Generation ...
+Dependency Generation ...
+Clean Temporary Files ...
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\main.lst -ffunction-sections -c .\main.c -o .\ARM_GCC_441\Debug\main.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\Clock_1.lst -ffunction-sections -c .\Generated_Source\PSoC5\Clock_1.c -o .\ARM_GCC_441\Debug\Clock_1.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\Cm3Start.lst -ffunction-sections -c .\Generated_Source\PSoC5\Cm3Start.c -o .\ARM_GCC_441\Debug\Cm3Start.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\CyDmac.lst -ffunction-sections -c .\Generated_Source\PSoC5\CyDmac.c -o .\ARM_GCC_441\Debug\CyDmac.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\CyFlash.lst -ffunction-sections -c .\Generated_Source\PSoC5\CyFlash.c -o .\ARM_GCC_441\Debug\CyFlash.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\CyLib.lst -ffunction-sections -c .\Generated_Source\PSoC5\CyLib.c -o .\ARM_GCC_441\Debug\CyLib.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\cyPm.lst -ffunction-sections -c .\Generated_Source\PSoC5\cyPm.c -o .\ARM_GCC_441\Debug\cyPm.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\CySpc.lst -ffunction-sections -c .\Generated_Source\PSoC5\CySpc.c -o .\ARM_GCC_441\Debug\CySpc.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\LCD.lst -ffunction-sections -c .\Generated_Source\PSoC5\LCD.c -o .\ARM_GCC_441\Debug\LCD.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\LCD_PM.lst -ffunction-sections -c .\Generated_Source\PSoC5\LCD_PM.c -o .\ARM_GCC_441\Debug\LCD_PM.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\LCD_LCDPort.lst -ffunction-sections -c .\Generated_Source\PSoC5\LCD_LCDPort.c -o .\ARM_GCC_441\Debug\LCD_LCDPort.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\MISO.lst -ffunction-sections -c .\Generated_Source\PSoC5\MISO.c -o .\ARM_GCC_441\Debug\MISO.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\MOSI.lst -ffunction-sections -c .\Generated_Source\PSoC5\MOSI.c -o .\ARM_GCC_441\Debug\MOSI.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\nSS.lst -ffunction-sections -c .\Generated_Source\PSoC5\nSS.c -o .\ARM_GCC_441\Debug\nSS.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\SCLK.lst -ffunction-sections -c .\Generated_Source\PSoC5\SCLK.c -o .\ARM_GCC_441\Debug\SCLK.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\SPIM.lst -ffunction-sections -c .\Generated_Source\PSoC5\SPIM.c -o .\ARM_GCC_441\Debug\SPIM.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\SPIM_INT.lst -ffunction-sections -c .\Generated_Source\PSoC5\SPIM_INT.c -o .\ARM_GCC_441\Debug\SPIM_INT.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\SPIM_PM.lst -ffunction-sections -c .\Generated_Source\PSoC5\SPIM_PM.c -o .\ARM_GCC_441\Debug\SPIM_PM.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\CapSense.lst -ffunction-sections -c .\Generated_Source\PSoC5\CapSense.c -o .\ARM_GCC_441\Debug\CapSense.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\CapSense_CSHL.lst -ffunction-sections -c .\Generated_Source\PSoC5\CapSense_CSHL.c -o .\ARM_GCC_441\Debug\CapSense_CSHL.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\CapSense_INT.lst -ffunction-sections -c .\Generated_Source\PSoC5\CapSense_INT.c -o .\ARM_GCC_441\Debug\CapSense_INT.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\CapSense_Pins.lst -ffunction-sections -c .\Generated_Source\PSoC5\CapSense_Pins.c -o .\ARM_GCC_441\Debug\CapSense_Pins.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\CapSense_PM.lst -ffunction-sections -c .\Generated_Source\PSoC5\CapSense_PM.c -o .\ARM_GCC_441\Debug\CapSense_PM.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\CapSense_SMS_Wrapper.lst -ffunction-sections -c .\Generated_Source\PSoC5\CapSense_SMS_Wrapper.c -o .\ARM_GCC_441\Debug\CapSense_SMS_Wrapper.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\CapSense_TunerHelper.lst -ffunction-sections -c .\Generated_Source\PSoC5\CapSense_TunerHelper.c -o .\ARM_GCC_441\Debug\CapSense_TunerHelper.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\CapSense_CompCH0.lst -ffunction-sections -c .\Generated_Source\PSoC5\CapSense_CompCH0.c -o .\ARM_GCC_441\Debug\CapSense_CompCH0.o
+.\Generated_Source\PSoC5\CapSense_CompCH0.c: In function 'CapSense_CompCH0_ZeroCal':
+.\Generated_Source\PSoC5\CapSense_CompCH0.c:517: warning: control reaches end of non-void function
+.\Generated_Source\PSoC5\CapSense_CompCH0.c: At top level:
+.\Generated_Source\PSoC5\CapSense_CompCH0.c:20: warning: 'CapSense_CompCH0_backup' defined but not used
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\CapSense_CompCH0_PM.lst -ffunction-sections -c .\Generated_Source\PSoC5\CapSense_CompCH0_PM.c -o .\ARM_GCC_441\Debug\CapSense_CompCH0_PM.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\CapSense_AMuxCH0.lst -ffunction-sections -c .\Generated_Source\PSoC5\CapSense_AMuxCH0.c -o .\ARM_GCC_441\Debug\CapSense_AMuxCH0.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\CapSense_IntClock.lst -ffunction-sections -c .\Generated_Source\PSoC5\CapSense_IntClock.c -o .\ARM_GCC_441\Debug\CapSense_IntClock.o
+arm-none-eabi-gcc.exe -I. -Wno-main -I./Generated_Source/PSoC5 -mcpu=cortex-m3 -mthumb -Wall -g -Wa,-alh=.\ARM_GCC_441\Debug\cyfitter_cfg.lst -ffunction-sections -c .\Generated_Source\PSoC5\cyfitter_cfg.c -o .\ARM_GCC_441\Debug\cyfitter_cfg.o
+arm-none-eabi-ar.exe -rs .\ARM_GCC_441\Debug\Transmitter.a .\ARM_GCC_441\Debug\Clock_1.o .\ARM_GCC_441\Debug\core_cm3.o .\ARM_GCC_441\Debug\CyBootAsmGnu.o .\ARM_GCC_441\Debug\CyDmac.o .\ARM_GCC_441\Debug\CyFlash.o .\ARM_GCC_441\Debug\CyLib.o .\ARM_GCC_441\Debug\cyPm.o .\ARM_GCC_441\Debug\CySpc.o .\ARM_GCC_441\Debug\cyutils.o .\ARM_GCC_441\Debug\LCD.o .\ARM_GCC_441\Debug\LCD_PM.o .\ARM_GCC_441\Debug\LCD_LCDPort.o .\ARM_GCC_441\Debug\MISO.o .\ARM_GCC_441\Debug\MOSI.o .\ARM_GCC_441\Debug\nSS.o .\ARM_GCC_441\Debug\SCLK.o .\ARM_GCC_441\Debug\SPIM.o .\ARM_GCC_441\Debug\SPIM_INT.o .\ARM_GCC_441\Debug\SPIM_PM.o .\ARM_GCC_441\Debug\CapSense.o .\ARM_GCC_441\Debug\CapSense_CSHL.o .\ARM_GCC_441\Debug\CapSense_INT.o .\ARM_GCC_441\Debug\CapSense_Pins.o .\ARM_GCC_441\Debug\CapSense_PM.o .\ARM_GCC_441\Debug\CapSense_SMS_Wrapper.o .\ARM_GCC_441\Debug\CapSense_TunerHelper.o .\ARM_GCC_441\Debug\CapSense_CompCH0.o .\ARM_GCC_441\Debug\CapSense_CompCH0_PM.o .\ARM_GCC_441\Debug\CapSense_AMuxCH0.o .\ARM_GCC_441\Debug\CapSense_IntClock.o .\ARM_GCC_441\Debug\cyfitter_cfg.o
+arm-none-eabi-ar.exe: creating .\ARM_GCC_441\Debug\Transmitter.a
+arm-none-eabi-gcc.exe -mthumb -march=armv7-m -mfix-cortex-m3-ldrd -T .\Generated_Source\PSoC5\cm3gcc.ld -g -Wl,-Map,.\ARM_GCC_441\Debug\Transmitter.map -Wl,--gc-sections -Wl,--start-group -o .\ARM_GCC_441\Debug\Transmitter.elf .\ARM_GCC_441\Debug\main.o .\ARM_GCC_441\Debug\Cm3Start.o .\ARM_GCC_441\Debug\Transmitter.a "C:\Program Files\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_441\Debug\CyComponentLibrary.a" -Wl,--end-group
+arm-none-eabi-objcopy.exe -O ihex .\ARM_GCC_441\Debug\Transmitter.elf .\ARM_GCC_441\Debug\Transmitter.ihx
+cyhextool -o .\ARM_GCC_441\Debug\Transmitter.hex -f .\ARM_GCC_441\Debug\Transmitter.ihx -prot .\Generated_Source\PSoC5\protect.hex -id E13C069 -a EEPROM=90200000:800,PROGRAM=00000000:40000,CONFIG=80000000:8000,PROTECT=90400000:100 -meta 0101 -cunv 00000006 -wonv AFAC90BC -ecc .\Generated_Source\PSoC5\config.hex
+Flash used: 7696 of 262144 bytes (2.9 %).
+SRAM used: 312 of 65536 bytes (0.5 %).
+--------------- Build Succeeded: 01/03/2012 17:32:07 ---------------

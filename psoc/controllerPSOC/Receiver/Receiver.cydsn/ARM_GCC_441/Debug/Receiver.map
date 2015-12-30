@@ -1,0 +1,999 @@
+Archive member included because of file (symbol)
+
+.\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+                              .\ARM_GCC_441\Debug\Cm3Start.o (CyDmacConfigure)
+.\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+                              .\ARM_GCC_441\Debug\Cm3Start.o (CyResetStatus)
+.\ARM_GCC_441\Debug\Receiver.a(cyPm.o)
+                              .\ARM_GCC_441\Debug\Receiver.a(CyLib.o) (CyPmReadStatus)
+.\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+                              .\ARM_GCC_441\Debug\main.o (LCD_WriteControl)
+.\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+                              .\ARM_GCC_441\Debug\main.o (SPIM_ClearFIFO)
+.\ARM_GCC_441\Debug\Receiver.a(cyfitter_cfg.o)
+                              .\ARM_GCC_441\Debug\Cm3Start.o (cyfitter_cfg)
+.\ARM_GCC_441\Debug\Receiver.a(CyBootAsmGnu.o)
+                              .\ARM_GCC_441\Debug\Receiver.a(CyLib.o) (CyDelayCycles)
+.\ARM_GCC_441\Debug\Receiver.a(CyFlash.o)
+                              .\ARM_GCC_441\Debug\Receiver.a(cyPm.o) (CyFlash_SetWaitCycles)
+.\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+                              .\ARM_GCC_441\Debug\Receiver.a(CyFlash.o) (CySpcLock)
+.\ARM_GCC_441\Debug\Receiver.a(cyutils.o)
+                              .\ARM_GCC_441\Debug\Receiver.a(cyfitter_cfg.o) (CySetReg24)
+c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
+                              .\ARM_GCC_441\Debug\Receiver.a(cyfitter_cfg.o) (memcpy)
+c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libcs3.a(start_c.o)
+                              (__cs3_start_c)
+c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libcs3micro.a(micro-vector.o)
+                              (__cs3_interrupt_vector_micro)
+c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libcs3micro.a(micro_isr_interrupt.o)
+                              (__cs3_isr_nmi)
+c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-init.o)
+                              c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libcs3.a(start_c.o) (__libc_init_array)
+
+Allocating common symbols
+Common symbol       size              file
+
+cyCommand           0x10              .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+cyCommandSize       0x1               .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+CyResetStatus       0x1               .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+dieTemperature      0x2               .\ARM_GCC_441\Debug\Receiver.a(CyFlash.o)
+
+Discarded input sections
+
+ .text          0x00000000        0x0 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
+ .data          0x00000000        0x0 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
+ .bss           0x00000000        0x0 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
+ .data          0x00000000        0x4 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
+ .text          0x00000000        0x0 .\ARM_GCC_441\Debug\main.o
+ .data          0x00000000        0x0 .\ARM_GCC_441\Debug\main.o
+ .bss           0x00000000        0x0 .\ARM_GCC_441\Debug\main.o
+ .text          0x00000000        0x0 .\ARM_GCC_441\Debug\Cm3Start.o
+ .data          0x00000000        0x0 .\ARM_GCC_441\Debug\Cm3Start.o
+ .bss           0x00000000        0x0 .\ARM_GCC_441\Debug\Cm3Start.o
+ .text.IntDefaultHandler
+                0x00000000        0x8 .\ARM_GCC_441\Debug\Cm3Start.o
+ .text          0x00000000        0x0 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .data          0x00000000        0x0 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .text.CyDmacError
+                0x00000000       0x1c .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .text.CyDmacClearError
+                0x00000000       0x24 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .text.CyDmacErrorAddress
+                0x00000000       0x18 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .text.CyDmaChAlloc
+                0x00000000       0x84 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .text.CyDmaChFree
+                0x00000000       0x64 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .text.CyDmaChEnable
+                0x00000000       0x70 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .text.CyDmaChDisable
+                0x00000000       0x58 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .text.CyDmaClearPendingDrq
+                0x00000000       0x84 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .text.CyDmaChPriority
+                0x00000000       0x70 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .text.CyDmaChSetExtendedAddress
+                0x00000000       0x88 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .text.CyDmaChSetInitialTd
+                0x00000000       0x44 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .text.CyDmaChSetRequest
+                0x00000000       0x60 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .text.CyDmaChGetRequest
+                0x00000000       0x40 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .text.CyDmaChStatus
+                0x00000000       0x70 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .text.CyDmaChSetConfiguration
+                0x00000000       0xa0 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .text.CyDmaTdAllocate
+                0x00000000       0x7c .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .text.CyDmaTdFree
+                0x00000000       0x6c .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .text.CyDmaTdFreeCount
+                0x00000000       0x20 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .text.CyDmaTdSetConfiguration
+                0x00000000       0x78 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .text.CyDmaTdGetConfiguration
+                0x00000000       0x94 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .text.CyDmaTdSetAddress
+                0x00000000       0x6c .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .text.CyDmaTdGetAddress
+                0x00000000       0x7c .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .text          0x00000000        0x0 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .bss           0x00000000        0x0 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyPLL_OUT_Start
+                0x00000000      0x118 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyPLL_OUT_Stop
+                0x00000000       0x24 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyPLL_OUT_SetPQ
+                0x00000000       0xa8 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyPLL_OUT_SetSource
+                0x00000000       0x70 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyIMO_Start
+                0x00000000       0xd0 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyIMO_Stop
+                0x00000000       0x24 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyIMO_SetTrimValue
+                0x00000000      0x144 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyIMO_SetFreq
+                0x00000000      0x214 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyIMO_SetSource
+                0x00000000       0xb8 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyIMO_EnableDoubler
+                0x00000000       0x28 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyIMO_DisableDoubler
+                0x00000000       0x24 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyMasterClk_SetSource
+                0x00000000       0x44 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyMasterClk_SetDivider
+                0x00000000       0x20 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyBusClk_Internal_SetDivider
+                0x00000000       0x84 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyBusClk_SetDivider
+                0x00000000       0xa4 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyCpuClk_SetDivider
+                0x00000000       0x14 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyUsbClk_SetSource
+                0x00000000       0x40 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyILO_Start1K
+                0x00000000       0x28 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyILO_Stop1K
+                0x00000000       0x24 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyILO_Start100K
+                0x00000000       0x28 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyILO_Stop100K
+                0x00000000       0x24 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyILO_Enable33K
+                0x00000000       0x28 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyILO_Disable33K
+                0x00000000       0x24 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyILO_SetSource
+                0x00000000       0x44 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyILO_SetPowerMode
+                0x00000000       0x58 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyXTAL_32KHZ_Start
+                0x00000000       0x7c .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyXTAL_32KHZ_Stop
+                0x00000000       0x24 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyXTAL_32KHZ_ReadStatus
+                0x00000000       0x24 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyXTAL_32KHZ_SetPowerMode
+                0x00000000       0x58 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyXTAL_Start
+                0x00000000      0x15c .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyXTAL_Stop
+                0x00000000       0x24 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyXTAL_EnableErrStatus
+                0x00000000       0x24 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyXTAL_DisableErrStatus
+                0x00000000       0x28 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyXTAL_ReadStatus
+                0x00000000       0x20 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyXTAL_EnableFaultRecovery
+                0x00000000       0x28 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyXTAL_DisableFaultRecovery
+                0x00000000       0x24 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyXTAL_SetStartup
+                0x00000000       0x3c .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyHalt   0x00000000       0x18 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CySoftwareReset
+                0x00000000       0x18 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyDelayFreq
+                0x00000000       0xac .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyWdtStart
+                0x00000000       0xcc .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyWdtClear
+                0x00000000       0x44 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyDisableInts
+                0x00000000       0x30 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyEnableInts
+                0x00000000       0x20 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyFlushCache
+                0x00000000       0x38 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyIntSetSysVector
+                0x00000000       0x44 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyIntGetSysVector
+                0x00000000       0x30 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyIntSetVector
+                0x00000000       0x4c .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyIntGetVector
+                0x00000000       0x34 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyIntSetPriority
+                0x00000000       0x58 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyIntGetPriority
+                0x00000000       0x2c .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyIntEnable
+                0x00000000       0x34 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyIntGetState
+                0x00000000       0x40 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyIntDisable
+                0x00000000       0x34 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyIntSetPending
+                0x00000000       0x34 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text.CyIntClearPending
+                0x00000000       0x34 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .text          0x00000000        0x0 .\ARM_GCC_441\Debug\Receiver.a(cyPm.o)
+ .data          0x00000000        0x0 .\ARM_GCC_441\Debug\Receiver.a(cyPm.o)
+ .bss           0x00000000       0x1c .\ARM_GCC_441\Debug\Receiver.a(cyPm.o)
+ .rodata        0x00000000       0x10 .\ARM_GCC_441\Debug\Receiver.a(cyPm.o)
+ .text.CyPmSaveClocks
+                0x00000000      0x348 .\ARM_GCC_441\Debug\Receiver.a(cyPm.o)
+ .text.CyPmRestoreClocks
+                0x00000000      0x2e8 .\ARM_GCC_441\Debug\Receiver.a(cyPm.o)
+ .text.CyPmAltAct
+                0x00000000      0x138 .\ARM_GCC_441\Debug\Receiver.a(cyPm.o)
+ .text.CyPmSleep
+                0x00000000       0xfc .\ARM_GCC_441\Debug\Receiver.a(cyPm.o)
+ .text.CyPmHibernate
+                0x00000000       0x88 .\ARM_GCC_441\Debug\Receiver.a(cyPm.o)
+ .text.CyPmReadStatus
+                0x00000000       0x7c .\ARM_GCC_441\Debug\Receiver.a(cyPm.o)
+ .text.CyPmHibSaveSet
+                0x00000000       0x5c .\ARM_GCC_441\Debug\Receiver.a(cyPm.o)
+ .text.CyPmHibRestore
+                0x00000000       0x34 .\ARM_GCC_441\Debug\Receiver.a(cyPm.o)
+ .text.CyPmCtwSaveSet
+                0x00000000      0x108 .\ARM_GCC_441\Debug\Receiver.a(cyPm.o)
+ .text.CyPmOppsSaveSet
+                0x00000000       0x84 .\ARM_GCC_441\Debug\Receiver.a(cyPm.o)
+ .text.CyPmFtwSaveSet
+                0x00000000      0x10c .\ARM_GCC_441\Debug\Receiver.a(cyPm.o)
+ .text.CyPmHibSlpSaveSet
+                0x00000000       0x54 .\ARM_GCC_441\Debug\Receiver.a(cyPm.o)
+ .text.CyPmHibSlpRestore
+                0x00000000       0x20 .\ARM_GCC_441\Debug\Receiver.a(cyPm.o)
+ .text          0x00000000        0x0 .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+ .data          0x00000000        0x0 .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+ .text.LCD_Stop
+                0x00000000       0x1c .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+ .text.LCD_PrintHexUint16
+                0x00000000       0x2c .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+ .text.LCD_PrintDecUint16
+                0x00000000      0x108 .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+ .text          0x00000000        0x0 .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+ .data          0x00000000        0x0 .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+ .text.SPIM_Stop
+                0x00000000       0x58 .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+ .text.SPIM_EnableTxInt
+                0x00000000        0xc .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+ .text.SPIM_EnableRxInt
+                0x00000000        0xc .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+ .text.SPIM_DisableTxInt
+                0x00000000        0xc .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+ .text.SPIM_DisableRxInt
+                0x00000000        0xc .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+ .text.SPIM_SetTxInterruptMode
+                0x00000000       0x20 .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+ .text.SPIM_SetRxInterruptMode
+                0x00000000       0x20 .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+ .text.SPIM_GetRxBufferSize
+                0x00000000       0x3c .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+ .text.SPIM_GetTxBufferSize
+                0x00000000       0x50 .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+ .text.SPIM_PutArray
+                0x00000000       0x38 .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+ .text.SPIM_EnableInt
+                0x00000000        0xc .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+ .text.SPIM_DisableInt
+                0x00000000        0xc .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+ .text.SPIM_SetInterruptMode
+                0x00000000       0x30 .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+ .text.SPIM_ReadStatus
+                0x00000000       0x38 .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+ .text          0x00000000        0x0 .\ARM_GCC_441\Debug\Receiver.a(cyfitter_cfg.o)
+ .data          0x00000000        0x0 .\ARM_GCC_441\Debug\Receiver.a(cyfitter_cfg.o)
+ .text.CyClockStartupError
+                0x00000000        0xc .\ARM_GCC_441\Debug\Receiver.a(cyfitter_cfg.o)
+ .data          0x00000000        0x0 .\ARM_GCC_441\Debug\Receiver.a(CyBootAsmGnu.o)
+ .bss           0x00000000        0x0 .\ARM_GCC_441\Debug\Receiver.a(CyBootAsmGnu.o)
+ .text          0x00000000        0x0 .\ARM_GCC_441\Debug\Receiver.a(CyFlash.o)
+ .data          0x00000000        0x0 .\ARM_GCC_441\Debug\Receiver.a(CyFlash.o)
+ .bss           0x00000000        0x4 .\ARM_GCC_441\Debug\Receiver.a(CyFlash.o)
+ .text.CyFlash_Start
+                0x00000000       0x4c .\ARM_GCC_441\Debug\Receiver.a(CyFlash.o)
+ .text.CyFlash_Stop
+                0x00000000       0x40 .\ARM_GCC_441\Debug\Receiver.a(CyFlash.o)
+ .text.CySetTempInt
+                0x00000000       0xcc .\ARM_GCC_441\Debug\Receiver.a(CyFlash.o)
+ .text.CySetTemp
+                0x00000000       0x28 .\ARM_GCC_441\Debug\Receiver.a(CyFlash.o)
+ .text.CySetFlashEEBuffer
+                0x00000000       0x54 .\ARM_GCC_441\Debug\Receiver.a(CyFlash.o)
+ .text.CyWriteRowData
+                0x00000000       0xa4 .\ARM_GCC_441\Debug\Receiver.a(CyFlash.o)
+ .text.CyWriteRowFull
+                0x00000000      0x11c .\ARM_GCC_441\Debug\Receiver.a(CyFlash.o)
+ .text.CyFlash_SetWaitCycles
+                0x00000000       0xb8 .\ARM_GCC_441\Debug\Receiver.a(CyFlash.o)
+ .text.CyEEPROM_ReadReserve
+                0x00000000       0x3c .\ARM_GCC_441\Debug\Receiver.a(CyFlash.o)
+ .text.CyEEPROM_ReadRelease
+                0x00000000       0x20 .\ARM_GCC_441\Debug\Receiver.a(CyFlash.o)
+ COMMON         0x00000000        0x2 .\ARM_GCC_441\Debug\Receiver.a(CyFlash.o)
+ .text          0x00000000        0x0 .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+ .data          0x00000000        0x0 .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+ .bss           0x00000000        0x4 .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+ .text.CySpcLock
+                0x00000000       0x4c .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+ .text.CySpcWriteCommand
+                0x00000000      0x10c .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+ .text.CySpcReadData
+                0x00000000       0x64 .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+ .text.CySpcUnlock
+                0x00000000       0x18 .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+ .text.CySpcCreateCmdLoadMultiByte
+                0x00000000       0xc8 .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+ .text.CySpcCreateCmdLoadRow
+                0x00000000       0x64 .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+ .text.CySpcCreateCmdReadMultiByte
+                0x00000000       0xa8 .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+ .text.CySpcCreateCmdWriteRow
+                0x00000000       0xa0 .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+ .text.CySpcCreateCmdProgramRow
+                0x00000000       0x88 .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+ .text.CySpcCreateCmdEraseSector
+                0x00000000       0xa4 .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+ .text.CySpcCreateCmdGetTemp
+                0x00000000       0xa8 .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+ .text.CySpcCreateCmdSetupTs
+                0x00000000       0x8c .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+ .text.CySpcCreateCmdDisableTs
+                0x00000000       0x54 .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+ .text.CySpcActivePower
+                0x00000000       0x54 .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+ .text.CySpcStandbyPower
+                0x00000000       0x54 .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+ COMMON         0x00000000       0x11 .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+ .text          0x00000000        0x0 .\ARM_GCC_441\Debug\Receiver.a(cyutils.o)
+ .data          0x00000000        0x0 .\ARM_GCC_441\Debug\Receiver.a(cyutils.o)
+ .bss           0x00000000        0x0 .\ARM_GCC_441\Debug\Receiver.a(cyutils.o)
+ .data          0x00000000        0x0 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
+ .bss           0x00000000        0x0 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
+ .text          0x00000000        0x0 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtend.o
+ .data          0x00000000        0x0 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtend.o
+ .bss           0x00000000        0x0 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtend.o
+ .text          0x00000000        0x0 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+ .data          0x00000000        0x0 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+ .bss           0x00000000        0x0 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+ .data          0x00000000        0x0 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libcs3.a(start_c.o)
+ .bss           0x00000000        0x0 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libcs3.a(start_c.o)
+ .text          0x00000000        0x0 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libcs3micro.a(micro-vector.o)
+ .data          0x00000000        0x0 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libcs3micro.a(micro-vector.o)
+ .bss           0x00000000        0x0 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libcs3micro.a(micro-vector.o)
+ .data          0x00000000        0x0 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libcs3micro.a(micro_isr_interrupt.o)
+ .bss           0x00000000        0x0 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libcs3micro.a(micro_isr_interrupt.o)
+ .data          0x00000000        0x0 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-init.o)
+ .bss           0x00000000        0x0 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-init.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+rom              0x00000000         0x00040000         xr
+ram              0x1fff8000         0x00010000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
+LOAD c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
+START GROUP
+LOAD .\ARM_GCC_441\Debug\main.o
+LOAD .\ARM_GCC_441\Debug\Cm3Start.o
+LOAD .\ARM_GCC_441\Debug\Receiver.a
+LOAD C:\Program Files\Cypress\PSoC Creator\2.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_441\Debug\CyComponentLibrary.a
+END GROUP
+START GROUP
+LOAD c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2\libgcc.a
+LOAD c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a
+END GROUP
+LOAD c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtend.o
+LOAD c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+START GROUP
+LOAD c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2\libgcc.a
+LOAD c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a
+LOAD c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libcs3.a
+LOAD c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libcs3unhosted.a
+LOAD c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libcs3micro.a
+END GROUP
+                0x1fff8138                PROVIDE (__cs3_heap_start, _end)
+                0x00000001                PROVIDE (__cs3_region_num, ((__cs3_regions_end - __cs3_regions) / 0x14))
+                0x20008000                PROVIDE (__cs3_stack, 0x20008000)
+                0x20004000                PROVIDE (__cs3_heap_end, (__cs3_stack - 0x4000))
+
+.text           0x00000000     0x1b60
+ CREATE_OBJECT_SYMBOLS
+                0x00000000                __cs3_interrupt_vector = __cs3_interrupt_vector_micro
+ *(.cs3.interrupt_vector)
+ .cs3.interrupt_vector
+                0x00000000       0xc0 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libcs3micro.a(micro-vector.o)
+                0x00000000                __cs3_interrupt_vector_micro
+                0x00000001                ASSERT ((. != __cs3_interrupt_vector_micro), No interrupt vector)
+                0x00000734                PROVIDE (__cs3_reset, Reset)
+ *(.cs3.reset)
+                0x00000001                ASSERT ((. != __cs3_reset), No reset code)
+ *(.dma_init)
+ .dma_init      0x000000c0      0x128 .\ARM_GCC_441\Debug\Receiver.a(cyfitter_cfg.o)
+                0x00000001                ASSERT (((0x0 + .) <= 0x10000), DMA Init must be within the first 64k of flash)
+ *(.text.cs3.init)
+ .text.cs3.init
+                0x000001e8       0x5c c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libcs3.a(start_c.o)
+                0x000001e8                __cs3_start_c
+ *(.text .text.* .gnu.linkonce.t.*)
+ .text          0x00000244       0x30 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
+ .text.main     0x00000274      0x138 .\ARM_GCC_441\Debug\main.o
+                0x00000274                main
+ .text.radioWrite
+                0x000003ac       0x44 .\ARM_GCC_441\Debug\main.o
+                0x000003ac                radioWrite
+ .text.radioReadBuf
+                0x000003f0       0xd0 .\ARM_GCC_441\Debug\main.o
+                0x000003f0                radioReadBuf
+ .text.radioRead
+                0x000004c0       0x8c .\ARM_GCC_441\Debug\main.o
+                0x000004c0                radioRead
+ .text.radioInit
+                0x0000054c       0x98 .\ARM_GCC_441\Debug\main.o
+                0x0000054c                radioInit
+ .text.radioStartReceive
+                0x000005e4       0x4c .\ARM_GCC_441\Debug\main.o
+                0x000005e4                radioStartReceive
+ .text.radioGetState
+                0x00000630       0x4c .\ARM_GCC_441\Debug\main.o
+                0x00000630                radioGetState
+ .text.radioEndReceive
+                0x0000067c       0xb8 .\ARM_GCC_441\Debug\main.o
+                0x0000067c                radioEndReceive
+ .text.Reset    0x00000734       0x30 .\ARM_GCC_441\Debug\Cm3Start.o
+                0x00000734                Reset
+ .text.initialize_psoc
+                0x00000764       0xa0 .\ARM_GCC_441\Debug\Cm3Start.o
+                0x00000764                initialize_psoc
+ .text.CyDmacConfigure
+                0x00000804       0x70 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+                0x00000804                CyDmacConfigure
+ .text.CyDelay  0x00000874       0x48 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+                0x00000874                CyDelay
+ .text.CyDelayUs
+                0x000008bc       0x28 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+                0x000008bc                CyDelayUs
+ .text.LCD_Init
+                0x000008e4       0x90 .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+                0x000008e4                LCD_Init
+ .text.LCD_Enable
+                0x00000974       0x1c .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+                0x00000974                LCD_Enable
+ .text.LCD_Start
+                0x00000990       0x2c .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+                0x00000990                LCD_Start
+ .text.LCD_Position
+                0x000009bc       0x74 .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+                0x000009bc                LCD_Position
+ .text.LCD_PrintString
+                0x00000a30       0x40 .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+                0x00000a30                LCD_PrintString
+ .text.LCD_PutChar
+                0x00000a70       0x1c .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+                0x00000a70                LCD_PutChar
+ .text.LCD_WriteData
+                0x00000a8c       0x38 .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+                0x00000a8c                LCD_WriteData
+ .text.LCD_WriteControl
+                0x00000ac4       0x40 .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+                0x00000ac4                LCD_WriteControl
+ .text.LCD_IsReady
+                0x00000b04      0x1fc .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+                0x00000b04                LCD_IsReady
+ .text.LCD_WrDatNib
+                0x00000d00       0xac .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+                0x00000d00                LCD_WrDatNib
+ .text.LCD_WrCntrlNib
+                0x00000dac       0x8c .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+                0x00000dac                LCD_WrCntrlNib
+ .text.LCD_PrintHexUint8
+                0x00000e38       0x44 .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+                0x00000e38                LCD_PrintHexUint8
+ .text.SPIM_Init
+                0x00000e7c       0x3c .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+                0x00000e7c                SPIM_Init
+ .text.SPIM_Enable
+                0x00000eb8       0x78 .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+                0x00000eb8                SPIM_Enable
+ .text.SPIM_Start
+                0x00000f30       0x2c .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+                0x00000f30                SPIM_Start
+ .text.SPIM_ReadTxStatus
+                0x00000f5c       0x28 .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+                0x00000f5c                SPIM_ReadTxStatus
+ .text.SPIM_ReadRxStatus
+                0x00000f84       0x28 .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+                0x00000f84                SPIM_ReadRxStatus
+ .text.SPIM_WriteTxData
+                0x00000fac       0x34 .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+                0x00000fac                SPIM_WriteTxData
+ .text.SPIM_ReadRxData
+                0x00000fe0       0x28 .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+                0x00000fe0                SPIM_ReadRxData
+ .text.SPIM_ClearRxBuffer
+                0x00001008       0x2c .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+                0x00001008                SPIM_ClearRxBuffer
+ .text.SPIM_ClearTxBuffer
+                0x00001034       0x5c .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+                0x00001034                SPIM_ClearTxBuffer
+ .text.SPIM_ClearFIFO
+                0x00001090       0x7c .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+                0x00001090                SPIM_ClearFIFO
+ .text.cymemzero8
+                0x0000110c       0x44 .\ARM_GCC_441\Debug\Receiver.a(cyfitter_cfg.o)
+ .text.cymemcpy8
+                0x00001150       0x50 .\ARM_GCC_441\Debug\Receiver.a(cyfitter_cfg.o)
+ .text.cfg_dma_init
+                0x000011a0      0x208 .\ARM_GCC_441\Debug\Receiver.a(cyfitter_cfg.o)
+ .text.ClockSetup
+                0x000013a8      0x158 .\ARM_GCC_441\Debug\Receiver.a(cyfitter_cfg.o)
+ .text.AnalogSetDefault
+                0x00001500       0x98 .\ARM_GCC_441\Debug\Receiver.a(cyfitter_cfg.o)
+                0x00001500                AnalogSetDefault
+ .text.cyfitter_cfg
+                0x00001598      0x1f8 .\ARM_GCC_441\Debug\Receiver.a(cyfitter_cfg.o)
+                0x00001598                cyfitter_cfg
+ *fill*         0x00001790       0x70 00
+ .text          0x00001800      0x100 .\ARM_GCC_441\Debug\Receiver.a(CyBootAsmGnu.o)
+                0x00001800                CyDelayCycles
+                0x00001810                CyEnterCriticalSection
+                0x00001818                CyExitCriticalSection
+ .text.CySetReg24
+                0x00001900       0x4c .\ARM_GCC_441\Debug\Receiver.a(cyutils.o)
+                0x00001900                CySetReg24
+ .text          0x0000194c      0x190 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
+                0x0000194c                memcpy
+ .text          0x00001adc       0x30 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libcs3.a(start_c.o)
+                0x00001adc                __cs3_premain
+ .text          0x00001b0c        0x2 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libcs3micro.a(micro_isr_interrupt.o)
+                0x00001b0c                __cs3_isr_external_24
+                0x00001b0c                __cs3_isr_external_9
+                0x00001b0c                __cs3_isr_external_14
+                0x00001b0c                __cs3_isr_reserved_9
+                0x00001b0c                __cs3_isr_external_4
+                0x00001b0c                __cs3_isr_external_21
+                0x00001b0c                __cs3_isr_external_0
+                0x00001b0c                __cs3_isr_external_27
+                0x00001b0c                __cs3_isr_external_11
+                0x00001b0c                __cs3_isr_usage_fault
+                0x00001b0c                __cs3_isr_svcall
+                0x00001b0c                __cs3_isr_external_3
+                0x00001b0c                __cs3_isr_mpu_fault
+                0x00001b0c                __cs3_isr_external_16
+                0x00001b0c                __cs3_isr_pendsv
+                0x00001b0c                __cs3_isr_external_31
+                0x00001b0c                __cs3_isr_nmi
+                0x00001b0c                __cs3_isr_external_5
+                0x00001b0c                __cs3_isr_external_6
+                0x00001b0c                __cs3_isr_external_12
+                0x00001b0c                __cs3_isr_hard_fault
+                0x00001b0c                __cs3_isr_bus_fault
+                0x00001b0c                __cs3_isr_external_1
+                0x00001b0c                __cs3_isr_external_13
+                0x00001b0c                __cs3_isr_external_30
+                0x00001b0c                __cs3_isr_external_23
+                0x00001b0c                __cs3_isr_external_20
+                0x00001b0c                __cs3_isr_debug
+                0x00001b0c                __cs3_isr_reserved_13
+                0x00001b0c                __cs3_isr_external_8
+                0x00001b0c                __cs3_isr_external_26
+                0x00001b0c                __cs3_isr_reserved_8
+                0x00001b0c                __cs3_isr_reserved_7
+                0x00001b0c                __cs3_isr_external_7
+                0x00001b0c                __cs3_isr_external_28
+                0x00001b0c                __cs3_isr_systick
+                0x00001b0c                __cs3_isr_external_22
+                0x00001b0c                __cs3_isr_external_10
+                0x00001b0c                __cs3_isr_external_15
+                0x00001b0c                __cs3_isr_interrupt
+                0x00001b0c                __cs3_isr_external_18
+                0x00001b0c                __cs3_isr_external_29
+                0x00001b0c                __cs3_isr_external_25
+                0x00001b0c                __cs3_isr_reserved_10
+                0x00001b0c                __cs3_isr_external_2
+                0x00001b0c                __cs3_isr_external_17
+                0x00001b0c                __cs3_isr_external_19
+ *fill*         0x00001b0e        0x2 00
+ .text          0x00001b10       0x50 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-init.o)
+                0x00001b10                __libc_init_array
+ *(.plt)
+ *(.gnu.warning)
+ *(.glue_7t)
+ .glue_7t       0x00000000        0x0 linker stubs
+ *(.glue_7)
+ .glue_7        0x00000000        0x0 linker stubs
+ *(.vfp11_veneer)
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+ *(.bootloader)
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+ *(.gcc_except_table)
+
+.v4_bx          0x00001b60        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+
+.eh_frame
+ *(.eh_frame)
+                0x00001b60                PROVIDE (__exidx_start, .)
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x00001b60                __exidx_end = .
+
+.rodata         0x00001b60       0xd8
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata        0x00001b60        0xc .\ARM_GCC_441\Debug\main.o
+ .rodata        0x00001b6c       0x10 .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+                0x00001b6c                LCD_hex
+ .rodata        0x00001b7c       0x80 .\ARM_GCC_441\Debug\Receiver.a(cyfitter_cfg.o)
+                0x00001bfc                . = ALIGN (0x4)
+ *(.init)
+ .init          0x00001bfc        0x4 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
+                0x00001bfc                _init
+ .init          0x00001c00        0x8 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+                0x00001c08                . = ALIGN (0x4)
+                0x00001c08                __preinit_array_start = .
+ *(.preinit_array)
+                0x00001c08                __preinit_array_end = .
+                0x00001c08                . = ALIGN (0x4)
+                0x00001c08                __init_array_start = .
+ *(SORT(.init_array.*))
+ *(.init_array)
+ .init_array    0x00001c08        0x4 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
+ .init_array    0x00001c0c        0x4 .\ARM_GCC_441\Debug\Cm3Start.o
+                0x00001c10                __init_array_end = .
+                0x00001c10                . = ALIGN (0x4)
+ *(.fini)
+ .fini          0x00001c10        0x4 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
+                0x00001c10                _fini
+ .fini          0x00001c14        0x8 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+                0x00001c1c                . = ALIGN (0x4)
+                0x00001c1c                __fini_array_start = .
+ *(.fini_array)
+ .fini_array    0x00001c1c        0x4 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
+ *(SORT(.fini_array.*))
+                0x00001c20                __fini_array_end = .
+                0x00001c20                . = ALIGN (0x4)
+ *crtbegin.o(.ctors)
+ *(EXCLUDE_FILE(*crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *crtend.o(.ctors)
+                0x00001c20                . = ALIGN (0x4)
+ *crtbegin.o(.dtors)
+ *(EXCLUDE_FILE(*crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *crtend.o(.dtors)
+                0x00001c20                . = ALIGN (0x4)
+                0x00001c20                __cs3_regions = .
+                0x00001c20        0x4 LONG 0x0
+                0x00001c24        0x4 LONG 0x1c38 __cs3_region_init_ram
+                0x00001c28        0x4 LONG 0x1fff8000 __cs3_region_start_ram
+                0x00001c2c        0x4 LONG 0x118 __cs3_region_init_size_ram
+                0x00001c30        0x4 LONG 0x20 __cs3_region_zero_size_ram
+                0x00001c34                __cs3_regions_end = .
+                0x00001c38                . = ALIGN (0x8)
+ *fill*         0x00001c34        0x4 00
+                0x00001c38                _etext = .
+
+.data           0x1fff8000      0x118 load address 0x00001c38
+                0x1fff8000                __cs3_region_start_ram = .
+ *(.cs3.region-head.ram)
+                0x1fff8001                ASSERT ((. == __cs3_region_start_ram), .cs3.region-head.ram not permitted)
+ *(.ramvectors)
+ .ramvectors    0x1fff8000      0x100 .\ARM_GCC_441\Debug\Cm3Start.o
+                0x1fff8000                CyRamVectors
+ *(.jcr)
+ .jcr           0x1fff8100        0x0 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
+ .jcr           0x1fff8100        0x4 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtend.o
+ *(.got.plt)
+ *(.got)
+ *(.shdata)
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x1fff8104       0x10 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+                0x1fff8104                cydelay_freq_hz
+                0x1fff8108                cydelay_freq_khz
+                0x1fff810c                cydelay_freq_mhz
+                0x1fff8110                cydelay_32k_ms
+                0x1fff8118                . = ALIGN (0x8)
+ *fill*         0x1fff8114        0x4 00
+ *(.ram)
+                0x1fff8118                _edata = .
+
+.bss            0x1fff8118       0x20 load address 0x00001d50
+ *(.shbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x1fff8118        0x1 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
+ *fill*         0x1fff8119        0x3 00
+ .bss           0x1fff811c        0x8 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .bss           0x1fff8124        0x2 .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+                0x1fff8124                LCD_enableState
+                0x1fff8125                LCD_initVar
+ .bss           0x1fff8126        0x1 .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+                0x1fff8126                SPIM_initVar
+ *fill*         0x1fff8127        0x1 00
+ .bss           0x1fff8128        0x8 .\ARM_GCC_441\Debug\Receiver.a(cyfitter_cfg.o)
+ *(COMMON)
+ COMMON         0x1fff8130        0x1 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+                0x1fff8130                CyResetStatus
+                0x1fff8138                . = ALIGN (0x8)
+ *fill*         0x1fff8131        0x7 00
+ *(.ram.b)
+                0x1fff8138                _end = .
+                0x1fff8138                __end = .
+                0x20008000                __cs3_region_end_ram = (__cs3_region_start_ram + 0x10000)
+                0x00010000                __cs3_region_size_ram = 0x10000
+                0x00001c38                __cs3_region_init_ram = LOADADDR (.data)
+                0x00000118                __cs3_region_init_size_ram = (_edata - ADDR (.data))
+                0x00000020                __cs3_region_zero_size_ram = (_end - _edata)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.comment        0x00000000      0x1d9
+ .comment       0x00000000       0x2b .\ARM_GCC_441\Debug\main.o
+ .comment       0x0000002b       0x2b .\ARM_GCC_441\Debug\Cm3Start.o
+ .comment       0x00000056       0x2b .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .comment       0x00000081       0x2b .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .comment       0x000000ac       0x2b .\ARM_GCC_441\Debug\Receiver.a(cyPm.o)
+ .comment       0x000000d7       0x2b .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+ .comment       0x00000102       0x2b .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+ .comment       0x0000012d       0x2b .\ARM_GCC_441\Debug\Receiver.a(cyfitter_cfg.o)
+ .comment       0x00000158       0x2b .\ARM_GCC_441\Debug\Receiver.a(CyFlash.o)
+ .comment       0x00000183       0x2b .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+ .comment       0x000001ae       0x2b .\ARM_GCC_441\Debug\Receiver.a(cyutils.o)
+
+.debug_aranges  0x00000000      0x6b0
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x58 .\ARM_GCC_441\Debug\main.o
+ .debug_aranges
+                0x00000058       0x30 .\ARM_GCC_441\Debug\Cm3Start.o
+ .debug_aranges
+                0x00000088       0xd0 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .debug_aranges
+                0x00000158      0x1e8 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .debug_aranges
+                0x00000340       0x80 .\ARM_GCC_441\Debug\Receiver.a(cyPm.o)
+ .debug_aranges
+                0x000003c0       0x90 .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+ .debug_aranges
+                0x00000450       0xd8 .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+ .debug_aranges
+                0x00000528       0x50 .\ARM_GCC_441\Debug\Receiver.a(cyfitter_cfg.o)
+ .debug_aranges
+                0x00000578       0x20 .\ARM_GCC_441\Debug\Receiver.a(CyBootAsmGnu.o)
+ .debug_aranges
+                0x00000598       0x68 .\ARM_GCC_441\Debug\Receiver.a(CyFlash.o)
+ .debug_aranges
+                0x00000600       0x90 .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+ .debug_aranges
+                0x00000690       0x20 .\ARM_GCC_441\Debug\Receiver.a(cyutils.o)
+
+.debug_pubnames
+                0x00000000      0xfb6
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000       0x93 .\ARM_GCC_441\Debug\main.o
+ .debug_pubnames
+                0x00000093       0x57 .\ARM_GCC_441\Debug\Cm3Start.o
+ .debug_pubnames
+                0x000000ea      0x202 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .debug_pubnames
+                0x000002ec      0x52e .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .debug_pubnames
+                0x0000081a      0x137 .\ARM_GCC_441\Debug\Receiver.a(cyPm.o)
+ .debug_pubnames
+                0x00000951      0x14d .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+ .debug_pubnames
+                0x00000a9e      0x21b .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+ .debug_pubnames
+                0x00000cb9       0x38 .\ARM_GCC_441\Debug\Receiver.a(cyfitter_cfg.o)
+ .debug_pubnames
+                0x00000cf1       0xf0 .\ARM_GCC_441\Debug\Receiver.a(CyFlash.o)
+ .debug_pubnames
+                0x00000de1      0x1b4 .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+ .debug_pubnames
+                0x00000f95       0x21 .\ARM_GCC_441\Debug\Receiver.a(cyutils.o)
+
+.debug_info     0x00000000     0x31fd
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000      0x26c .\ARM_GCC_441\Debug\main.o
+ .debug_info    0x0000026c      0x12a .\ARM_GCC_441\Debug\Cm3Start.o
+ .debug_info    0x00000396      0x8fe .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .debug_info    0x00000c94      0xbbc .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .debug_info    0x00001850      0x45b .\ARM_GCC_441\Debug\Receiver.a(cyPm.o)
+ .debug_info    0x00001cab      0x39e .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+ .debug_info    0x00002049      0x3fa .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+ .debug_info    0x00002443      0x456 .\ARM_GCC_441\Debug\Receiver.a(cyfitter_cfg.o)
+ .debug_info    0x00002899       0x7d .\ARM_GCC_441\Debug\Receiver.a(CyBootAsmGnu.o)
+ .debug_info    0x00002916      0x2f1 .\ARM_GCC_441\Debug\Receiver.a(CyFlash.o)
+ .debug_info    0x00002c07      0x528 .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+ .debug_info    0x0000312f       0xce .\ARM_GCC_441\Debug\Receiver.a(cyutils.o)
+
+.debug_abbrev   0x00000000      0xbdb
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x10e .\ARM_GCC_441\Debug\main.o
+ .debug_abbrev  0x0000010e       0xe7 .\ARM_GCC_441\Debug\Cm3Start.o
+ .debug_abbrev  0x000001f5      0x167 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .debug_abbrev  0x0000035c      0x167 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .debug_abbrev  0x000004c3      0x12d .\ARM_GCC_441\Debug\Receiver.a(cyPm.o)
+ .debug_abbrev  0x000005f0      0x103 .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+ .debug_abbrev  0x000006f3       0xfa .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+ .debug_abbrev  0x000007ed      0x137 .\ARM_GCC_441\Debug\Receiver.a(cyfitter_cfg.o)
+ .debug_abbrev  0x00000924       0x14 .\ARM_GCC_441\Debug\Receiver.a(CyBootAsmGnu.o)
+ .debug_abbrev  0x00000938      0x11d .\ARM_GCC_441\Debug\Receiver.a(CyFlash.o)
+ .debug_abbrev  0x00000a55      0x117 .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+ .debug_abbrev  0x00000b6c       0x6f .\ARM_GCC_441\Debug\Receiver.a(cyutils.o)
+
+.debug_line     0x00000000     0x1663
+ *(.debug_line)
+ .debug_line    0x00000000      0x15f .\ARM_GCC_441\Debug\main.o
+ .debug_line    0x0000015f       0xb4 .\ARM_GCC_441\Debug\Cm3Start.o
+ .debug_line    0x00000213      0x299 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .debug_line    0x000004ac      0x57d .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .debug_line    0x00000a29      0x267 .\ARM_GCC_441\Debug\Receiver.a(cyPm.o)
+ .debug_line    0x00000c90      0x1d6 .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+ .debug_line    0x00000e66      0x263 .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+ .debug_line    0x000010c9      0x15e .\ARM_GCC_441\Debug\Receiver.a(cyfitter_cfg.o)
+ .debug_line    0x00001227       0x67 .\ARM_GCC_441\Debug\Receiver.a(CyBootAsmGnu.o)
+ .debug_line    0x0000128e      0x16a .\ARM_GCC_441\Debug\Receiver.a(CyFlash.o)
+ .debug_line    0x000013f8      0x1eb .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+ .debug_line    0x000015e3       0x80 .\ARM_GCC_441\Debug\Receiver.a(cyutils.o)
+
+.debug_frame    0x00000000     0x1584
+ *(.debug_frame)
+ .debug_frame   0x00000000      0x10c .\ARM_GCC_441\Debug\main.o
+ .debug_frame   0x0000010c       0x68 .\ARM_GCC_441\Debug\Cm3Start.o
+ .debug_frame   0x00000174      0x2a4 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .debug_frame   0x00000418      0x698 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .debug_frame   0x00000ab0      0x194 .\ARM_GCC_441\Debug\Receiver.a(cyPm.o)
+ .debug_frame   0x00000c44      0x1e0 .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+ .debug_frame   0x00000e24      0x2c4 .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+ .debug_frame   0x000010e8       0xd8 .\ARM_GCC_441\Debug\Receiver.a(cyfitter_cfg.o)
+ .debug_frame   0x000011c0      0x13c .\ARM_GCC_441\Debug\Receiver.a(CyFlash.o)
+ .debug_frame   0x000012fc      0x1bc .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+ .debug_frame   0x000014b8       0x2c .\ARM_GCC_441\Debug\Receiver.a(cyutils.o)
+ .debug_frame   0x000014e4       0x34 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
+ .debug_frame   0x00001518       0x40 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libcs3.a(start_c.o)
+ .debug_frame   0x00001558       0x2c c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-init.o)
+
+.debug_str      0x00000000     0x14f6
+ *(.debug_str)
+ .debug_str     0x00000000      0x12a .\ARM_GCC_441\Debug\main.o
+                                0x170 (size before relaxing)
+ .debug_str     0x0000012a       0x85 .\ARM_GCC_441\Debug\Cm3Start.o
+                                0x158 (size before relaxing)
+ .debug_str     0x000001af      0x342 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+                                0x429 (size before relaxing)
+ .debug_str     0x000004f1      0x582 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+                                0x6b4 (size before relaxing)
+ .debug_str     0x00000a73      0x2a2 .\ARM_GCC_441\Debug\Receiver.a(cyPm.o)
+                                0x394 (size before relaxing)
+ .debug_str     0x00000d15      0x15a .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+                                0x243 (size before relaxing)
+ .debug_str     0x00000e6f      0x201 .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+                                0x2d2 (size before relaxing)
+ .debug_str     0x00001070      0x145 .\ARM_GCC_441\Debug\Receiver.a(cyfitter_cfg.o)
+                                0x28f (size before relaxing)
+ .debug_str     0x000011b5      0x113 .\ARM_GCC_441\Debug\Receiver.a(CyFlash.o)
+                                0x210 (size before relaxing)
+ .debug_str     0x000012c8      0x200 .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+                                0x314 (size before relaxing)
+ .debug_str     0x000014c8       0x2e .\ARM_GCC_441\Debug\Receiver.a(cyutils.o)
+                                0x107 (size before relaxing)
+
+.debug_loc      0x00000000     0x23bb
+ *(.debug_loc)
+ .debug_loc     0x00000000      0x1ac .\ARM_GCC_441\Debug\main.o
+ .debug_loc     0x000001ac       0x8d .\ARM_GCC_441\Debug\Cm3Start.o
+ .debug_loc     0x00000239      0x4d9 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .debug_loc     0x00000712      0xb9e .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .debug_loc     0x000012b0      0x283 .\ARM_GCC_441\Debug\Receiver.a(cyPm.o)
+ .debug_loc     0x00001533      0x309 .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+ .debug_loc     0x0000183c      0x4bc .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+ .debug_loc     0x00001cf8      0x169 .\ARM_GCC_441\Debug\Receiver.a(cyfitter_cfg.o)
+ .debug_loc     0x00001e61      0x1f6 .\ARM_GCC_441\Debug\Receiver.a(CyFlash.o)
+ .debug_loc     0x00002057      0x32d .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+ .debug_loc     0x00002384       0x37 .\ARM_GCC_441\Debug\Receiver.a(cyutils.o)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_ranges   0x00000000      0x638
+ *(.debug_ranges)
+ .debug_ranges  0x00000000       0x50 .\ARM_GCC_441\Debug\main.o
+ .debug_ranges  0x00000050       0x28 .\ARM_GCC_441\Debug\Cm3Start.o
+ .debug_ranges  0x00000078       0xc8 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .debug_ranges  0x00000140      0x1e0 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .debug_ranges  0x00000320       0x78 .\ARM_GCC_441\Debug\Receiver.a(cyPm.o)
+ .debug_ranges  0x00000398       0x88 .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+ .debug_ranges  0x00000420       0xd0 .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+ .debug_ranges  0x000004f0       0x48 .\ARM_GCC_441\Debug\Receiver.a(cyfitter_cfg.o)
+ .debug_ranges  0x00000538       0x60 .\ARM_GCC_441\Debug\Receiver.a(CyFlash.o)
+ .debug_ranges  0x00000598       0x88 .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+ .debug_ranges  0x00000620       0x18 .\ARM_GCC_441\Debug\Receiver.a(cyutils.o)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.note.gnu.arm.ident
+ *(.note.gnu.arm.ident)
+
+.ARM.attributes
+                0x00000000       0x25
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x19 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
+ .ARM.attributes
+                0x00000019       0x29 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
+ .ARM.attributes
+                0x00000042       0x31 .\ARM_GCC_441\Debug\main.o
+ .ARM.attributes
+                0x00000073       0x31 .\ARM_GCC_441\Debug\Cm3Start.o
+ .ARM.attributes
+                0x000000a4       0x31 .\ARM_GCC_441\Debug\Receiver.a(CyDmac.o)
+ .ARM.attributes
+                0x000000d5       0x31 .\ARM_GCC_441\Debug\Receiver.a(CyLib.o)
+ .ARM.attributes
+                0x00000106       0x31 .\ARM_GCC_441\Debug\Receiver.a(cyPm.o)
+ .ARM.attributes
+                0x00000137       0x31 .\ARM_GCC_441\Debug\Receiver.a(LCD.o)
+ .ARM.attributes
+                0x00000168       0x31 .\ARM_GCC_441\Debug\Receiver.a(SPIM.o)
+ .ARM.attributes
+                0x00000199       0x31 .\ARM_GCC_441\Debug\Receiver.a(cyfitter_cfg.o)
+ .ARM.attributes
+                0x000001ca       0x21 .\ARM_GCC_441\Debug\Receiver.a(CyBootAsmGnu.o)
+ .ARM.attributes
+                0x000001eb       0x31 .\ARM_GCC_441\Debug\Receiver.a(CyFlash.o)
+ .ARM.attributes
+                0x0000021c       0x31 .\ARM_GCC_441\Debug\Receiver.a(CySpc.o)
+ .ARM.attributes
+                0x0000024d       0x31 .\ARM_GCC_441\Debug\Receiver.a(cyutils.o)
+ .ARM.attributes
+                0x0000027e       0x29 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
+ .ARM.attributes
+                0x000002a7       0x29 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtend.o
+ .ARM.attributes
+                0x000002d0       0x19 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+ .ARM.attributes
+                0x000002e9       0x29 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libcs3.a(start_c.o)
+ .ARM.attributes
+                0x00000312       0x19 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libcs3micro.a(micro-vector.o)
+ .ARM.attributes
+                0x0000032b       0x19 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libcs3micro.a(micro_isr_interrupt.o)
+ .ARM.attributes
+                0x00000344       0x29 c:/program files/cypress/psoc creator/2.0/psoc creator/import/gnu_cs/arm/4.4.1/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-init.o)
+
+/DISCARD/
+ *(.note.GNU-stack)
+OUTPUT(.\ARM_GCC_441\Debug\Receiver.elf elf32-littlearm)

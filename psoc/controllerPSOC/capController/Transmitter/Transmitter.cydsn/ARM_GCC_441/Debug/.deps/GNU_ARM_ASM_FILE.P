@@ -1,0 +1,4 @@
+E:/ControllerKinect/Transmitter/Transmitter.cydsn/ARM_GCC_441/Debug/CyBootAsmGnu.o : E:/ControllerKinect/Transmitter/Transmitter.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s 
+
+E:/ControllerKinect/Transmitter/Transmitter.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s : 
+

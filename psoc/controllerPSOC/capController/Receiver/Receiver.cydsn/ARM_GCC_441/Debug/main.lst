@@ -1,0 +1,2775 @@
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 18, 4
+  12              		.thumb
+  13              		.file	"main.c"
+  14              		.section	.debug_abbrev,"",%progbits
+  15              	.Ldebug_abbrev0:
+  16              		.section	.debug_info,"",%progbits
+  17              	.Ldebug_info0:
+  18              		.section	.debug_line,"",%progbits
+  19              	.Ldebug_line0:
+  20 0000 8B010000 		.text
+  20      02005300 
+  20      00000201 
+  20      FB0E0D00 
+  20      01010101 
+  21              	.Ltext0:
+  22              		.cfi_sections	.debug_frame
+  23              		.global	red
+  24              		.bss
+  25              		.align	1
+  26              		.type	red, %object
+  27              		.size	red, 2
+  28              	red:
+  29 0000 0000     		.space	2
+  30              		.global	green
+  31              		.align	1
+  32              		.type	green, %object
+  33              		.size	green, 2
+  34              	green:
+  35 0002 0000     		.space	2
+  36              		.global	blue
+  37              		.align	1
+  38              		.type	blue, %object
+  39              		.size	blue, 2
+  40              	blue:
+  41 0004 0000     		.space	2
+  42              		.global	oldRed
+  43              		.align	1
+  44              		.type	oldRed, %object
+  45              		.size	oldRed, 2
+  46              	oldRed:
+  47 0006 0000     		.space	2
+  48              		.global	oldGreen
+  49              		.align	1
+  50              		.type	oldGreen, %object
+  51              		.size	oldGreen, 2
+  52              	oldGreen:
+  53 0008 0000     		.space	2
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 2
+
+
+  54              		.global	oldBlue
+  55              		.align	1
+  56              		.type	oldBlue, %object
+  57              		.size	oldBlue, 2
+  58              	oldBlue:
+  59 000a 0000     		.space	2
+  60              		.global	newData
+  61              		.align	1
+  62              		.type	newData, %object
+  63              		.size	newData, 2
+  64              	newData:
+  65 000c 0000     		.space	2
+  66              		.section	.rodata
+  67              		.align	2
+  68              	.LC0:
+  69 0000 525800   		.ascii	"RX\000"
+  70 0003 00       		.align	2
+  71              	.LC1:
+  72 0004 5300     		.ascii	"S\000"
+  73              		.section	.text.main,"ax",%progbits
+  74              		.align	2
+  75              		.global	main
+  76              		.thumb
+  77              		.thumb_func
+  78              		.type	main, %function
+  79              	main:
+  80              	.LFB29:
+  81              		.file 1 "./main.c"
+   1:./main.c      **** /* ========================================
+   2:./main.c      ****  *
+   3:./main.c      ****  * Copyright YOUR COMPANY, THE YEAR
+   4:./main.c      ****  * All Rights Reserved
+   5:./main.c      ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:./main.c      ****  *
+   7:./main.c      ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:./main.c      ****  * WHICH IS THE PROPERTY OF your company.
+   9:./main.c      ****  *
+  10:./main.c      ****  * ========================================
+  11:./main.c      **** */
+  12:./main.c      **** #include <device.h>
+  13:./main.c      **** #include <lpregs.h>
+  14:./main.c      **** 
+  15:./main.c      **** void radioWrite(uint16,uint16);
+  16:./main.c      **** uint16 radioRead(uint16);
+  17:./main.c      **** void radioInit();
+  18:./main.c      **** void radioStartReceive();
+  19:./main.c      **** uint8 radioGetState();
+  20:./main.c      **** uint8 radioEndReceive(uint8);
+  21:./main.c      **** uint16 radioReadBuf(uint16);
+  22:./main.c      **** void sendSerial();
+  23:./main.c      **** 
+  24:./main.c      **** uint16 red=0;
+  25:./main.c      **** uint16 green=0;
+  26:./main.c      **** uint16 blue=0;
+  27:./main.c      **** uint16 oldRed=0;
+  28:./main.c      **** uint16 oldGreen=0;
+  29:./main.c      **** uint16 oldBlue=0;
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 3
+
+
+  30:./main.c      **** uint16 newData=0;
+  31:./main.c      **** 
+  32:./main.c      **** void main()
+  33:./main.c      **** {
+  82              		.loc 1 33 0
+  83              		.cfi_startproc
+  84              		@ args = 0, pretend = 0, frame = 8
+  85              		@ frame_needed = 1, uses_anonymous_args = 0
+  86 0000 80B5     		push	{r7, lr}
+  87              	.LCFI0:
+  88              		.cfi_def_cfa_offset 8
+  89 0002 82B0     		sub	sp, sp, #8
+  90              	.LCFI1:
+  91              		.cfi_def_cfa_offset 16
+  92 0004 00AF     		add	r7, sp, #0
+  93              		.cfi_offset 14, -4
+  94              		.cfi_offset 7, -8
+  95              	.LCFI2:
+  96              		.cfi_def_cfa_register 7
+  34:./main.c      ****     CYGlobalIntEnable;  /* Uncomment this line to enable global interrupts. */
+  97              		.loc 1 34 0
+  98              	@ 34 "./main.c" 1
+  99 0006 62B6     		CPSIE   i
+ 100              	@ 0 "" 2
+  35:./main.c      **** 	uint16 rxState=0x00;	
+ 101              		.loc 1 35 0
+ 102              		.thumb
+ 103 0008 4FF00003 		mov	r3, #0
+ 104 000c 7B80     		strh	r3, [r7, #2]	@ movhi
+  36:./main.c      **** 	uint16 val=0x00;
+ 105              		.loc 1 36 0
+ 106 000e 4FF00003 		mov	r3, #0
+ 107 0012 BB80     		strh	r3, [r7, #4]	@ movhi
+  37:./main.c      **** 	uint16 i=0x00;
+ 108              		.loc 1 37 0
+ 109 0014 4FF00003 		mov	r3, #0
+ 110 0018 FB80     		strh	r3, [r7, #6]	@ movhi
+  38:./main.c      **** 		
+  39:./main.c      **** 	 LCD_Start();
+ 111              		.loc 1 39 0
+ 112 001a FFF7FEFF 		bl	LCD_Start
+  40:./main.c      **** 	 LCD_ClearDisplay();
+ 113              		.loc 1 40 0
+ 114 001e 4FF00100 		mov	r0, #1
+ 115 0022 FFF7FEFF 		bl	LCD_WriteControl
+  41:./main.c      **** 	 LCD_Position(0,0);
+ 116              		.loc 1 41 0
+ 117 0026 4FF00000 		mov	r0, #0
+ 118 002a 4FF00001 		mov	r1, #0
+ 119 002e FFF7FEFF 		bl	LCD_Position
+  42:./main.c      **** 	 LCD_PrintString("RX");
+ 120              		.loc 1 42 0
+ 121 0032 40F20000 		movw	r0, #:lower16:.LC0
+ 122 0036 C0F20000 		movt	r0, #:upper16:.LC0
+ 123 003a FFF7FEFF 		bl	LCD_PrintString
+  43:./main.c      **** 	 
+  44:./main.c      **** 	 SPIM_Start();
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 4
+
+
+ 124              		.loc 1 44 0
+ 125 003e FFF7FEFF 		bl	SPIM_Start
+  45:./main.c      **** 	 SPIM_ClearRxBuffer();
+ 126              		.loc 1 45 0
+ 127 0042 FFF7FEFF 		bl	SPIM_ClearRxBuffer
+  46:./main.c      **** 	 SPIM_ClearTxBuffer();
+ 128              		.loc 1 46 0
+ 129 0046 FFF7FEFF 		bl	SPIM_ClearTxBuffer
+  47:./main.c      **** 	 SPIM_ClearFIFO();
+ 130              		.loc 1 47 0
+ 131 004a FFF7FEFF 		bl	SPIM_ClearFIFO
+  48:./main.c      **** 	
+  49:./main.c      **** 	 UART_Start();
+ 132              		.loc 1 49 0
+ 133 004e FFF7FEFF 		bl	UART_Start
+  50:./main.c      **** 	 
+  51:./main.c      **** 	radioInit();
+ 134              		.loc 1 51 0
+ 135 0052 FFF7FEFF 		bl	radioInit
+  52:./main.c      **** 	
+  53:./main.c      **** 	radioWrite(0x01,0x02);
+ 136              		.loc 1 53 0
+ 137 0056 4FF00100 		mov	r0, #1
+ 138 005a 4FF00201 		mov	r1, #2
+ 139 005e FFF7FEFF 		bl	radioWrite
+  54:./main.c      **** 	val=radioRead(0x01);
+ 140              		.loc 1 54 0
+ 141 0062 4FF00100 		mov	r0, #1
+ 142 0066 FFF7FEFF 		bl	radioRead
+ 143 006a 0346     		mov	r3, r0
+ 144 006c BB80     		strh	r3, [r7, #4]	@ movhi
+  55:./main.c      **** 	if (val==0x02){
+ 145              		.loc 1 55 0
+ 146 006e BB88     		ldrh	r3, [r7, #4]
+ 147 0070 022B     		cmp	r3, #2
+ 148 0072 0BD1     		bne	.L2
+  56:./main.c      **** 	LCD_Position(1,0);
+ 149              		.loc 1 56 0
+ 150 0074 4FF00100 		mov	r0, #1
+ 151 0078 4FF00001 		mov	r1, #0
+ 152 007c FFF7FEFF 		bl	LCD_Position
+  57:./main.c      **** 	LCD_PrintString("S");
+ 153              		.loc 1 57 0
+ 154 0080 40F20000 		movw	r0, #:lower16:.LC1
+ 155 0084 C0F20000 		movt	r0, #:upper16:.LC1
+ 156 0088 FFF7FEFF 		bl	LCD_PrintString
+ 157              	.L2:
+  58:./main.c      **** 	}
+  59:./main.c      **** 		
+  60:./main.c      **** 		
+  61:./main.c      **** 	radioStartReceive();
+ 158              		.loc 1 61 0
+ 159 008c FFF7FEFF 		bl	radioStartReceive
+ 160 0090 00E0     		b	.L6
+ 161              	.L8:
+  62:./main.c      **** 	
+  63:./main.c      **** 	while (1){
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 5
+
+
+  64:./main.c      **** 	
+  65:./main.c      **** 	rxState=radioGetState();
+  66:./main.c      **** 	   // store the packet onto a local buffer if
+  67:./main.c      **** 	   LCD_Position(1,5);
+  68:./main.c      **** 	   LCD_PrintInt8(rxState);
+  69:./main.c      **** 	   if (rxState==0x08) radioEndReceive(rxState);
+  70:./main.c      **** 	   
+  71:./main.c      ****    //receive operation complete
+  72:./main.c      ****    if (rxState & RXC_IRQ)
+  73:./main.c      ****     {
+  74:./main.c      ****    if (radioEndReceive(rxState))
+  75:./main.c      ****     {
+  76:./main.c      ****     val=radioReadBuf(RX_BUFFER_ADR);
+  77:./main.c      **** 	//retrieved data displayed on the LCD screen
+  78:./main.c      **** 	sendSerial();
+  79:./main.c      ****     LCD_Position(0,3);
+  80:./main.c      **** 	LCD_PrintInt8(val);
+  81:./main.c      ****     //generate a small delay before receiving the next data
+  82:./main.c      **** 	//CyDelay(100);
+  83:./main.c      **** 	}
+  84:./main.c      **** 	//restart the receive operation
+  85:./main.c      **** 	radioStartReceive();
+  86:./main.c      **** 	i++;
+  87:./main.c      **** 	 // store the packet onto a local buffer if
+  88:./main.c      **** 	LCD_Position(0,14);
+  89:./main.c      **** 	LCD_PrintInt8(i);
+  90:./main.c      **** 	}
+  91:./main.c      ****     }
+ 162              		.loc 1 91 0
+ 163 0092 00BF     		nop
+ 164              	.L6:
+ 165              		.loc 1 65 0
+ 166 0094 FFF7FEFF 		bl	radioGetState
+ 167 0098 0346     		mov	r3, r0
+ 168 009a 7B80     		strh	r3, [r7, #2]	@ movhi
+ 169              		.loc 1 67 0
+ 170 009c 4FF00100 		mov	r0, #1
+ 171 00a0 4FF00501 		mov	r1, #5
+ 172 00a4 FFF7FEFF 		bl	LCD_Position
+ 173              		.loc 1 68 0
+ 174 00a8 7B88     		ldrh	r3, [r7, #2]	@ movhi
+ 175 00aa DBB2     		uxtb	r3, r3
+ 176 00ac 1846     		mov	r0, r3
+ 177 00ae FFF7FEFF 		bl	LCD_PrintHexUint8
+ 178              		.loc 1 69 0
+ 179 00b2 7B88     		ldrh	r3, [r7, #2]
+ 180 00b4 082B     		cmp	r3, #8
+ 181 00b6 04D1     		bne	.L3
+ 182 00b8 7B88     		ldrh	r3, [r7, #2]	@ movhi
+ 183 00ba DBB2     		uxtb	r3, r3
+ 184 00bc 1846     		mov	r0, r3
+ 185 00be FFF7FEFF 		bl	radioEndReceive
+ 186              	.L3:
+ 187              		.loc 1 72 0
+ 188 00c2 7B88     		ldrh	r3, [r7, #2]
+ 189 00c4 03F00203 		and	r3, r3, #2
+ 190 00c8 002B     		cmp	r3, #0
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 6
+
+
+ 191 00ca E2D0     		beq	.L8
+ 192              		.loc 1 74 0
+ 193 00cc 7B88     		ldrh	r3, [r7, #2]	@ movhi
+ 194 00ce DBB2     		uxtb	r3, r3
+ 195 00d0 1846     		mov	r0, r3
+ 196 00d2 FFF7FEFF 		bl	radioEndReceive
+ 197 00d6 0346     		mov	r3, r0
+ 198 00d8 002B     		cmp	r3, #0
+ 199 00da 12D0     		beq	.L5
+ 200              		.loc 1 76 0
+ 201 00dc 4FF02100 		mov	r0, #33
+ 202 00e0 FFF7FEFF 		bl	radioReadBuf
+ 203 00e4 0346     		mov	r3, r0
+ 204 00e6 BB80     		strh	r3, [r7, #4]	@ movhi
+ 205              		.loc 1 78 0
+ 206 00e8 FFF7FEFF 		bl	sendSerial
+ 207              		.loc 1 79 0
+ 208 00ec 4FF00000 		mov	r0, #0
+ 209 00f0 4FF00301 		mov	r1, #3
+ 210 00f4 FFF7FEFF 		bl	LCD_Position
+ 211              		.loc 1 80 0
+ 212 00f8 BB88     		ldrh	r3, [r7, #4]	@ movhi
+ 213 00fa DBB2     		uxtb	r3, r3
+ 214 00fc 1846     		mov	r0, r3
+ 215 00fe FFF7FEFF 		bl	LCD_PrintHexUint8
+ 216              	.L5:
+ 217              		.loc 1 85 0
+ 218 0102 FFF7FEFF 		bl	radioStartReceive
+ 219              		.loc 1 86 0
+ 220 0106 FB88     		ldrh	r3, [r7, #6]	@ movhi
+ 221 0108 03F10103 		add	r3, r3, #1
+ 222 010c FB80     		strh	r3, [r7, #6]	@ movhi
+ 223              		.loc 1 88 0
+ 224 010e 4FF00000 		mov	r0, #0
+ 225 0112 4FF00E01 		mov	r1, #14
+ 226 0116 FFF7FEFF 		bl	LCD_Position
+ 227              		.loc 1 89 0
+ 228 011a FB88     		ldrh	r3, [r7, #6]	@ movhi
+ 229 011c DBB2     		uxtb	r3, r3
+ 230 011e 1846     		mov	r0, r3
+ 231 0120 FFF7FEFF 		bl	LCD_PrintHexUint8
+ 232              		.loc 1 91 0
+ 233 0124 B6E7     		b	.L6
+ 234              		.cfi_endproc
+ 235              	.LFE29:
+ 236              		.size	main, .-main
+ 237 0126 00BF     		.section	.text.radioWrite,"ax",%progbits
+ 238              		.align	2
+ 239              		.global	radioWrite
+ 240              		.thumb
+ 241              		.thumb_func
+ 242              		.type	radioWrite, %function
+ 243              	radioWrite:
+ 244              	.LFB30:
+  92:./main.c      **** }
+  93:./main.c      **** 
+  94:./main.c      **** 	
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 7
+
+
+  95:./main.c      **** 
+  96:./main.c      **** 
+  97:./main.c      **** void radioWrite(uint16 addr,uint16 dat){
+ 245              		.loc 1 97 0
+ 246              		.cfi_startproc
+ 247              		@ args = 0, pretend = 0, frame = 8
+ 248              		@ frame_needed = 1, uses_anonymous_args = 0
+ 249 0000 80B5     		push	{r7, lr}
+ 250              	.LCFI3:
+ 251              		.cfi_def_cfa_offset 8
+ 252 0002 82B0     		sub	sp, sp, #8
+ 253              	.LCFI4:
+ 254              		.cfi_def_cfa_offset 16
+ 255 0004 00AF     		add	r7, sp, #0
+ 256              		.cfi_offset 14, -4
+ 257              		.cfi_offset 7, -8
+ 258              	.LCFI5:
+ 259              		.cfi_def_cfa_register 7
+ 260 0006 0246     		mov	r2, r0
+ 261 0008 0B46     		mov	r3, r1
+ 262 000a FA80     		strh	r2, [r7, #6]	@ movhi
+ 263 000c BB80     		strh	r3, [r7, #4]	@ movhi
+  98:./main.c      **** 	SPIM_ClearRxBuffer();
+ 264              		.loc 1 98 0
+ 265 000e FFF7FEFF 		bl	SPIM_ClearRxBuffer
+  99:./main.c      **** 	SPIM_ClearTxBuffer();
+ 266              		.loc 1 99 0
+ 267 0012 FFF7FEFF 		bl	SPIM_ClearTxBuffer
+ 100:./main.c      **** 	
+ 101:./main.c      **** 	SPIM_WriteTxData(0x80+addr);
+ 268              		.loc 1 101 0
+ 269 0016 FB88     		ldrh	r3, [r7, #6]	@ movhi
+ 270 0018 DBB2     		uxtb	r3, r3
+ 271 001a A3F18003 		sub	r3, r3, #128
+ 272 001e DBB2     		uxtb	r3, r3
+ 273 0020 1846     		mov	r0, r3
+ 274 0022 FFF7FEFF 		bl	SPIM_WriteTxData
+ 102:./main.c      **** 	SPIM_WriteTxData(dat);
+ 275              		.loc 1 102 0
+ 276 0026 BB88     		ldrh	r3, [r7, #4]	@ movhi
+ 277 0028 DBB2     		uxtb	r3, r3
+ 278 002a 1846     		mov	r0, r3
+ 279 002c FFF7FEFF 		bl	SPIM_WriteTxData
+ 280              	.L10:
+ 103:./main.c      **** 	while(!SPIM_ReadTxStatus() & SPIM_STS_SPI_DONE);
+ 281              		.loc 1 103 0
+ 282 0030 FFF7FEFF 		bl	SPIM_ReadTxStatus
+ 283 0034 0346     		mov	r3, r0
+ 284 0036 002B     		cmp	r3, #0
+ 285 0038 FAD0     		beq	.L10
+ 104:./main.c      **** }
+ 286              		.loc 1 104 0
+ 287 003a 07F10807 		add	r7, r7, #8
+ 288 003e BD46     		mov	sp, r7
+ 289 0040 80BD     		pop	{r7, pc}
+ 290              		.cfi_endproc
+ 291              	.LFE30:
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 8
+
+
+ 292              		.size	radioWrite, .-radioWrite
+ 293 0042 00BF     		.section	.text.radioReadBuf,"ax",%progbits
+ 294              		.align	2
+ 295              		.global	radioReadBuf
+ 296              		.thumb
+ 297              		.thumb_func
+ 298              		.type	radioReadBuf, %function
+ 299              	radioReadBuf:
+ 300              	.LFB31:
+ 105:./main.c      **** 
+ 106:./main.c      **** uint16 radioReadBuf(uint16 addr){
+ 301              		.loc 1 106 0
+ 302              		.cfi_startproc
+ 303              		@ args = 0, pretend = 0, frame = 16
+ 304              		@ frame_needed = 1, uses_anonymous_args = 0
+ 305 0000 80B5     		push	{r7, lr}
+ 306              	.LCFI6:
+ 307              		.cfi_def_cfa_offset 8
+ 308 0002 84B0     		sub	sp, sp, #16
+ 309              	.LCFI7:
+ 310              		.cfi_def_cfa_offset 24
+ 311 0004 00AF     		add	r7, sp, #0
+ 312              		.cfi_offset 14, -4
+ 313              		.cfi_offset 7, -8
+ 314              	.LCFI8:
+ 315              		.cfi_def_cfa_register 7
+ 316 0006 0346     		mov	r3, r0
+ 317 0008 FB80     		strh	r3, [r7, #6]	@ movhi
+ 107:./main.c      **** 	uint16 val=0x00;
+ 318              		.loc 1 107 0
+ 319 000a 4FF00003 		mov	r3, #0
+ 320 000e BB81     		strh	r3, [r7, #12]	@ movhi
+ 108:./main.c      **** 	uint16 i=0;
+ 321              		.loc 1 108 0
+ 322 0010 4FF00003 		mov	r3, #0
+ 323 0014 FB81     		strh	r3, [r7, #14]	@ movhi
+ 109:./main.c      **** 	SPIM_ClearRxBuffer();
+ 324              		.loc 1 109 0
+ 325 0016 FFF7FEFF 		bl	SPIM_ClearRxBuffer
+ 110:./main.c      **** 	SPIM_ClearTxBuffer();
+ 326              		.loc 1 110 0
+ 327 001a FFF7FEFF 		bl	SPIM_ClearTxBuffer
+ 111:./main.c      **** 	
+ 112:./main.c      **** 	SPIM_WriteTxData(addr);
+ 328              		.loc 1 112 0
+ 329 001e FB88     		ldrh	r3, [r7, #6]	@ movhi
+ 330 0020 DBB2     		uxtb	r3, r3
+ 331 0022 1846     		mov	r0, r3
+ 332 0024 FFF7FEFF 		bl	SPIM_WriteTxData
+ 113:./main.c      **** 	SPIM_WriteTxData(0x00);
+ 333              		.loc 1 113 0
+ 334 0028 4FF00000 		mov	r0, #0
+ 335 002c FFF7FEFF 		bl	SPIM_WriteTxData
+ 114:./main.c      **** 	SPIM_WriteTxData(0x00);
+ 336              		.loc 1 114 0
+ 337 0030 4FF00000 		mov	r0, #0
+ 338 0034 FFF7FEFF 		bl	SPIM_WriteTxData
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 9
+
+
+ 115:./main.c      **** 	SPIM_WriteTxData(0x00);
+ 339              		.loc 1 115 0
+ 340 0038 4FF00000 		mov	r0, #0
+ 341 003c FFF7FEFF 		bl	SPIM_WriteTxData
+ 342              	.L13:
+ 116:./main.c      **** 
+ 117:./main.c      **** 	while(!SPIM_ReadTxStatus() & SPIM_STS_SPI_DONE);
+ 343              		.loc 1 117 0
+ 344 0040 FFF7FEFF 		bl	SPIM_ReadTxStatus
+ 345 0044 0346     		mov	r3, r0
+ 346 0046 002B     		cmp	r3, #0
+ 347 0048 FAD0     		beq	.L13
+ 118:./main.c      **** 	
+ 119:./main.c      **** 	//for (i=0;i<4;i++){
+ 120:./main.c      **** 			val=SPIM_ReadRxData();
+ 348              		.loc 1 120 0
+ 349 004a FFF7FEFF 		bl	SPIM_ReadRxData
+ 350 004e 0346     		mov	r3, r0
+ 351 0050 BB81     		strh	r3, [r7, #12]	@ movhi
+ 121:./main.c      **** 			LCD_Position(0,5);
+ 352              		.loc 1 121 0
+ 353 0052 4FF00000 		mov	r0, #0
+ 354 0056 4FF00501 		mov	r1, #5
+ 355 005a FFF7FEFF 		bl	LCD_Position
+ 122:./main.c      **** 			LCD_PrintInt8(val);
+ 356              		.loc 1 122 0
+ 357 005e BB89     		ldrh	r3, [r7, #12]	@ movhi
+ 358 0060 DBB2     		uxtb	r3, r3
+ 359 0062 1846     		mov	r0, r3
+ 360 0064 FFF7FEFF 		bl	LCD_PrintHexUint8
+ 123:./main.c      **** 			red=SPIM_ReadRxData();
+ 361              		.loc 1 123 0
+ 362 0068 FFF7FEFF 		bl	SPIM_ReadRxData
+ 363 006c 0346     		mov	r3, r0
+ 364 006e 1A46     		mov	r2, r3
+ 365 0070 40F20003 		movw	r3, #:lower16:red
+ 366 0074 C0F20003 		movt	r3, #:upper16:red
+ 367 0078 1A80     		strh	r2, [r3, #0]	@ movhi
+ 124:./main.c      **** 			LCD_Position(0,7);
+ 368              		.loc 1 124 0
+ 369 007a 4FF00000 		mov	r0, #0
+ 370 007e 4FF00701 		mov	r1, #7
+ 371 0082 FFF7FEFF 		bl	LCD_Position
+ 125:./main.c      **** 			LCD_PrintInt8(red);
+ 372              		.loc 1 125 0
+ 373 0086 40F20003 		movw	r3, #:lower16:red
+ 374 008a C0F20003 		movt	r3, #:upper16:red
+ 375 008e 1B88     		ldrh	r3, [r3, #0]
+ 376 0090 DBB2     		uxtb	r3, r3
+ 377 0092 1846     		mov	r0, r3
+ 378 0094 FFF7FEFF 		bl	LCD_PrintHexUint8
+ 126:./main.c      **** 			green=SPIM_ReadRxData();
+ 379              		.loc 1 126 0
+ 380 0098 FFF7FEFF 		bl	SPIM_ReadRxData
+ 381 009c 0346     		mov	r3, r0
+ 382 009e 1A46     		mov	r2, r3
+ 383 00a0 40F20003 		movw	r3, #:lower16:green
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 10
+
+
+ 384 00a4 C0F20003 		movt	r3, #:upper16:green
+ 385 00a8 1A80     		strh	r2, [r3, #0]	@ movhi
+ 127:./main.c      **** 			LCD_Position(0,9);
+ 386              		.loc 1 127 0
+ 387 00aa 4FF00000 		mov	r0, #0
+ 388 00ae 4FF00901 		mov	r1, #9
+ 389 00b2 FFF7FEFF 		bl	LCD_Position
+ 128:./main.c      **** 			LCD_PrintInt8(green);
+ 390              		.loc 1 128 0
+ 391 00b6 40F20003 		movw	r3, #:lower16:green
+ 392 00ba C0F20003 		movt	r3, #:upper16:green
+ 393 00be 1B88     		ldrh	r3, [r3, #0]
+ 394 00c0 DBB2     		uxtb	r3, r3
+ 395 00c2 1846     		mov	r0, r3
+ 396 00c4 FFF7FEFF 		bl	LCD_PrintHexUint8
+ 129:./main.c      **** 			blue=SPIM_ReadRxData();
+ 397              		.loc 1 129 0
+ 398 00c8 FFF7FEFF 		bl	SPIM_ReadRxData
+ 399 00cc 0346     		mov	r3, r0
+ 400 00ce 1A46     		mov	r2, r3
+ 401 00d0 40F20003 		movw	r3, #:lower16:blue
+ 402 00d4 C0F20003 		movt	r3, #:upper16:blue
+ 403 00d8 1A80     		strh	r2, [r3, #0]	@ movhi
+ 130:./main.c      **** 			LCD_Position(0,11);
+ 404              		.loc 1 130 0
+ 405 00da 4FF00000 		mov	r0, #0
+ 406 00de 4FF00B01 		mov	r1, #11
+ 407 00e2 FFF7FEFF 		bl	LCD_Position
+ 131:./main.c      **** 			LCD_PrintInt8(blue);
+ 408              		.loc 1 131 0
+ 409 00e6 40F20003 		movw	r3, #:lower16:blue
+ 410 00ea C0F20003 		movt	r3, #:upper16:blue
+ 411 00ee 1B88     		ldrh	r3, [r3, #0]
+ 412 00f0 DBB2     		uxtb	r3, r3
+ 413 00f2 1846     		mov	r0, r3
+ 414 00f4 FFF7FEFF 		bl	LCD_PrintHexUint8
+ 132:./main.c      **** 	
+ 133:./main.c      **** 	if (oldRed!=red || oldGreen!=green || oldBlue!=blue) {
+ 415              		.loc 1 133 0
+ 416 00f8 40F20003 		movw	r3, #:lower16:oldRed
+ 417 00fc C0F20003 		movt	r3, #:upper16:oldRed
+ 418 0100 1A88     		ldrh	r2, [r3, #0]
+ 419 0102 40F20003 		movw	r3, #:lower16:red
+ 420 0106 C0F20003 		movt	r3, #:upper16:red
+ 421 010a 1B88     		ldrh	r3, [r3, #0]
+ 422 010c 9A42     		cmp	r2, r3
+ 423 010e 17D1     		bne	.L14
+ 424 0110 40F20003 		movw	r3, #:lower16:oldGreen
+ 425 0114 C0F20003 		movt	r3, #:upper16:oldGreen
+ 426 0118 1A88     		ldrh	r2, [r3, #0]
+ 427 011a 40F20003 		movw	r3, #:lower16:green
+ 428 011e C0F20003 		movt	r3, #:upper16:green
+ 429 0122 1B88     		ldrh	r3, [r3, #0]
+ 430 0124 9A42     		cmp	r2, r3
+ 431 0126 0BD1     		bne	.L14
+ 432 0128 40F20003 		movw	r3, #:lower16:oldBlue
+ 433 012c C0F20003 		movt	r3, #:upper16:oldBlue
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 11
+
+
+ 434 0130 1A88     		ldrh	r2, [r3, #0]
+ 435 0132 40F20003 		movw	r3, #:lower16:blue
+ 436 0136 C0F20003 		movt	r3, #:upper16:blue
+ 437 013a 1B88     		ldrh	r3, [r3, #0]
+ 438 013c 9A42     		cmp	r2, r3
+ 439 013e 25D0     		beq	.L15
+ 440              	.L14:
+ 134:./main.c      **** 		newData=1;
+ 441              		.loc 1 134 0
+ 442 0140 40F20003 		movw	r3, #:lower16:newData
+ 443 0144 C0F20003 		movt	r3, #:upper16:newData
+ 444 0148 4FF00102 		mov	r2, #1
+ 445 014c 1A80     		strh	r2, [r3, #0]	@ movhi
+ 135:./main.c      **** 		oldRed=red;
+ 446              		.loc 1 135 0
+ 447 014e 40F20003 		movw	r3, #:lower16:red
+ 448 0152 C0F20003 		movt	r3, #:upper16:red
+ 449 0156 1A88     		ldrh	r2, [r3, #0]
+ 450 0158 40F20003 		movw	r3, #:lower16:oldRed
+ 451 015c C0F20003 		movt	r3, #:upper16:oldRed
+ 452 0160 1A80     		strh	r2, [r3, #0]	@ movhi
+ 136:./main.c      **** 		oldGreen=green;
+ 453              		.loc 1 136 0
+ 454 0162 40F20003 		movw	r3, #:lower16:green
+ 455 0166 C0F20003 		movt	r3, #:upper16:green
+ 456 016a 1A88     		ldrh	r2, [r3, #0]
+ 457 016c 40F20003 		movw	r3, #:lower16:oldGreen
+ 458 0170 C0F20003 		movt	r3, #:upper16:oldGreen
+ 459 0174 1A80     		strh	r2, [r3, #0]	@ movhi
+ 137:./main.c      **** 		oldBlue=blue;	
+ 460              		.loc 1 137 0
+ 461 0176 40F20003 		movw	r3, #:lower16:blue
+ 462 017a C0F20003 		movt	r3, #:upper16:blue
+ 463 017e 1A88     		ldrh	r2, [r3, #0]
+ 464 0180 40F20003 		movw	r3, #:lower16:oldBlue
+ 465 0184 C0F20003 		movt	r3, #:upper16:oldBlue
+ 466 0188 1A80     		strh	r2, [r3, #0]	@ movhi
+ 467              		.loc 1 133 0
+ 468 018a 06E0     		b	.L16
+ 469              	.L15:
+ 138:./main.c      **** 	}
+ 139:./main.c      **** 	else {newData=0;}
+ 470              		.loc 1 139 0
+ 471 018c 40F20003 		movw	r3, #:lower16:newData
+ 472 0190 C0F20003 		movt	r3, #:upper16:newData
+ 473 0194 4FF00002 		mov	r2, #0
+ 474 0198 1A80     		strh	r2, [r3, #0]	@ movhi
+ 475              	.L16:
+ 140:./main.c      **** 	
+ 141:./main.c      **** 	return i;
+ 476              		.loc 1 141 0
+ 477 019a FB89     		ldrh	r3, [r7, #14]
+ 142:./main.c      **** }
+ 478              		.loc 1 142 0
+ 479 019c 1846     		mov	r0, r3
+ 480 019e 07F11007 		add	r7, r7, #16
+ 481 01a2 BD46     		mov	sp, r7
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 12
+
+
+ 482 01a4 80BD     		pop	{r7, pc}
+ 483              		.cfi_endproc
+ 484              	.LFE31:
+ 485              		.size	radioReadBuf, .-radioReadBuf
+ 486 01a6 00BF     		.section	.rodata
+ 487 0006 0000     		.align	2
+ 488              	.LC2:
+ 489 0008 25303375 		.ascii	"%03u\000"
+ 489      00
+ 490 000d 000000   		.align	2
+ 491              	.LC3:
+ 492 0010 25303275 		.ascii	"%02u\000"
+ 492      00
+ 493              		.section	.text.sendSerial,"ax",%progbits
+ 494              		.align	2
+ 495              		.global	sendSerial
+ 496              		.thumb
+ 497              		.thumb_func
+ 498              		.type	sendSerial, %function
+ 499              	sendSerial:
+ 500              	.LFB32:
+ 143:./main.c      **** 
+ 144:./main.c      **** void sendSerial(){
+ 501              		.loc 1 144 0
+ 502              		.cfi_startproc
+ 503              		@ args = 0, pretend = 0, frame = 16
+ 504              		@ frame_needed = 1, uses_anonymous_args = 0
+ 505 0000 80B5     		push	{r7, lr}
+ 506              	.LCFI9:
+ 507              		.cfi_def_cfa_offset 8
+ 508 0002 84B0     		sub	sp, sp, #16
+ 509              	.LCFI10:
+ 510              		.cfi_def_cfa_offset 24
+ 511 0004 00AF     		add	r7, sp, #0
+ 512              		.cfi_offset 14, -4
+ 513              		.cfi_offset 7, -8
+ 514              	.LCFI11:
+ 515              		.cfi_def_cfa_register 7
+ 145:./main.c      **** uint8 i=red;
+ 516              		.loc 1 145 0
+ 517 0006 40F20003 		movw	r3, #:lower16:red
+ 518 000a C0F20003 		movt	r3, #:upper16:red
+ 519 000e 1B88     		ldrh	r3, [r3, #0]
+ 520 0010 3B73     		strb	r3, [r7, #12]
+ 146:./main.c      **** uint8 j=blue;
+ 521              		.loc 1 146 0
+ 522 0012 40F20003 		movw	r3, #:lower16:blue
+ 523 0016 C0F20003 		movt	r3, #:upper16:blue
+ 524 001a 1B88     		ldrh	r3, [r3, #0]
+ 525 001c 7B73     		strb	r3, [r7, #13]
+ 147:./main.c      **** uint8 k=green;
+ 526              		.loc 1 147 0
+ 527 001e 40F20003 		movw	r3, #:lower16:green
+ 528 0022 C0F20003 		movt	r3, #:upper16:green
+ 529 0026 1B88     		ldrh	r3, [r3, #0]
+ 530 0028 BB73     		strb	r3, [r7, #14]
+ 148:./main.c      **** uint8 val=0;
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 13
+
+
+ 531              		.loc 1 148 0
+ 532 002a 4FF00003 		mov	r3, #0
+ 533 002e FB73     		strb	r3, [r7, #15]
+ 149:./main.c      **** char ch[3];
+ 150:./main.c      **** char rgbData[7];
+ 151:./main.c      **** 
+ 152:./main.c      **** if (newData==1){
+ 534              		.loc 1 152 0
+ 535 0030 40F20003 		movw	r3, #:lower16:newData
+ 536 0034 C0F20003 		movt	r3, #:upper16:newData
+ 537 0038 1B88     		ldrh	r3, [r3, #0]
+ 538 003a 012B     		cmp	r3, #1
+ 539 003c 3DD1     		bne	.L20
+ 153:./main.c      **** 		sprintf(ch,"%03u",i);//conversion from number to string so it is easier to print with 3 digits an
+ 540              		.loc 1 153 0
+ 541 003e 3B7B     		ldrb	r3, [r7, #12]	@ zero_extendqisi2
+ 542 0040 07F10802 		add	r2, r7, #8
+ 543 0044 1046     		mov	r0, r2
+ 544 0046 40F20001 		movw	r1, #:lower16:.LC2
+ 545 004a C0F20001 		movt	r1, #:upper16:.LC2
+ 546 004e 1A46     		mov	r2, r3
+ 547 0050 FFF7FEFF 		bl	sprintf
+ 154:./main.c      **** 		rgbData[0]=ch[0];
+ 548              		.loc 1 154 0
+ 549 0054 3B7A     		ldrb	r3, [r7, #8]	@ zero_extendqisi2
+ 550 0056 3B70     		strb	r3, [r7, #0]
+ 155:./main.c      **** 		rgbData[1]=ch[1];
+ 551              		.loc 1 155 0
+ 552 0058 7B7A     		ldrb	r3, [r7, #9]	@ zero_extendqisi2
+ 553 005a 7B70     		strb	r3, [r7, #1]
+ 156:./main.c      **** 		rgbData[2]=ch[2];
+ 554              		.loc 1 156 0
+ 555 005c BB7A     		ldrb	r3, [r7, #10]	@ zero_extendqisi2
+ 556 005e BB70     		strb	r3, [r7, #2]
+ 157:./main.c      **** 		sprintf(ch,"%03u",j);
+ 557              		.loc 1 157 0
+ 558 0060 7B7B     		ldrb	r3, [r7, #13]	@ zero_extendqisi2
+ 559 0062 07F10802 		add	r2, r7, #8
+ 560 0066 1046     		mov	r0, r2
+ 561 0068 40F20001 		movw	r1, #:lower16:.LC2
+ 562 006c C0F20001 		movt	r1, #:upper16:.LC2
+ 563 0070 1A46     		mov	r2, r3
+ 564 0072 FFF7FEFF 		bl	sprintf
+ 158:./main.c      **** 		rgbData[3]=ch[0];
+ 565              		.loc 1 158 0
+ 566 0076 3B7A     		ldrb	r3, [r7, #8]	@ zero_extendqisi2
+ 567 0078 FB70     		strb	r3, [r7, #3]
+ 159:./main.c      **** 		rgbData[4]=ch[1];
+ 568              		.loc 1 159 0
+ 569 007a 7B7A     		ldrb	r3, [r7, #9]	@ zero_extendqisi2
+ 570 007c 3B71     		strb	r3, [r7, #4]
+ 160:./main.c      **** 		rgbData[5]=ch[2];
+ 571              		.loc 1 160 0
+ 572 007e BB7A     		ldrb	r3, [r7, #10]	@ zero_extendqisi2
+ 573 0080 7B71     		strb	r3, [r7, #5]
+ 161:./main.c      **** 		sprintf(ch,"%02u",k);
+ 574              		.loc 1 161 0
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 14
+
+
+ 575 0082 BB7B     		ldrb	r3, [r7, #14]	@ zero_extendqisi2
+ 576 0084 07F10802 		add	r2, r7, #8
+ 577 0088 1046     		mov	r0, r2
+ 578 008a 40F20001 		movw	r1, #:lower16:.LC3
+ 579 008e C0F20001 		movt	r1, #:upper16:.LC3
+ 580 0092 1A46     		mov	r2, r3
+ 581 0094 FFF7FEFF 		bl	sprintf
+ 162:./main.c      **** 		rgbData[6]=ch[0];
+ 582              		.loc 1 162 0
+ 583 0098 3B7A     		ldrb	r3, [r7, #8]	@ zero_extendqisi2
+ 584 009a BB71     		strb	r3, [r7, #6]
+ 163:./main.c      **** 		rgbData[7]=ch[1];
+ 585              		.loc 1 163 0
+ 586 009c 7B7A     		ldrb	r3, [r7, #9]	@ zero_extendqisi2
+ 587 009e FB71     		strb	r3, [r7, #7]
+ 164:./main.c      **** 		rgbData[8]=ch[2];
+ 588              		.loc 1 164 0
+ 589 00a0 BB7A     		ldrb	r3, [r7, #10]	@ zero_extendqisi2
+ 590 00a2 3B72     		strb	r3, [r7, #8]
+ 165:./main.c      **** 		UART_PutString(rgbData);
+ 591              		.loc 1 165 0
+ 592 00a4 3B46     		mov	r3, r7
+ 593 00a6 1846     		mov	r0, r3
+ 594 00a8 FFF7FEFF 		bl	UART_PutString
+ 166:./main.c      **** 		newData=0;
+ 595              		.loc 1 166 0
+ 596 00ac 40F20003 		movw	r3, #:lower16:newData
+ 597 00b0 C0F20003 		movt	r3, #:upper16:newData
+ 598 00b4 4FF00002 		mov	r2, #0
+ 599 00b8 1A80     		strh	r2, [r3, #0]	@ movhi
+ 600              	.L20:
+ 167:./main.c      **** }
+ 168:./main.c      **** }
+ 601              		.loc 1 168 0
+ 602 00ba 07F11007 		add	r7, r7, #16
+ 603 00be BD46     		mov	sp, r7
+ 604 00c0 80BD     		pop	{r7, pc}
+ 605              		.cfi_endproc
+ 606              	.LFE32:
+ 607              		.size	sendSerial, .-sendSerial
+ 608 00c2 00BF     		.section	.text.radioRead,"ax",%progbits
+ 609              		.align	2
+ 610              		.global	radioRead
+ 611              		.thumb
+ 612              		.thumb_func
+ 613              		.type	radioRead, %function
+ 614              	radioRead:
+ 615              	.LFB33:
+ 169:./main.c      **** 
+ 170:./main.c      **** 
+ 171:./main.c      **** 
+ 172:./main.c      **** uint16 radioRead(uint16 addr){
+ 616              		.loc 1 172 0
+ 617              		.cfi_startproc
+ 618              		@ args = 0, pretend = 0, frame = 16
+ 619              		@ frame_needed = 1, uses_anonymous_args = 0
+ 620 0000 80B5     		push	{r7, lr}
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 15
+
+
+ 621              	.LCFI12:
+ 622              		.cfi_def_cfa_offset 8
+ 623 0002 84B0     		sub	sp, sp, #16
+ 624              	.LCFI13:
+ 625              		.cfi_def_cfa_offset 24
+ 626 0004 00AF     		add	r7, sp, #0
+ 627              		.cfi_offset 14, -4
+ 628              		.cfi_offset 7, -8
+ 629              	.LCFI14:
+ 630              		.cfi_def_cfa_register 7
+ 631 0006 0346     		mov	r3, r0
+ 632 0008 FB80     		strh	r3, [r7, #6]	@ movhi
+ 173:./main.c      **** 	uint16 val=0x00;
+ 633              		.loc 1 173 0
+ 634 000a 4FF00003 		mov	r3, #0
+ 635 000e BB81     		strh	r3, [r7, #12]	@ movhi
+ 174:./main.c      **** 	uint16 i=0;
+ 636              		.loc 1 174 0
+ 637 0010 4FF00003 		mov	r3, #0
+ 638 0014 FB81     		strh	r3, [r7, #14]	@ movhi
+ 175:./main.c      **** 	SPIM_ClearRxBuffer();
+ 639              		.loc 1 175 0
+ 640 0016 FFF7FEFF 		bl	SPIM_ClearRxBuffer
+ 176:./main.c      **** 	SPIM_ClearTxBuffer();
+ 641              		.loc 1 176 0
+ 642 001a FFF7FEFF 		bl	SPIM_ClearTxBuffer
+ 177:./main.c      **** 	
+ 178:./main.c      **** 	SPIM_WriteTxData(addr);
+ 643              		.loc 1 178 0
+ 644 001e FB88     		ldrh	r3, [r7, #6]	@ movhi
+ 645 0020 DBB2     		uxtb	r3, r3
+ 646 0022 1846     		mov	r0, r3
+ 647 0024 FFF7FEFF 		bl	SPIM_WriteTxData
+ 179:./main.c      **** 	SPIM_WriteTxData(0x00);
+ 648              		.loc 1 179 0
+ 649 0028 4FF00000 		mov	r0, #0
+ 650 002c FFF7FEFF 		bl	SPIM_WriteTxData
+ 180:./main.c      **** 	SPIM_WriteTxData(0x00);
+ 651              		.loc 1 180 0
+ 652 0030 4FF00000 		mov	r0, #0
+ 653 0034 FFF7FEFF 		bl	SPIM_WriteTxData
+ 181:./main.c      **** 	SPIM_WriteTxData(0x00);
+ 654              		.loc 1 181 0
+ 655 0038 4FF00000 		mov	r0, #0
+ 656 003c FFF7FEFF 		bl	SPIM_WriteTxData
+ 657              	.L22:
+ 182:./main.c      **** 
+ 183:./main.c      **** 	while(!SPIM_ReadTxStatus() & SPIM_STS_SPI_DONE);
+ 658              		.loc 1 183 0
+ 659 0040 FFF7FEFF 		bl	SPIM_ReadTxStatus
+ 660 0044 0346     		mov	r3, r0
+ 661 0046 002B     		cmp	r3, #0
+ 662 0048 FAD0     		beq	.L22
+ 184:./main.c      **** 	
+ 185:./main.c      **** 	for (i=0;i<2;i++){
+ 663              		.loc 1 185 0
+ 664 004a 4FF00003 		mov	r3, #0
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 16
+
+
+ 665 004e FB81     		strh	r3, [r7, #14]	@ movhi
+ 666 0050 12E0     		b	.L23
+ 667              	.L24:
+ 186:./main.c      **** 			val=SPIM_ReadRxData();
+ 668              		.loc 1 186 0
+ 669 0052 FFF7FEFF 		bl	SPIM_ReadRxData
+ 670 0056 0346     		mov	r3, r0
+ 671 0058 BB81     		strh	r3, [r7, #12]	@ movhi
+ 187:./main.c      **** 			LCD_Position(1,14);
+ 672              		.loc 1 187 0
+ 673 005a 4FF00100 		mov	r0, #1
+ 674 005e 4FF00E01 		mov	r1, #14
+ 675 0062 FFF7FEFF 		bl	LCD_Position
+ 188:./main.c      **** 			LCD_PrintInt8(val);
+ 676              		.loc 1 188 0
+ 677 0066 BB89     		ldrh	r3, [r7, #12]	@ movhi
+ 678 0068 DBB2     		uxtb	r3, r3
+ 679 006a 1846     		mov	r0, r3
+ 680 006c FFF7FEFF 		bl	LCD_PrintHexUint8
+ 681              		.loc 1 185 0
+ 682 0070 FB89     		ldrh	r3, [r7, #14]	@ movhi
+ 683 0072 03F10103 		add	r3, r3, #1
+ 684 0076 FB81     		strh	r3, [r7, #14]	@ movhi
+ 685              	.L23:
+ 686 0078 FB89     		ldrh	r3, [r7, #14]
+ 687 007a 012B     		cmp	r3, #1
+ 688 007c E9D9     		bls	.L24
+ 189:./main.c      **** 		//	CyDelay(1000);
+ 190:./main.c      **** 		}
+ 191:./main.c      **** 	return val;
+ 689              		.loc 1 191 0
+ 690 007e BB89     		ldrh	r3, [r7, #12]
+ 192:./main.c      **** }
+ 691              		.loc 1 192 0
+ 692 0080 1846     		mov	r0, r3
+ 693 0082 07F11007 		add	r7, r7, #16
+ 694 0086 BD46     		mov	sp, r7
+ 695 0088 80BD     		pop	{r7, pc}
+ 696              		.cfi_endproc
+ 697              	.LFE33:
+ 698              		.size	radioRead, .-radioRead
+ 699 008a 00BF     		.section	.text.radioInit,"ax",%progbits
+ 700              		.align	2
+ 701              		.global	radioInit
+ 702              		.thumb
+ 703              		.thumb_func
+ 704              		.type	radioInit, %function
+ 705              	radioInit:
+ 706              	.LFB34:
+ 193:./main.c      **** 
+ 194:./main.c      **** void radioInit(){
+ 707              		.loc 1 194 0
+ 708              		.cfi_startproc
+ 709              		@ args = 0, pretend = 0, frame = 0
+ 710              		@ frame_needed = 1, uses_anonymous_args = 0
+ 711 0000 80B5     		push	{r7, lr}
+ 712              	.LCFI15:
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 17
+
+
+ 713              		.cfi_def_cfa_offset 8
+ 714 0002 00AF     		add	r7, sp, #0
+ 715              		.cfi_offset 14, -4
+ 716              		.cfi_offset 7, -8
+ 717              	.LCFI16:
+ 718              		.cfi_def_cfa_register 7
+ 195:./main.c      ****  
+ 196:./main.c      **** 	 /* Reset the LP through the SPI (soft reset). */
+ 197:./main.c      **** 	radioWrite(MODE_OVERRIDE_ADR, RST);
+ 719              		.loc 1 197 0
+ 720 0004 4FF01D00 		mov	r0, #29
+ 721 0008 4FF00101 		mov	r1, #1
+ 722 000c FFF7FEFF 		bl	radioWrite
+ 198:./main.c      **** 
+ 199:./main.c      ****     /* Set up to use auto-cal for VCO. */
+ 200:./main.c      ****    radioWrite(AUTO_CAL_TIME_ADR, AUTO_CAL_TIME_MAX); /* Extend autoCal time to max. */
+ 723              		.loc 1 200 0
+ 724 0010 4FF03200 		mov	r0, #50
+ 725 0014 4FF03C01 		mov	r1, #60
+ 726 0018 FFF7FEFF 		bl	radioWrite
+ 201:./main.c      **** 
+ 202:./main.c      ****     radioWrite(AUTO_CAL_OFFSET_ADR, AUTO_CAL_OFFSET_MINUS_4); /* AutoCal offset to -4. */
+ 727              		.loc 1 202 0
+ 728 001c 4FF03500 		mov	r0, #53
+ 729 0020 4FF01401 		mov	r1, #20
+ 730 0024 FFF7FEFF 		bl	radioWrite
+ 203:./main.c      **** 
+ 204:./main.c      ****     /* Set IRQ polarity to positive. */
+ 205:./main.c      ****     radioWrite(IO_CFG_ADR, IRQ_POL);
+ 731              		.loc 1 205 0
+ 732 0028 4FF00D00 		mov	r0, #13
+ 733 002c 4FF04001 		mov	r1, #64
+ 734 0030 FFF7FEFF 		bl	radioWrite
+ 206:./main.c      **** 
+ 207:./main.c      ****     /* Set the XTAL Startup delay to 150uSec to handle warm restarts of the XTAL. */
+ 208:./main.c      ****    radioWrite(XTAL_CFG_ADR, 0x08);
+ 735              		.loc 1 208 0
+ 736 0034 4FF02600 		mov	r0, #38
+ 737 0038 4FF00801 		mov	r1, #8
+ 738 003c FFF7FEFF 		bl	radioWrite
+ 209:./main.c      ****    radioWrite(XACT_CFG_ADR, 0x90);
+ 739              		.loc 1 209 0
+ 740 0040 4FF00F00 		mov	r0, #15
+ 741 0044 4FF09001 		mov	r1, #144
+ 742 0048 FFF7FEFF 		bl	radioWrite
+ 210:./main.c      **** 	
+ 211:./main.c      **** 	/*
+ 212:./main.c      ****      * Enable HiLo for quick-turn-around. Use low side injection for receive 
+ 213:./main.c      ****      * this should result in non-inverted data, so no need to hit the invert
+ 214:./main.c      ****      * bit. Turn off AGC and force the LNA on.
+ 215:./main.c      ****      */
+ 216:./main.c      ****    radioWrite(RX_CFG_ADR,
+ 743              		.loc 1 216 0
+ 744 004c 4FF00600 		mov	r0, #6
+ 745 0050 4FF04801 		mov	r1, #72
+ 746 0054 FFF7FEFF 		bl	radioWrite
+ 217:./main.c      ****                  ((RX_CFG_RST | FASTTURN_EN | LNA_EN ) & ~( HI | RXOW_EN | AUTO_AGC_EN)));
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 18
+
+
+ 218:./main.c      **** 
+ 219:./main.c      ****     /*
+ 220:./main.c      ****      * Set the TX Offset to +1MHz.
+ 221:./main.c      ****      * THIS MEANS THE ACTUAL TRANSMIT CARRIER WILL BE 1MHz ABOVE THE PLL
+ 222:./main.c      ****      * FREQUENCY PROGRAMMED IN THE CHANNEL OR A & N REGISTERS.
+ 223:./main.c      ****      * RadioSetFrequency COMPENSATES FOR THIS OFFSET.
+ 224:./main.c      ****      */
+ 225:./main.c      ****     radioWrite(TX_OFFSET_LSB_ADR, 0x55);
+ 747              		.loc 1 225 0
+ 748 0058 4FF01B00 		mov	r0, #27
+ 749 005c 4FF05501 		mov	r1, #85
+ 750 0060 FFF7FEFF 		bl	radioWrite
+ 226:./main.c      ****     radioWrite(TX_OFFSET_MSB_ADR, 0x05);
+ 751              		.loc 1 226 0
+ 752 0064 4FF01C00 		mov	r0, #28
+ 753 0068 4FF00501 		mov	r1, #5
+ 754 006c FFF7FEFF 		bl	radioWrite
+ 227:./main.c      **** 	radioWrite(DATA32_THOLD_ADR,0x05);
+ 755              		.loc 1 227 0
+ 756 0070 4FF01100 		mov	r0, #17
+ 757 0074 4FF00501 		mov	r1, #5
+ 758 0078 FFF7FEFF 		bl	radioWrite
+ 228:./main.c      **** 	radioWrite(FRAMING_CFG_ADR,0xA4);
+ 759              		.loc 1 228 0
+ 760 007c 4FF01000 		mov	r0, #16
+ 761 0080 4FF0A401 		mov	r1, #164
+ 762 0084 FFF7FEFF 		bl	radioWrite
+ 229:./main.c      **** 	
+ 230:./main.c      ****     /* Set Data Mode to 250kbps */
+ 231:./main.c      ****    radioWrite(TX_CFG_ADR, TX_CFG_RST | DATMODE_8DR);
+ 763              		.loc 1 231 0
+ 764 0088 4FF00300 		mov	r0, #3
+ 765 008c 4FF00D01 		mov	r1, #13
+ 766 0090 FFF7FEFF 		bl	radioWrite
+ 232:./main.c      **** }
+ 767              		.loc 1 232 0
+ 768 0094 80BD     		pop	{r7, pc}
+ 769              		.cfi_endproc
+ 770              	.LFE34:
+ 771              		.size	radioInit, .-radioInit
+ 772 0096 00BF     		.section	.text.radioStartReceive,"ax",%progbits
+ 773              		.align	2
+ 774              		.global	radioStartReceive
+ 775              		.thumb
+ 776              		.thumb_func
+ 777              		.type	radioStartReceive, %function
+ 778              	radioStartReceive:
+ 779              	.LFB35:
+ 233:./main.c      **** 
+ 234:./main.c      **** void radioStartReceive(){
+ 780              		.loc 1 234 0
+ 781              		.cfi_startproc
+ 782              		@ args = 0, pretend = 0, frame = 8
+ 783              		@ frame_needed = 1, uses_anonymous_args = 0
+ 784 0000 80B5     		push	{r7, lr}
+ 785              	.LCFI17:
+ 786              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 19
+
+
+ 787 0002 82B0     		sub	sp, sp, #8
+ 788              	.LCFI18:
+ 789              		.cfi_def_cfa_offset 16
+ 790 0004 00AF     		add	r7, sp, #0
+ 791              		.cfi_offset 14, -4
+ 792              		.cfi_offset 7, -8
+ 793              	.LCFI19:
+ 794              		.cfi_def_cfa_register 7
+ 235:./main.c      **** 	uint16 val=0x00;
+ 795              		.loc 1 235 0
+ 796 0006 4FF00003 		mov	r3, #0
+ 797 000a FB80     		strh	r3, [r7, #6]	@ movhi
+ 236:./main.c      ****     radioWrite(RX_CTRL_ADR, (RX_GO | RXC_IRQ | RXE_IRQ));
+ 798              		.loc 1 236 0
+ 799 000c 4FF00500 		mov	r0, #5
+ 800 0010 4FF08301 		mov	r1, #131
+ 801 0014 FFF7FEFF 		bl	radioWrite
+ 237:./main.c      ****     /* Clear RSSI */
+ 238:./main.c      ****     radioRead(RSSI_ADR);
+ 802              		.loc 1 238 0
+ 803 0018 4FF01300 		mov	r0, #19
+ 804 001c FFF7FEFF 		bl	radioRead
+ 239:./main.c      **** 	val=radioRead(RX_CTRL_ADR);
+ 805              		.loc 1 239 0
+ 806 0020 4FF00500 		mov	r0, #5
+ 807 0024 FFF7FEFF 		bl	radioRead
+ 808 0028 0346     		mov	r3, r0
+ 809 002a FB80     		strh	r3, [r7, #6]	@ movhi
+ 240:./main.c      **** 	LCD_Position(1,2);
+ 810              		.loc 1 240 0
+ 811 002c 4FF00100 		mov	r0, #1
+ 812 0030 4FF00201 		mov	r1, #2
+ 813 0034 FFF7FEFF 		bl	LCD_Position
+ 241:./main.c      **** 	LCD_PrintInt8(val);
+ 814              		.loc 1 241 0
+ 815 0038 FB88     		ldrh	r3, [r7, #6]	@ movhi
+ 816 003a DBB2     		uxtb	r3, r3
+ 817 003c 1846     		mov	r0, r3
+ 818 003e FFF7FEFF 		bl	LCD_PrintHexUint8
+ 242:./main.c      **** }
+ 819              		.loc 1 242 0
+ 820 0042 07F10807 		add	r7, r7, #8
+ 821 0046 BD46     		mov	sp, r7
+ 822 0048 80BD     		pop	{r7, pc}
+ 823              		.cfi_endproc
+ 824              	.LFE35:
+ 825              		.size	radioStartReceive, .-radioStartReceive
+ 826 004a 00BF     		.section	.rodata
+ 827 0015 000000   		.align	2
+ 828              	.LC4:
+ 829 0018 4900     		.ascii	"I\000"
+ 830              		.section	.text.radioGetState,"ax",%progbits
+ 831              		.align	2
+ 832              		.global	radioGetState
+ 833              		.thumb
+ 834              		.thumb_func
+ 835              		.type	radioGetState, %function
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 20
+
+
+ 836              	radioGetState:
+ 837              	.LFB36:
+ 243:./main.c      **** 
+ 244:./main.c      **** uint8 radioGetState()
+ 245:./main.c      **** {
+ 838              		.loc 1 245 0
+ 839              		.cfi_startproc
+ 840              		@ args = 0, pretend = 0, frame = 8
+ 841              		@ frame_needed = 1, uses_anonymous_args = 0
+ 842 0000 80B5     		push	{r7, lr}
+ 843              	.LCFI20:
+ 844              		.cfi_def_cfa_offset 8
+ 845 0002 82B0     		sub	sp, sp, #8
+ 846              	.LCFI21:
+ 847              		.cfi_def_cfa_offset 16
+ 848 0004 00AF     		add	r7, sp, #0
+ 849              		.cfi_offset 14, -4
+ 850              		.cfi_offset 7, -8
+ 851              	.LCFI22:
+ 852              		.cfi_def_cfa_register 7
+ 246:./main.c      ****     uint8 Status = 0;
+ 853              		.loc 1 246 0
+ 854 0006 4FF00003 		mov	r3, #0
+ 855 000a FB71     		strb	r3, [r7, #7]
+ 247:./main.c      ****    
+ 248:./main.c      **** 	/* This register needs to be debounced. */
+ 249:./main.c      ****      Status  = radioRead(RX_IRQ_STATUS_ADR);
+ 856              		.loc 1 249 0
+ 857 000c 4FF00700 		mov	r0, #7
+ 858 0010 FFF7FEFF 		bl	radioRead
+ 859 0014 0346     		mov	r3, r0
+ 860 0016 FB71     		strb	r3, [r7, #7]
+ 250:./main.c      ****      Status |= radioRead(RX_IRQ_STATUS_ADR);
+ 861              		.loc 1 250 0
+ 862 0018 4FF00700 		mov	r0, #7
+ 863 001c FFF7FEFF 		bl	radioRead
+ 864 0020 0346     		mov	r3, r0
+ 865 0022 DAB2     		uxtb	r2, r3
+ 866 0024 FB79     		ldrb	r3, [r7, #7]
+ 867 0026 42EA0303 		orr	r3, r2, r3
+ 868 002a FB71     		strb	r3, [r7, #7]
+ 251:./main.c      ****      if (Status & (RXBERR_IRQ | RXE_IRQ))
+ 869              		.loc 1 251 0
+ 870 002c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 871 002e 03F00503 		and	r3, r3, #5
+ 872 0032 002B     		cmp	r3, #0
+ 873 0034 03D0     		beq	.L31
+ 252:./main.c      ****         {
+ 253:./main.c      ****              /* If overflow, set the completion bit to force the end of packet. */
+ 254:./main.c      ****             Status |= (RXC_IRQ | RXE_IRQ);
+ 874              		.loc 1 254 0
+ 875 0036 FB79     		ldrb	r3, [r7, #7]
+ 876 0038 43F00303 		orr	r3, r3, #3
+ 877 003c FB71     		strb	r3, [r7, #7]
+ 878              	.L31:
+ 255:./main.c      ****         }
+ 256:./main.c      ****     LCD_Position(0,0);
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 21
+
+
+ 879              		.loc 1 256 0
+ 880 003e 4FF00000 		mov	r0, #0
+ 881 0042 4FF00001 		mov	r1, #0
+ 882 0046 FFF7FEFF 		bl	LCD_Position
+ 257:./main.c      **** 	LCD_PrintString("I");
+ 883              		.loc 1 257 0
+ 884 004a 40F20000 		movw	r0, #:lower16:.LC4
+ 885 004e C0F20000 		movt	r0, #:upper16:.LC4
+ 886 0052 FFF7FEFF 		bl	LCD_PrintString
+ 258:./main.c      ****     return Status;
+ 887              		.loc 1 258 0
+ 888 0056 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 259:./main.c      **** }	
+ 889              		.loc 1 259 0
+ 890 0058 1846     		mov	r0, r3
+ 891 005a 07F10807 		add	r7, r7, #8
+ 892 005e BD46     		mov	sp, r7
+ 893 0060 80BD     		pop	{r7, pc}
+ 894              		.cfi_endproc
+ 895              	.LFE36:
+ 896              		.size	radioGetState, .-radioGetState
+ 897 0062 00BF     		.section	.rodata
+ 898 001a 0000     		.align	2
+ 899              	.LC5:
+ 900 001c 4500     		.ascii	"E\000"
+ 901 001e 0000     		.section	.text.radioEndReceive,"ax",%progbits
+ 902              		.align	2
+ 903              		.global	radioEndReceive
+ 904              		.thumb
+ 905              		.thumb_func
+ 906              		.type	radioEndReceive, %function
+ 907              	radioEndReceive:
+ 908              	.LFB37:
+ 260:./main.c      **** 
+ 261:./main.c      **** uint8 radioEndReceive(uint8 RadioState)
+ 262:./main.c      **** {
+ 909              		.loc 1 262 0
+ 910              		.cfi_startproc
+ 911              		@ args = 0, pretend = 0, frame = 16
+ 912              		@ frame_needed = 1, uses_anonymous_args = 0
+ 913 0000 80B5     		push	{r7, lr}
+ 914              	.LCFI23:
+ 915              		.cfi_def_cfa_offset 8
+ 916 0002 84B0     		sub	sp, sp, #16
+ 917              	.LCFI24:
+ 918              		.cfi_def_cfa_offset 24
+ 919 0004 00AF     		add	r7, sp, #0
+ 920              		.cfi_offset 14, -4
+ 921              		.cfi_offset 7, -8
+ 922              	.LCFI25:
+ 923              		.cfi_def_cfa_register 7
+ 924 0006 0346     		mov	r3, r0
+ 925 0008 FB71     		strb	r3, [r7, #7]
+ 263:./main.c      ****     uint8 Count;
+ 264:./main.c      **** 	uint8 val=0x00;
+ 926              		.loc 1 264 0
+ 927 000a 4FF00003 		mov	r3, #0
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 22
+
+
+ 928 000e BB73     		strb	r3, [r7, #14]
+ 265:./main.c      ****     Count = radioRead(RX_LENGTH_ADR);
+ 929              		.loc 1 265 0
+ 930 0010 4FF00A00 		mov	r0, #10
+ 931 0014 FFF7FEFF 		bl	radioRead
+ 932 0018 0346     		mov	r3, r0
+ 933 001a 7B73     		strb	r3, [r7, #13]
+ 266:./main.c      **** 	LCD_Position(1,11);
+ 934              		.loc 1 266 0
+ 935 001c 4FF00100 		mov	r0, #1
+ 936 0020 4FF00B01 		mov	r1, #11
+ 937 0024 FFF7FEFF 		bl	LCD_Position
+ 267:./main.c      **** 	LCD_PrintInt8(Count);
+ 938              		.loc 1 267 0
+ 939 0028 7B7B     		ldrb	r3, [r7, #13]	@ zero_extendqisi2
+ 940 002a 1846     		mov	r0, r3
+ 941 002c FFF7FEFF 		bl	LCD_PrintHexUint8
+ 268:./main.c      ****     	
+ 269:./main.c      **** 	if ((RadioState & RXE_IRQ))
+ 942              		.loc 1 269 0
+ 943 0030 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 944 0032 03F00103 		and	r3, r3, #1
+ 945 0036 DBB2     		uxtb	r3, r3
+ 946 0038 002B     		cmp	r3, #0
+ 947 003a 11D0     		beq	.L34
+ 948              	.LBB2:
+ 270:./main.c      ****     {
+ 271:./main.c      ****         uint8 index;
+ 272:./main.c      **** 
+ 273:./main.c      ****         /* burp the buffer */
+ 274:./main.c      ****         for (index = 15; index; --index)
+ 949              		.loc 1 274 0
+ 950 003c 4FF00F03 		mov	r3, #15
+ 951 0040 FB73     		strb	r3, [r7, #15]
+ 952 0042 07E0     		b	.L35
+ 953              	.L36:
+ 275:./main.c      ****         {
+ 276:./main.c      ****             radioRead(RX_BUFFER_ADR);
+ 954              		.loc 1 276 0
+ 955 0044 4FF02100 		mov	r0, #33
+ 956 0048 FFF7FEFF 		bl	radioRead
+ 957              		.loc 1 274 0
+ 958 004c FB7B     		ldrb	r3, [r7, #15]
+ 959 004e 03F1FF33 		add	r3, r3, #-1
+ 960 0052 FB73     		strb	r3, [r7, #15]
+ 961              	.L35:
+ 962 0054 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 963 0056 002B     		cmp	r3, #0
+ 964 0058 F4D1     		bne	.L36
+ 277:./main.c      ****         }
+ 278:./main.c      ****         /* Packet was bad. */
+ 279:./main.c      ****         Count = 0;
+ 965              		.loc 1 279 0
+ 966 005a 4FF00003 		mov	r3, #0
+ 967 005e 7B73     		strb	r3, [r7, #13]
+ 968              	.L34:
+ 969              	.LBE2:
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 23
+
+
+ 280:./main.c      ****     }
+ 281:./main.c      ****     /* Abort by writing the FRC_END_STATE bit in the XACT_CFG register. */
+ 282:./main.c      ****    radioWrite(XACT_CFG_ADR, radioRead(XACT_CFG_ADR) | FRC_END_STATE);
+ 970              		.loc 1 282 0
+ 971 0060 4FF00F00 		mov	r0, #15
+ 972 0064 FFF7FEFF 		bl	radioRead
+ 973 0068 0346     		mov	r3, r0
+ 974 006a 43F02003 		orr	r3, r3, #32
+ 975 006e 9BB2     		uxth	r3, r3
+ 976 0070 4FF00F00 		mov	r0, #15
+ 977 0074 1946     		mov	r1, r3
+ 978 0076 FFF7FEFF 		bl	radioWrite
+ 283:./main.c      ****     /*
+ 284:./main.c      ****      * Wait for the FRC_END_STATE bit in the XACT_CFG register to clear
+ 285:./main.c      ****      * indicating the force has completed.
+ 286:./main.c      ****      */
+ 287:./main.c      **** 	LCD_Position(0,0);
+ 979              		.loc 1 287 0
+ 980 007a 4FF00000 		mov	r0, #0
+ 981 007e 4FF00001 		mov	r1, #0
+ 982 0082 FFF7FEFF 		bl	LCD_Position
+ 288:./main.c      **** 	LCD_PrintString("E");
+ 983              		.loc 1 288 0
+ 984 0086 40F20000 		movw	r0, #:lower16:.LC5
+ 985 008a C0F20000 		movt	r0, #:upper16:.LC5
+ 986 008e FFF7FEFF 		bl	LCD_PrintString
+ 987              	.L37:
+ 289:./main.c      ****     
+ 290:./main.c      **** 	while(radioRead( XACT_CFG_ADR) &  FRC_END_STATE) {};
+ 988              		.loc 1 290 0
+ 989 0092 4FF00F00 		mov	r0, #15
+ 990 0096 FFF7FEFF 		bl	radioRead
+ 991 009a 0346     		mov	r3, r0
+ 992 009c 03F02003 		and	r3, r3, #32
+ 993 00a0 002B     		cmp	r3, #0
+ 994 00a2 F6D1     		bne	.L37
+ 291:./main.c      **** 	
+ 292:./main.c      **** 	val=radioRead(RX_STATUS_ADR);
+ 995              		.loc 1 292 0
+ 996 00a4 4FF00800 		mov	r0, #8
+ 997 00a8 FFF7FEFF 		bl	radioRead
+ 998 00ac 0346     		mov	r3, r0
+ 999 00ae BB73     		strb	r3, [r7, #14]
+ 293:./main.c      **** 	LCD_Position(1,8);
+ 1000              		.loc 1 293 0
+ 1001 00b0 4FF00100 		mov	r0, #1
+ 1002 00b4 4FF00801 		mov	r1, #8
+ 1003 00b8 FFF7FEFF 		bl	LCD_Position
+ 294:./main.c      **** 	LCD_PrintInt8(val);
+ 1004              		.loc 1 294 0
+ 1005 00bc BB7B     		ldrb	r3, [r7, #14]	@ zero_extendqisi2
+ 1006 00be 1846     		mov	r0, r3
+ 1007 00c0 FFF7FEFF 		bl	LCD_PrintHexUint8
+ 295:./main.c      **** 	
+ 296:./main.c      **** 	
+ 297:./main.c      **** 	
+ 298:./main.c      ****     return Count;
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 24
+
+
+ 1008              		.loc 1 298 0
+ 1009 00c4 7B7B     		ldrb	r3, [r7, #13]	@ zero_extendqisi2
+ 299:./main.c      **** }
+ 1010              		.loc 1 299 0
+ 1011 00c6 1846     		mov	r0, r3
+ 1012 00c8 07F11007 		add	r7, r7, #16
+ 1013 00cc BD46     		mov	sp, r7
+ 1014 00ce 80BD     		pop	{r7, pc}
+ 1015              		.cfi_endproc
+ 1016              	.LFE37:
+ 1017              		.size	radioEndReceive, .-radioEndReceive
+ 1018              		.text
+ 1019              	.Letext0:
+ 1020              		.section	.debug_loc,"",%progbits
+ 1021              	.Ldebug_loc0:
+ 1022              	.LLST0:
+ 1023 0000 00000000 		.4byte	.LFB29
+ 1024 0004 02000000 		.4byte	.LCFI0
+ 1025 0008 0100     		.2byte	0x1
+ 1026 000a 5D       		.byte	0x5d
+ 1027 000b 02000000 		.4byte	.LCFI0
+ 1028 000f 04000000 		.4byte	.LCFI1
+ 1029 0013 0200     		.2byte	0x2
+ 1030 0015 7D       		.byte	0x7d
+ 1031 0016 08       		.sleb128 8
+ 1032 0017 04000000 		.4byte	.LCFI1
+ 1033 001b 06000000 		.4byte	.LCFI2
+ 1034 001f 0200     		.2byte	0x2
+ 1035 0021 7D       		.byte	0x7d
+ 1036 0022 10       		.sleb128 16
+ 1037 0023 06000000 		.4byte	.LCFI2
+ 1038 0027 26010000 		.4byte	.LFE29
+ 1039 002b 0200     		.2byte	0x2
+ 1040 002d 77       		.byte	0x77
+ 1041 002e 10       		.sleb128 16
+ 1042 002f 00000000 		.4byte	0x0
+ 1043 0033 00000000 		.4byte	0x0
+ 1044              	.LLST1:
+ 1045 0037 00000000 		.4byte	.LFB30
+ 1046 003b 02000000 		.4byte	.LCFI3
+ 1047 003f 0100     		.2byte	0x1
+ 1048 0041 5D       		.byte	0x5d
+ 1049 0042 02000000 		.4byte	.LCFI3
+ 1050 0046 04000000 		.4byte	.LCFI4
+ 1051 004a 0200     		.2byte	0x2
+ 1052 004c 7D       		.byte	0x7d
+ 1053 004d 08       		.sleb128 8
+ 1054 004e 04000000 		.4byte	.LCFI4
+ 1055 0052 06000000 		.4byte	.LCFI5
+ 1056 0056 0200     		.2byte	0x2
+ 1057 0058 7D       		.byte	0x7d
+ 1058 0059 10       		.sleb128 16
+ 1059 005a 06000000 		.4byte	.LCFI5
+ 1060 005e 42000000 		.4byte	.LFE30
+ 1061 0062 0200     		.2byte	0x2
+ 1062 0064 77       		.byte	0x77
+ 1063 0065 10       		.sleb128 16
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 25
+
+
+ 1064 0066 00000000 		.4byte	0x0
+ 1065 006a 00000000 		.4byte	0x0
+ 1066              	.LLST2:
+ 1067 006e 00000000 		.4byte	.LFB31
+ 1068 0072 02000000 		.4byte	.LCFI6
+ 1069 0076 0100     		.2byte	0x1
+ 1070 0078 5D       		.byte	0x5d
+ 1071 0079 02000000 		.4byte	.LCFI6
+ 1072 007d 04000000 		.4byte	.LCFI7
+ 1073 0081 0200     		.2byte	0x2
+ 1074 0083 7D       		.byte	0x7d
+ 1075 0084 08       		.sleb128 8
+ 1076 0085 04000000 		.4byte	.LCFI7
+ 1077 0089 06000000 		.4byte	.LCFI8
+ 1078 008d 0200     		.2byte	0x2
+ 1079 008f 7D       		.byte	0x7d
+ 1080 0090 18       		.sleb128 24
+ 1081 0091 06000000 		.4byte	.LCFI8
+ 1082 0095 A6010000 		.4byte	.LFE31
+ 1083 0099 0200     		.2byte	0x2
+ 1084 009b 77       		.byte	0x77
+ 1085 009c 18       		.sleb128 24
+ 1086 009d 00000000 		.4byte	0x0
+ 1087 00a1 00000000 		.4byte	0x0
+ 1088              	.LLST3:
+ 1089 00a5 00000000 		.4byte	.LFB32
+ 1090 00a9 02000000 		.4byte	.LCFI9
+ 1091 00ad 0100     		.2byte	0x1
+ 1092 00af 5D       		.byte	0x5d
+ 1093 00b0 02000000 		.4byte	.LCFI9
+ 1094 00b4 04000000 		.4byte	.LCFI10
+ 1095 00b8 0200     		.2byte	0x2
+ 1096 00ba 7D       		.byte	0x7d
+ 1097 00bb 08       		.sleb128 8
+ 1098 00bc 04000000 		.4byte	.LCFI10
+ 1099 00c0 06000000 		.4byte	.LCFI11
+ 1100 00c4 0200     		.2byte	0x2
+ 1101 00c6 7D       		.byte	0x7d
+ 1102 00c7 18       		.sleb128 24
+ 1103 00c8 06000000 		.4byte	.LCFI11
+ 1104 00cc C2000000 		.4byte	.LFE32
+ 1105 00d0 0200     		.2byte	0x2
+ 1106 00d2 77       		.byte	0x77
+ 1107 00d3 18       		.sleb128 24
+ 1108 00d4 00000000 		.4byte	0x0
+ 1109 00d8 00000000 		.4byte	0x0
+ 1110              	.LLST4:
+ 1111 00dc 00000000 		.4byte	.LFB33
+ 1112 00e0 02000000 		.4byte	.LCFI12
+ 1113 00e4 0100     		.2byte	0x1
+ 1114 00e6 5D       		.byte	0x5d
+ 1115 00e7 02000000 		.4byte	.LCFI12
+ 1116 00eb 04000000 		.4byte	.LCFI13
+ 1117 00ef 0200     		.2byte	0x2
+ 1118 00f1 7D       		.byte	0x7d
+ 1119 00f2 08       		.sleb128 8
+ 1120 00f3 04000000 		.4byte	.LCFI13
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 26
+
+
+ 1121 00f7 06000000 		.4byte	.LCFI14
+ 1122 00fb 0200     		.2byte	0x2
+ 1123 00fd 7D       		.byte	0x7d
+ 1124 00fe 18       		.sleb128 24
+ 1125 00ff 06000000 		.4byte	.LCFI14
+ 1126 0103 8A000000 		.4byte	.LFE33
+ 1127 0107 0200     		.2byte	0x2
+ 1128 0109 77       		.byte	0x77
+ 1129 010a 18       		.sleb128 24
+ 1130 010b 00000000 		.4byte	0x0
+ 1131 010f 00000000 		.4byte	0x0
+ 1132              	.LLST5:
+ 1133 0113 00000000 		.4byte	.LFB34
+ 1134 0117 02000000 		.4byte	.LCFI15
+ 1135 011b 0100     		.2byte	0x1
+ 1136 011d 5D       		.byte	0x5d
+ 1137 011e 02000000 		.4byte	.LCFI15
+ 1138 0122 04000000 		.4byte	.LCFI16
+ 1139 0126 0200     		.2byte	0x2
+ 1140 0128 7D       		.byte	0x7d
+ 1141 0129 08       		.sleb128 8
+ 1142 012a 04000000 		.4byte	.LCFI16
+ 1143 012e 96000000 		.4byte	.LFE34
+ 1144 0132 0200     		.2byte	0x2
+ 1145 0134 77       		.byte	0x77
+ 1146 0135 08       		.sleb128 8
+ 1147 0136 00000000 		.4byte	0x0
+ 1148 013a 00000000 		.4byte	0x0
+ 1149              	.LLST6:
+ 1150 013e 00000000 		.4byte	.LFB35
+ 1151 0142 02000000 		.4byte	.LCFI17
+ 1152 0146 0100     		.2byte	0x1
+ 1153 0148 5D       		.byte	0x5d
+ 1154 0149 02000000 		.4byte	.LCFI17
+ 1155 014d 04000000 		.4byte	.LCFI18
+ 1156 0151 0200     		.2byte	0x2
+ 1157 0153 7D       		.byte	0x7d
+ 1158 0154 08       		.sleb128 8
+ 1159 0155 04000000 		.4byte	.LCFI18
+ 1160 0159 06000000 		.4byte	.LCFI19
+ 1161 015d 0200     		.2byte	0x2
+ 1162 015f 7D       		.byte	0x7d
+ 1163 0160 10       		.sleb128 16
+ 1164 0161 06000000 		.4byte	.LCFI19
+ 1165 0165 4A000000 		.4byte	.LFE35
+ 1166 0169 0200     		.2byte	0x2
+ 1167 016b 77       		.byte	0x77
+ 1168 016c 10       		.sleb128 16
+ 1169 016d 00000000 		.4byte	0x0
+ 1170 0171 00000000 		.4byte	0x0
+ 1171              	.LLST7:
+ 1172 0175 00000000 		.4byte	.LFB36
+ 1173 0179 02000000 		.4byte	.LCFI20
+ 1174 017d 0100     		.2byte	0x1
+ 1175 017f 5D       		.byte	0x5d
+ 1176 0180 02000000 		.4byte	.LCFI20
+ 1177 0184 04000000 		.4byte	.LCFI21
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 27
+
+
+ 1178 0188 0200     		.2byte	0x2
+ 1179 018a 7D       		.byte	0x7d
+ 1180 018b 08       		.sleb128 8
+ 1181 018c 04000000 		.4byte	.LCFI21
+ 1182 0190 06000000 		.4byte	.LCFI22
+ 1183 0194 0200     		.2byte	0x2
+ 1184 0196 7D       		.byte	0x7d
+ 1185 0197 10       		.sleb128 16
+ 1186 0198 06000000 		.4byte	.LCFI22
+ 1187 019c 62000000 		.4byte	.LFE36
+ 1188 01a0 0200     		.2byte	0x2
+ 1189 01a2 77       		.byte	0x77
+ 1190 01a3 10       		.sleb128 16
+ 1191 01a4 00000000 		.4byte	0x0
+ 1192 01a8 00000000 		.4byte	0x0
+ 1193              	.LLST8:
+ 1194 01ac 00000000 		.4byte	.LFB37
+ 1195 01b0 02000000 		.4byte	.LCFI23
+ 1196 01b4 0100     		.2byte	0x1
+ 1197 01b6 5D       		.byte	0x5d
+ 1198 01b7 02000000 		.4byte	.LCFI23
+ 1199 01bb 04000000 		.4byte	.LCFI24
+ 1200 01bf 0200     		.2byte	0x2
+ 1201 01c1 7D       		.byte	0x7d
+ 1202 01c2 08       		.sleb128 8
+ 1203 01c3 04000000 		.4byte	.LCFI24
+ 1204 01c7 06000000 		.4byte	.LCFI25
+ 1205 01cb 0200     		.2byte	0x2
+ 1206 01cd 7D       		.byte	0x7d
+ 1207 01ce 18       		.sleb128 24
+ 1208 01cf 06000000 		.4byte	.LCFI25
+ 1209 01d3 D0000000 		.4byte	.LFE37
+ 1210 01d7 0200     		.2byte	0x2
+ 1211 01d9 77       		.byte	0x77
+ 1212 01da 18       		.sleb128 24
+ 1213 01db 00000000 		.4byte	0x0
+ 1214 01df 00000000 		.4byte	0x0
+ 1215              		.file 2 "./Generated_Source/PSoC5/cytypes.h"
+ 1216              		.file 3 "./Generated_Source/PSoC5/core_cm3.h"
+ 1217              		.section	.debug_info
+ 1218 0000 71030000 		.4byte	0x371
+ 1219 0004 0200     		.2byte	0x2
+ 1220 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 1221 000a 04       		.byte	0x4
+ 1222 000b 01       		.uleb128 0x1
+ 1223 000c 3B010000 		.4byte	.LASF34
+ 1224 0010 01       		.byte	0x1
+ 1225 0011 20010000 		.4byte	.LASF35
+ 1226 0015 7B000000 		.4byte	.LASF36
+ 1227 0019 00000000 		.4byte	0x0
+ 1228 001d 00000000 		.4byte	0x0
+ 1229 0021 00000000 		.4byte	.Ldebug_ranges0+0x0
+ 1230 0025 00000000 		.4byte	.Ldebug_line0
+ 1231 0029 02       		.uleb128 0x2
+ 1232 002a 01       		.byte	0x1
+ 1233 002b 06       		.byte	0x6
+ 1234 002c 8F010000 		.4byte	.LASF0
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 28
+
+
+ 1235 0030 02       		.uleb128 0x2
+ 1236 0031 01       		.byte	0x1
+ 1237 0032 08       		.byte	0x8
+ 1238 0033 52000000 		.4byte	.LASF1
+ 1239 0037 02       		.uleb128 0x2
+ 1240 0038 02       		.byte	0x2
+ 1241 0039 05       		.byte	0x5
+ 1242 003a 64010000 		.4byte	.LASF2
+ 1243 003e 02       		.uleb128 0x2
+ 1244 003f 02       		.byte	0x2
+ 1245 0040 07       		.byte	0x7
+ 1246 0041 9B010000 		.4byte	.LASF3
+ 1247 0045 02       		.uleb128 0x2
+ 1248 0046 04       		.byte	0x4
+ 1249 0047 05       		.byte	0x5
+ 1250 0048 74010000 		.4byte	.LASF4
+ 1251 004c 02       		.uleb128 0x2
+ 1252 004d 04       		.byte	0x4
+ 1253 004e 07       		.byte	0x7
+ 1254 004f 69000000 		.4byte	.LASF5
+ 1255 0053 02       		.uleb128 0x2
+ 1256 0054 08       		.byte	0x8
+ 1257 0055 05       		.byte	0x5
+ 1258 0056 00000000 		.4byte	.LASF6
+ 1259 005a 02       		.uleb128 0x2
+ 1260 005b 08       		.byte	0x8
+ 1261 005c 07       		.byte	0x7
+ 1262 005d 09010000 		.4byte	.LASF7
+ 1263 0061 03       		.uleb128 0x3
+ 1264 0062 04       		.byte	0x4
+ 1265 0063 05       		.byte	0x5
+ 1266 0064 696E7400 		.ascii	"int\000"
+ 1267 0068 02       		.uleb128 0x2
+ 1268 0069 04       		.byte	0x4
+ 1269 006a 07       		.byte	0x7
+ 1270 006b F4000000 		.4byte	.LASF8
+ 1271 006f 02       		.uleb128 0x2
+ 1272 0070 01       		.byte	0x1
+ 1273 0071 08       		.byte	0x8
+ 1274 0072 51010000 		.4byte	.LASF9
+ 1275 0076 04       		.uleb128 0x4
+ 1276 0077 6E010000 		.4byte	.LASF10
+ 1277 007b 02       		.byte	0x2
+ 1278 007c 2A       		.byte	0x2a
+ 1279 007d 30000000 		.4byte	0x30
+ 1280 0081 04       		.uleb128 0x4
+ 1281 0082 ED000000 		.4byte	.LASF11
+ 1282 0086 02       		.byte	0x2
+ 1283 0087 2B       		.byte	0x2b
+ 1284 0088 3E000000 		.4byte	0x3e
+ 1285 008c 05       		.uleb128 0x5
+ 1286 008d 04       		.byte	0x4
+ 1287 008e 07       		.byte	0x7
+ 1288 008f 06       		.uleb128 0x6
+ 1289 0090 01       		.byte	0x1
+ 1290 0091 E8000000 		.4byte	.LASF14
+ 1291 0095 01       		.byte	0x1
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 29
+
+
+ 1292 0096 20       		.byte	0x20
+ 1293 0097 00000000 		.4byte	.LFB29
+ 1294 009b 26010000 		.4byte	.LFE29
+ 1295 009f 00000000 		.4byte	.LLST0
+ 1296 00a3 D0000000 		.4byte	0xd0
+ 1297 00a7 07       		.uleb128 0x7
+ 1298 00a8 01010000 		.4byte	.LASF12
+ 1299 00ac 01       		.byte	0x1
+ 1300 00ad 23       		.byte	0x23
+ 1301 00ae 81000000 		.4byte	0x81
+ 1302 00b2 02       		.byte	0x2
+ 1303 00b3 91       		.byte	0x91
+ 1304 00b4 72       		.sleb128 -14
+ 1305 00b5 08       		.uleb128 0x8
+ 1306 00b6 76616C00 		.ascii	"val\000"
+ 1307 00ba 01       		.byte	0x1
+ 1308 00bb 24       		.byte	0x24
+ 1309 00bc 81000000 		.4byte	0x81
+ 1310 00c0 02       		.byte	0x2
+ 1311 00c1 91       		.byte	0x91
+ 1312 00c2 74       		.sleb128 -12
+ 1313 00c3 08       		.uleb128 0x8
+ 1314 00c4 6900     		.ascii	"i\000"
+ 1315 00c6 01       		.byte	0x1
+ 1316 00c7 25       		.byte	0x25
+ 1317 00c8 81000000 		.4byte	0x81
+ 1318 00cc 02       		.byte	0x2
+ 1319 00cd 91       		.byte	0x91
+ 1320 00ce 76       		.sleb128 -10
+ 1321 00cf 00       		.byte	0x0
+ 1322 00d0 09       		.uleb128 0x9
+ 1323 00d1 01       		.byte	0x1
+ 1324 00d2 CD000000 		.4byte	.LASF20
+ 1325 00d6 01       		.byte	0x1
+ 1326 00d7 61       		.byte	0x61
+ 1327 00d8 01       		.byte	0x1
+ 1328 00d9 00000000 		.4byte	.LFB30
+ 1329 00dd 42000000 		.4byte	.LFE30
+ 1330 00e1 37000000 		.4byte	.LLST1
+ 1331 00e5 06010000 		.4byte	0x106
+ 1332 00e9 0A       		.uleb128 0xa
+ 1333 00ea B5000000 		.4byte	.LASF13
+ 1334 00ee 01       		.byte	0x1
+ 1335 00ef 61       		.byte	0x61
+ 1336 00f0 81000000 		.4byte	0x81
+ 1337 00f4 02       		.byte	0x2
+ 1338 00f5 91       		.byte	0x91
+ 1339 00f6 76       		.sleb128 -10
+ 1340 00f7 0B       		.uleb128 0xb
+ 1341 00f8 64617400 		.ascii	"dat\000"
+ 1342 00fc 01       		.byte	0x1
+ 1343 00fd 61       		.byte	0x61
+ 1344 00fe 81000000 		.4byte	0x81
+ 1345 0102 02       		.byte	0x2
+ 1346 0103 91       		.byte	0x91
+ 1347 0104 74       		.sleb128 -12
+ 1348 0105 00       		.byte	0x0
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 30
+
+
+ 1349 0106 0C       		.uleb128 0xc
+ 1350 0107 01       		.byte	0x1
+ 1351 0108 2E000000 		.4byte	.LASF17
+ 1352 010c 01       		.byte	0x1
+ 1353 010d 6A       		.byte	0x6a
+ 1354 010e 01       		.byte	0x1
+ 1355 010f 81000000 		.4byte	0x81
+ 1356 0113 00000000 		.4byte	.LFB31
+ 1357 0117 A6010000 		.4byte	.LFE31
+ 1358 011b 6E000000 		.4byte	.LLST2
+ 1359 011f 4C010000 		.4byte	0x14c
+ 1360 0123 0A       		.uleb128 0xa
+ 1361 0124 B5000000 		.4byte	.LASF13
+ 1362 0128 01       		.byte	0x1
+ 1363 0129 6A       		.byte	0x6a
+ 1364 012a 81000000 		.4byte	0x81
+ 1365 012e 02       		.byte	0x2
+ 1366 012f 91       		.byte	0x91
+ 1367 0130 6E       		.sleb128 -18
+ 1368 0131 08       		.uleb128 0x8
+ 1369 0132 76616C00 		.ascii	"val\000"
+ 1370 0136 01       		.byte	0x1
+ 1371 0137 6B       		.byte	0x6b
+ 1372 0138 81000000 		.4byte	0x81
+ 1373 013c 02       		.byte	0x2
+ 1374 013d 91       		.byte	0x91
+ 1375 013e 74       		.sleb128 -12
+ 1376 013f 08       		.uleb128 0x8
+ 1377 0140 6900     		.ascii	"i\000"
+ 1378 0142 01       		.byte	0x1
+ 1379 0143 6C       		.byte	0x6c
+ 1380 0144 81000000 		.4byte	0x81
+ 1381 0148 02       		.byte	0x2
+ 1382 0149 91       		.byte	0x91
+ 1383 014a 76       		.sleb128 -10
+ 1384 014b 00       		.byte	0x0
+ 1385 014c 06       		.uleb128 0x6
+ 1386 014d 01       		.byte	0x1
+ 1387 014e 23000000 		.4byte	.LASF15
+ 1388 0152 01       		.byte	0x1
+ 1389 0153 90       		.byte	0x90
+ 1390 0154 00000000 		.4byte	.LFB32
+ 1391 0158 C2000000 		.4byte	.LFE32
+ 1392 015c A5000000 		.4byte	.LLST3
+ 1393 0160 B2010000 		.4byte	0x1b2
+ 1394 0164 08       		.uleb128 0x8
+ 1395 0165 6900     		.ascii	"i\000"
+ 1396 0167 01       		.byte	0x1
+ 1397 0168 91       		.byte	0x91
+ 1398 0169 76000000 		.4byte	0x76
+ 1399 016d 02       		.byte	0x2
+ 1400 016e 91       		.byte	0x91
+ 1401 016f 74       		.sleb128 -12
+ 1402 0170 08       		.uleb128 0x8
+ 1403 0171 6A00     		.ascii	"j\000"
+ 1404 0173 01       		.byte	0x1
+ 1405 0174 92       		.byte	0x92
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 31
+
+
+ 1406 0175 76000000 		.4byte	0x76
+ 1407 0179 02       		.byte	0x2
+ 1408 017a 91       		.byte	0x91
+ 1409 017b 75       		.sleb128 -11
+ 1410 017c 08       		.uleb128 0x8
+ 1411 017d 6B00     		.ascii	"k\000"
+ 1412 017f 01       		.byte	0x1
+ 1413 0180 93       		.byte	0x93
+ 1414 0181 76000000 		.4byte	0x76
+ 1415 0185 02       		.byte	0x2
+ 1416 0186 91       		.byte	0x91
+ 1417 0187 76       		.sleb128 -10
+ 1418 0188 08       		.uleb128 0x8
+ 1419 0189 76616C00 		.ascii	"val\000"
+ 1420 018d 01       		.byte	0x1
+ 1421 018e 94       		.byte	0x94
+ 1422 018f 76000000 		.4byte	0x76
+ 1423 0193 02       		.byte	0x2
+ 1424 0194 91       		.byte	0x91
+ 1425 0195 77       		.sleb128 -9
+ 1426 0196 08       		.uleb128 0x8
+ 1427 0197 636800   		.ascii	"ch\000"
+ 1428 019a 01       		.byte	0x1
+ 1429 019b 95       		.byte	0x95
+ 1430 019c B2010000 		.4byte	0x1b2
+ 1431 01a0 02       		.byte	0x2
+ 1432 01a1 91       		.byte	0x91
+ 1433 01a2 70       		.sleb128 -16
+ 1434 01a3 07       		.uleb128 0x7
+ 1435 01a4 AE010000 		.4byte	.LASF16
+ 1436 01a8 01       		.byte	0x1
+ 1437 01a9 96       		.byte	0x96
+ 1438 01aa C2010000 		.4byte	0x1c2
+ 1439 01ae 02       		.byte	0x2
+ 1440 01af 91       		.byte	0x91
+ 1441 01b0 68       		.sleb128 -24
+ 1442 01b1 00       		.byte	0x0
+ 1443 01b2 0D       		.uleb128 0xd
+ 1444 01b3 6F000000 		.4byte	0x6f
+ 1445 01b7 C2010000 		.4byte	0x1c2
+ 1446 01bb 0E       		.uleb128 0xe
+ 1447 01bc 8C000000 		.4byte	0x8c
+ 1448 01c0 02       		.byte	0x2
+ 1449 01c1 00       		.byte	0x0
+ 1450 01c2 0D       		.uleb128 0xd
+ 1451 01c3 6F000000 		.4byte	0x6f
+ 1452 01c7 D2010000 		.4byte	0x1d2
+ 1453 01cb 0E       		.uleb128 0xe
+ 1454 01cc 8C000000 		.4byte	0x8c
+ 1455 01d0 06       		.byte	0x6
+ 1456 01d1 00       		.byte	0x0
+ 1457 01d2 0C       		.uleb128 0xc
+ 1458 01d3 01       		.byte	0x1
+ 1459 01d4 47010000 		.4byte	.LASF18
+ 1460 01d8 01       		.byte	0x1
+ 1461 01d9 AC       		.byte	0xac
+ 1462 01da 01       		.byte	0x1
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 32
+
+
+ 1463 01db 81000000 		.4byte	0x81
+ 1464 01df 00000000 		.4byte	.LFB33
+ 1465 01e3 8A000000 		.4byte	.LFE33
+ 1466 01e7 DC000000 		.4byte	.LLST4
+ 1467 01eb 18020000 		.4byte	0x218
+ 1468 01ef 0A       		.uleb128 0xa
+ 1469 01f0 B5000000 		.4byte	.LASF13
+ 1470 01f4 01       		.byte	0x1
+ 1471 01f5 AC       		.byte	0xac
+ 1472 01f6 81000000 		.4byte	0x81
+ 1473 01fa 02       		.byte	0x2
+ 1474 01fb 91       		.byte	0x91
+ 1475 01fc 6E       		.sleb128 -18
+ 1476 01fd 08       		.uleb128 0x8
+ 1477 01fe 76616C00 		.ascii	"val\000"
+ 1478 0202 01       		.byte	0x1
+ 1479 0203 AD       		.byte	0xad
+ 1480 0204 81000000 		.4byte	0x81
+ 1481 0208 02       		.byte	0x2
+ 1482 0209 91       		.byte	0x91
+ 1483 020a 74       		.sleb128 -12
+ 1484 020b 08       		.uleb128 0x8
+ 1485 020c 6900     		.ascii	"i\000"
+ 1486 020e 01       		.byte	0x1
+ 1487 020f AE       		.byte	0xae
+ 1488 0210 81000000 		.4byte	0x81
+ 1489 0214 02       		.byte	0x2
+ 1490 0215 91       		.byte	0x91
+ 1491 0216 76       		.sleb128 -10
+ 1492 0217 00       		.byte	0x0
+ 1493 0218 0F       		.uleb128 0xf
+ 1494 0219 01       		.byte	0x1
+ 1495 021a 29010000 		.4byte	.LASF37
+ 1496 021e 01       		.byte	0x1
+ 1497 021f C2       		.byte	0xc2
+ 1498 0220 00000000 		.4byte	.LFB34
+ 1499 0224 96000000 		.4byte	.LFE34
+ 1500 0228 13010000 		.4byte	.LLST5
+ 1501 022c 06       		.uleb128 0x6
+ 1502 022d 01       		.byte	0x1
+ 1503 022e 7D010000 		.4byte	.LASF19
+ 1504 0232 01       		.byte	0x1
+ 1505 0233 EA       		.byte	0xea
+ 1506 0234 00000000 		.4byte	.LFB35
+ 1507 0238 4A000000 		.4byte	.LFE35
+ 1508 023c 3E010000 		.4byte	.LLST6
+ 1509 0240 53020000 		.4byte	0x253
+ 1510 0244 08       		.uleb128 0x8
+ 1511 0245 76616C00 		.ascii	"val\000"
+ 1512 0249 01       		.byte	0x1
+ 1513 024a EB       		.byte	0xeb
+ 1514 024b 81000000 		.4byte	0x81
+ 1515 024f 02       		.byte	0x2
+ 1516 0250 91       		.byte	0x91
+ 1517 0251 76       		.sleb128 -10
+ 1518 0252 00       		.byte	0x0
+ 1519 0253 10       		.uleb128 0x10
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 33
+
+
+ 1520 0254 01       		.byte	0x1
+ 1521 0255 0E000000 		.4byte	.LASF21
+ 1522 0259 01       		.byte	0x1
+ 1523 025a F4       		.byte	0xf4
+ 1524 025b 76000000 		.4byte	0x76
+ 1525 025f 00000000 		.4byte	.LFB36
+ 1526 0263 62000000 		.4byte	.LFE36
+ 1527 0267 75010000 		.4byte	.LLST7
+ 1528 026b 7E020000 		.4byte	0x27e
+ 1529 026f 07       		.uleb128 0x7
+ 1530 0270 1C000000 		.4byte	.LASF22
+ 1531 0274 01       		.byte	0x1
+ 1532 0275 F6       		.byte	0xf6
+ 1533 0276 76000000 		.4byte	0x76
+ 1534 027a 02       		.byte	0x2
+ 1535 027b 91       		.byte	0x91
+ 1536 027c 77       		.sleb128 -9
+ 1537 027d 00       		.byte	0x0
+ 1538 027e 11       		.uleb128 0x11
+ 1539 027f 01       		.byte	0x1
+ 1540 0280 D8000000 		.4byte	.LASF23
+ 1541 0284 01       		.byte	0x1
+ 1542 0285 0501     		.2byte	0x105
+ 1543 0287 01       		.byte	0x1
+ 1544 0288 76000000 		.4byte	0x76
+ 1545 028c 00000000 		.4byte	.LFB37
+ 1546 0290 D0000000 		.4byte	.LFE37
+ 1547 0294 AC010000 		.4byte	.LLST8
+ 1548 0298 E3020000 		.4byte	0x2e3
+ 1549 029c 12       		.uleb128 0x12
+ 1550 029d 47000000 		.4byte	.LASF24
+ 1551 02a1 01       		.byte	0x1
+ 1552 02a2 0501     		.2byte	0x105
+ 1553 02a4 76000000 		.4byte	0x76
+ 1554 02a8 02       		.byte	0x2
+ 1555 02a9 91       		.byte	0x91
+ 1556 02aa 6F       		.sleb128 -17
+ 1557 02ab 13       		.uleb128 0x13
+ 1558 02ac B6010000 		.4byte	.LASF25
+ 1559 02b0 01       		.byte	0x1
+ 1560 02b1 0701     		.2byte	0x107
+ 1561 02b3 76000000 		.4byte	0x76
+ 1562 02b7 02       		.byte	0x2
+ 1563 02b8 91       		.byte	0x91
+ 1564 02b9 75       		.sleb128 -11
+ 1565 02ba 14       		.uleb128 0x14
+ 1566 02bb 76616C00 		.ascii	"val\000"
+ 1567 02bf 01       		.byte	0x1
+ 1568 02c0 0801     		.2byte	0x108
+ 1569 02c2 76000000 		.4byte	0x76
+ 1570 02c6 02       		.byte	0x2
+ 1571 02c7 91       		.byte	0x91
+ 1572 02c8 76       		.sleb128 -10
+ 1573 02c9 15       		.uleb128 0x15
+ 1574 02ca 3C000000 		.4byte	.LBB2
+ 1575 02ce 60000000 		.4byte	.LBE2
+ 1576 02d2 13       		.uleb128 0x13
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 34
+
+
+ 1577 02d3 56010000 		.4byte	.LASF26
+ 1578 02d7 01       		.byte	0x1
+ 1579 02d8 0F01     		.2byte	0x10f
+ 1580 02da 76000000 		.4byte	0x76
+ 1581 02de 02       		.byte	0x2
+ 1582 02df 91       		.byte	0x91
+ 1583 02e0 77       		.sleb128 -9
+ 1584 02e1 00       		.byte	0x0
+ 1585 02e2 00       		.byte	0x0
+ 1586 02e3 16       		.uleb128 0x16
+ 1587 02e4 C0000000 		.4byte	.LASF27
+ 1588 02e8 03       		.byte	0x3
+ 1589 02e9 CE06     		.2byte	0x6ce
+ 1590 02eb F1020000 		.4byte	0x2f1
+ 1591 02ef 01       		.byte	0x1
+ 1592 02f0 01       		.byte	0x1
+ 1593 02f1 17       		.uleb128 0x17
+ 1594 02f2 61000000 		.4byte	0x61
+ 1595 02f6 18       		.uleb128 0x18
+ 1596 02f7 72656400 		.ascii	"red\000"
+ 1597 02fb 01       		.byte	0x1
+ 1598 02fc 18       		.byte	0x18
+ 1599 02fd 81000000 		.4byte	0x81
+ 1600 0301 01       		.byte	0x1
+ 1601 0302 05       		.byte	0x5
+ 1602 0303 03       		.byte	0x3
+ 1603 0304 00000000 		.4byte	red
+ 1604 0308 19       		.uleb128 0x19
+ 1605 0309 BA000000 		.4byte	.LASF28
+ 1606 030d 01       		.byte	0x1
+ 1607 030e 19       		.byte	0x19
+ 1608 030f 81000000 		.4byte	0x81
+ 1609 0313 01       		.byte	0x1
+ 1610 0314 05       		.byte	0x5
+ 1611 0315 03       		.byte	0x3
+ 1612 0316 00000000 		.4byte	green
+ 1613 031a 19       		.uleb128 0x19
+ 1614 031b 3B000000 		.4byte	.LASF29
+ 1615 031f 01       		.byte	0x1
+ 1616 0320 1A       		.byte	0x1a
+ 1617 0321 81000000 		.4byte	0x81
+ 1618 0325 01       		.byte	0x1
+ 1619 0326 05       		.byte	0x5
+ 1620 0327 03       		.byte	0x3
+ 1621 0328 00000000 		.4byte	blue
+ 1622 032c 19       		.uleb128 0x19
+ 1623 032d 40000000 		.4byte	.LASF30
+ 1624 0331 01       		.byte	0x1
+ 1625 0332 1B       		.byte	0x1b
+ 1626 0333 81000000 		.4byte	0x81
+ 1627 0337 01       		.byte	0x1
+ 1628 0338 05       		.byte	0x5
+ 1629 0339 03       		.byte	0x3
+ 1630 033a 00000000 		.4byte	oldRed
+ 1631 033e 19       		.uleb128 0x19
+ 1632 033f 60000000 		.4byte	.LASF31
+ 1633 0343 01       		.byte	0x1
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 35
+
+
+ 1634 0344 1C       		.byte	0x1c
+ 1635 0345 81000000 		.4byte	0x81
+ 1636 0349 01       		.byte	0x1
+ 1637 034a 05       		.byte	0x5
+ 1638 034b 03       		.byte	0x3
+ 1639 034c 00000000 		.4byte	oldGreen
+ 1640 0350 19       		.uleb128 0x19
+ 1641 0351 33010000 		.4byte	.LASF32
+ 1642 0355 01       		.byte	0x1
+ 1643 0356 1D       		.byte	0x1d
+ 1644 0357 81000000 		.4byte	0x81
+ 1645 035b 01       		.byte	0x1
+ 1646 035c 05       		.byte	0x5
+ 1647 035d 03       		.byte	0x3
+ 1648 035e 00000000 		.4byte	oldBlue
+ 1649 0362 19       		.uleb128 0x19
+ 1650 0363 5C010000 		.4byte	.LASF33
+ 1651 0367 01       		.byte	0x1
+ 1652 0368 1E       		.byte	0x1e
+ 1653 0369 81000000 		.4byte	0x81
+ 1654 036d 01       		.byte	0x1
+ 1655 036e 05       		.byte	0x5
+ 1656 036f 03       		.byte	0x3
+ 1657 0370 00000000 		.4byte	newData
+ 1658 0374 00       		.byte	0x0
+ 1659              		.section	.debug_abbrev
+ 1660 0000 01       		.uleb128 0x1
+ 1661 0001 11       		.uleb128 0x11
+ 1662 0002 01       		.byte	0x1
+ 1663 0003 25       		.uleb128 0x25
+ 1664 0004 0E       		.uleb128 0xe
+ 1665 0005 13       		.uleb128 0x13
+ 1666 0006 0B       		.uleb128 0xb
+ 1667 0007 03       		.uleb128 0x3
+ 1668 0008 0E       		.uleb128 0xe
+ 1669 0009 1B       		.uleb128 0x1b
+ 1670 000a 0E       		.uleb128 0xe
+ 1671 000b 11       		.uleb128 0x11
+ 1672 000c 01       		.uleb128 0x1
+ 1673 000d 52       		.uleb128 0x52
+ 1674 000e 01       		.uleb128 0x1
+ 1675 000f 55       		.uleb128 0x55
+ 1676 0010 06       		.uleb128 0x6
+ 1677 0011 10       		.uleb128 0x10
+ 1678 0012 06       		.uleb128 0x6
+ 1679 0013 00       		.byte	0x0
+ 1680 0014 00       		.byte	0x0
+ 1681 0015 02       		.uleb128 0x2
+ 1682 0016 24       		.uleb128 0x24
+ 1683 0017 00       		.byte	0x0
+ 1684 0018 0B       		.uleb128 0xb
+ 1685 0019 0B       		.uleb128 0xb
+ 1686 001a 3E       		.uleb128 0x3e
+ 1687 001b 0B       		.uleb128 0xb
+ 1688 001c 03       		.uleb128 0x3
+ 1689 001d 0E       		.uleb128 0xe
+ 1690 001e 00       		.byte	0x0
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 36
+
+
+ 1691 001f 00       		.byte	0x0
+ 1692 0020 03       		.uleb128 0x3
+ 1693 0021 24       		.uleb128 0x24
+ 1694 0022 00       		.byte	0x0
+ 1695 0023 0B       		.uleb128 0xb
+ 1696 0024 0B       		.uleb128 0xb
+ 1697 0025 3E       		.uleb128 0x3e
+ 1698 0026 0B       		.uleb128 0xb
+ 1699 0027 03       		.uleb128 0x3
+ 1700 0028 08       		.uleb128 0x8
+ 1701 0029 00       		.byte	0x0
+ 1702 002a 00       		.byte	0x0
+ 1703 002b 04       		.uleb128 0x4
+ 1704 002c 16       		.uleb128 0x16
+ 1705 002d 00       		.byte	0x0
+ 1706 002e 03       		.uleb128 0x3
+ 1707 002f 0E       		.uleb128 0xe
+ 1708 0030 3A       		.uleb128 0x3a
+ 1709 0031 0B       		.uleb128 0xb
+ 1710 0032 3B       		.uleb128 0x3b
+ 1711 0033 0B       		.uleb128 0xb
+ 1712 0034 49       		.uleb128 0x49
+ 1713 0035 13       		.uleb128 0x13
+ 1714 0036 00       		.byte	0x0
+ 1715 0037 00       		.byte	0x0
+ 1716 0038 05       		.uleb128 0x5
+ 1717 0039 24       		.uleb128 0x24
+ 1718 003a 00       		.byte	0x0
+ 1719 003b 0B       		.uleb128 0xb
+ 1720 003c 0B       		.uleb128 0xb
+ 1721 003d 3E       		.uleb128 0x3e
+ 1722 003e 0B       		.uleb128 0xb
+ 1723 003f 00       		.byte	0x0
+ 1724 0040 00       		.byte	0x0
+ 1725 0041 06       		.uleb128 0x6
+ 1726 0042 2E       		.uleb128 0x2e
+ 1727 0043 01       		.byte	0x1
+ 1728 0044 3F       		.uleb128 0x3f
+ 1729 0045 0C       		.uleb128 0xc
+ 1730 0046 03       		.uleb128 0x3
+ 1731 0047 0E       		.uleb128 0xe
+ 1732 0048 3A       		.uleb128 0x3a
+ 1733 0049 0B       		.uleb128 0xb
+ 1734 004a 3B       		.uleb128 0x3b
+ 1735 004b 0B       		.uleb128 0xb
+ 1736 004c 11       		.uleb128 0x11
+ 1737 004d 01       		.uleb128 0x1
+ 1738 004e 12       		.uleb128 0x12
+ 1739 004f 01       		.uleb128 0x1
+ 1740 0050 40       		.uleb128 0x40
+ 1741 0051 06       		.uleb128 0x6
+ 1742 0052 01       		.uleb128 0x1
+ 1743 0053 13       		.uleb128 0x13
+ 1744 0054 00       		.byte	0x0
+ 1745 0055 00       		.byte	0x0
+ 1746 0056 07       		.uleb128 0x7
+ 1747 0057 34       		.uleb128 0x34
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 37
+
+
+ 1748 0058 00       		.byte	0x0
+ 1749 0059 03       		.uleb128 0x3
+ 1750 005a 0E       		.uleb128 0xe
+ 1751 005b 3A       		.uleb128 0x3a
+ 1752 005c 0B       		.uleb128 0xb
+ 1753 005d 3B       		.uleb128 0x3b
+ 1754 005e 0B       		.uleb128 0xb
+ 1755 005f 49       		.uleb128 0x49
+ 1756 0060 13       		.uleb128 0x13
+ 1757 0061 02       		.uleb128 0x2
+ 1758 0062 0A       		.uleb128 0xa
+ 1759 0063 00       		.byte	0x0
+ 1760 0064 00       		.byte	0x0
+ 1761 0065 08       		.uleb128 0x8
+ 1762 0066 34       		.uleb128 0x34
+ 1763 0067 00       		.byte	0x0
+ 1764 0068 03       		.uleb128 0x3
+ 1765 0069 08       		.uleb128 0x8
+ 1766 006a 3A       		.uleb128 0x3a
+ 1767 006b 0B       		.uleb128 0xb
+ 1768 006c 3B       		.uleb128 0x3b
+ 1769 006d 0B       		.uleb128 0xb
+ 1770 006e 49       		.uleb128 0x49
+ 1771 006f 13       		.uleb128 0x13
+ 1772 0070 02       		.uleb128 0x2
+ 1773 0071 0A       		.uleb128 0xa
+ 1774 0072 00       		.byte	0x0
+ 1775 0073 00       		.byte	0x0
+ 1776 0074 09       		.uleb128 0x9
+ 1777 0075 2E       		.uleb128 0x2e
+ 1778 0076 01       		.byte	0x1
+ 1779 0077 3F       		.uleb128 0x3f
+ 1780 0078 0C       		.uleb128 0xc
+ 1781 0079 03       		.uleb128 0x3
+ 1782 007a 0E       		.uleb128 0xe
+ 1783 007b 3A       		.uleb128 0x3a
+ 1784 007c 0B       		.uleb128 0xb
+ 1785 007d 3B       		.uleb128 0x3b
+ 1786 007e 0B       		.uleb128 0xb
+ 1787 007f 27       		.uleb128 0x27
+ 1788 0080 0C       		.uleb128 0xc
+ 1789 0081 11       		.uleb128 0x11
+ 1790 0082 01       		.uleb128 0x1
+ 1791 0083 12       		.uleb128 0x12
+ 1792 0084 01       		.uleb128 0x1
+ 1793 0085 40       		.uleb128 0x40
+ 1794 0086 06       		.uleb128 0x6
+ 1795 0087 01       		.uleb128 0x1
+ 1796 0088 13       		.uleb128 0x13
+ 1797 0089 00       		.byte	0x0
+ 1798 008a 00       		.byte	0x0
+ 1799 008b 0A       		.uleb128 0xa
+ 1800 008c 05       		.uleb128 0x5
+ 1801 008d 00       		.byte	0x0
+ 1802 008e 03       		.uleb128 0x3
+ 1803 008f 0E       		.uleb128 0xe
+ 1804 0090 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 38
+
+
+ 1805 0091 0B       		.uleb128 0xb
+ 1806 0092 3B       		.uleb128 0x3b
+ 1807 0093 0B       		.uleb128 0xb
+ 1808 0094 49       		.uleb128 0x49
+ 1809 0095 13       		.uleb128 0x13
+ 1810 0096 02       		.uleb128 0x2
+ 1811 0097 0A       		.uleb128 0xa
+ 1812 0098 00       		.byte	0x0
+ 1813 0099 00       		.byte	0x0
+ 1814 009a 0B       		.uleb128 0xb
+ 1815 009b 05       		.uleb128 0x5
+ 1816 009c 00       		.byte	0x0
+ 1817 009d 03       		.uleb128 0x3
+ 1818 009e 08       		.uleb128 0x8
+ 1819 009f 3A       		.uleb128 0x3a
+ 1820 00a0 0B       		.uleb128 0xb
+ 1821 00a1 3B       		.uleb128 0x3b
+ 1822 00a2 0B       		.uleb128 0xb
+ 1823 00a3 49       		.uleb128 0x49
+ 1824 00a4 13       		.uleb128 0x13
+ 1825 00a5 02       		.uleb128 0x2
+ 1826 00a6 0A       		.uleb128 0xa
+ 1827 00a7 00       		.byte	0x0
+ 1828 00a8 00       		.byte	0x0
+ 1829 00a9 0C       		.uleb128 0xc
+ 1830 00aa 2E       		.uleb128 0x2e
+ 1831 00ab 01       		.byte	0x1
+ 1832 00ac 3F       		.uleb128 0x3f
+ 1833 00ad 0C       		.uleb128 0xc
+ 1834 00ae 03       		.uleb128 0x3
+ 1835 00af 0E       		.uleb128 0xe
+ 1836 00b0 3A       		.uleb128 0x3a
+ 1837 00b1 0B       		.uleb128 0xb
+ 1838 00b2 3B       		.uleb128 0x3b
+ 1839 00b3 0B       		.uleb128 0xb
+ 1840 00b4 27       		.uleb128 0x27
+ 1841 00b5 0C       		.uleb128 0xc
+ 1842 00b6 49       		.uleb128 0x49
+ 1843 00b7 13       		.uleb128 0x13
+ 1844 00b8 11       		.uleb128 0x11
+ 1845 00b9 01       		.uleb128 0x1
+ 1846 00ba 12       		.uleb128 0x12
+ 1847 00bb 01       		.uleb128 0x1
+ 1848 00bc 40       		.uleb128 0x40
+ 1849 00bd 06       		.uleb128 0x6
+ 1850 00be 01       		.uleb128 0x1
+ 1851 00bf 13       		.uleb128 0x13
+ 1852 00c0 00       		.byte	0x0
+ 1853 00c1 00       		.byte	0x0
+ 1854 00c2 0D       		.uleb128 0xd
+ 1855 00c3 01       		.uleb128 0x1
+ 1856 00c4 01       		.byte	0x1
+ 1857 00c5 49       		.uleb128 0x49
+ 1858 00c6 13       		.uleb128 0x13
+ 1859 00c7 01       		.uleb128 0x1
+ 1860 00c8 13       		.uleb128 0x13
+ 1861 00c9 00       		.byte	0x0
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 39
+
+
+ 1862 00ca 00       		.byte	0x0
+ 1863 00cb 0E       		.uleb128 0xe
+ 1864 00cc 21       		.uleb128 0x21
+ 1865 00cd 00       		.byte	0x0
+ 1866 00ce 49       		.uleb128 0x49
+ 1867 00cf 13       		.uleb128 0x13
+ 1868 00d0 2F       		.uleb128 0x2f
+ 1869 00d1 0B       		.uleb128 0xb
+ 1870 00d2 00       		.byte	0x0
+ 1871 00d3 00       		.byte	0x0
+ 1872 00d4 0F       		.uleb128 0xf
+ 1873 00d5 2E       		.uleb128 0x2e
+ 1874 00d6 00       		.byte	0x0
+ 1875 00d7 3F       		.uleb128 0x3f
+ 1876 00d8 0C       		.uleb128 0xc
+ 1877 00d9 03       		.uleb128 0x3
+ 1878 00da 0E       		.uleb128 0xe
+ 1879 00db 3A       		.uleb128 0x3a
+ 1880 00dc 0B       		.uleb128 0xb
+ 1881 00dd 3B       		.uleb128 0x3b
+ 1882 00de 0B       		.uleb128 0xb
+ 1883 00df 11       		.uleb128 0x11
+ 1884 00e0 01       		.uleb128 0x1
+ 1885 00e1 12       		.uleb128 0x12
+ 1886 00e2 01       		.uleb128 0x1
+ 1887 00e3 40       		.uleb128 0x40
+ 1888 00e4 06       		.uleb128 0x6
+ 1889 00e5 00       		.byte	0x0
+ 1890 00e6 00       		.byte	0x0
+ 1891 00e7 10       		.uleb128 0x10
+ 1892 00e8 2E       		.uleb128 0x2e
+ 1893 00e9 01       		.byte	0x1
+ 1894 00ea 3F       		.uleb128 0x3f
+ 1895 00eb 0C       		.uleb128 0xc
+ 1896 00ec 03       		.uleb128 0x3
+ 1897 00ed 0E       		.uleb128 0xe
+ 1898 00ee 3A       		.uleb128 0x3a
+ 1899 00ef 0B       		.uleb128 0xb
+ 1900 00f0 3B       		.uleb128 0x3b
+ 1901 00f1 0B       		.uleb128 0xb
+ 1902 00f2 49       		.uleb128 0x49
+ 1903 00f3 13       		.uleb128 0x13
+ 1904 00f4 11       		.uleb128 0x11
+ 1905 00f5 01       		.uleb128 0x1
+ 1906 00f6 12       		.uleb128 0x12
+ 1907 00f7 01       		.uleb128 0x1
+ 1908 00f8 40       		.uleb128 0x40
+ 1909 00f9 06       		.uleb128 0x6
+ 1910 00fa 01       		.uleb128 0x1
+ 1911 00fb 13       		.uleb128 0x13
+ 1912 00fc 00       		.byte	0x0
+ 1913 00fd 00       		.byte	0x0
+ 1914 00fe 11       		.uleb128 0x11
+ 1915 00ff 2E       		.uleb128 0x2e
+ 1916 0100 01       		.byte	0x1
+ 1917 0101 3F       		.uleb128 0x3f
+ 1918 0102 0C       		.uleb128 0xc
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 40
+
+
+ 1919 0103 03       		.uleb128 0x3
+ 1920 0104 0E       		.uleb128 0xe
+ 1921 0105 3A       		.uleb128 0x3a
+ 1922 0106 0B       		.uleb128 0xb
+ 1923 0107 3B       		.uleb128 0x3b
+ 1924 0108 05       		.uleb128 0x5
+ 1925 0109 27       		.uleb128 0x27
+ 1926 010a 0C       		.uleb128 0xc
+ 1927 010b 49       		.uleb128 0x49
+ 1928 010c 13       		.uleb128 0x13
+ 1929 010d 11       		.uleb128 0x11
+ 1930 010e 01       		.uleb128 0x1
+ 1931 010f 12       		.uleb128 0x12
+ 1932 0110 01       		.uleb128 0x1
+ 1933 0111 40       		.uleb128 0x40
+ 1934 0112 06       		.uleb128 0x6
+ 1935 0113 01       		.uleb128 0x1
+ 1936 0114 13       		.uleb128 0x13
+ 1937 0115 00       		.byte	0x0
+ 1938 0116 00       		.byte	0x0
+ 1939 0117 12       		.uleb128 0x12
+ 1940 0118 05       		.uleb128 0x5
+ 1941 0119 00       		.byte	0x0
+ 1942 011a 03       		.uleb128 0x3
+ 1943 011b 0E       		.uleb128 0xe
+ 1944 011c 3A       		.uleb128 0x3a
+ 1945 011d 0B       		.uleb128 0xb
+ 1946 011e 3B       		.uleb128 0x3b
+ 1947 011f 05       		.uleb128 0x5
+ 1948 0120 49       		.uleb128 0x49
+ 1949 0121 13       		.uleb128 0x13
+ 1950 0122 02       		.uleb128 0x2
+ 1951 0123 0A       		.uleb128 0xa
+ 1952 0124 00       		.byte	0x0
+ 1953 0125 00       		.byte	0x0
+ 1954 0126 13       		.uleb128 0x13
+ 1955 0127 34       		.uleb128 0x34
+ 1956 0128 00       		.byte	0x0
+ 1957 0129 03       		.uleb128 0x3
+ 1958 012a 0E       		.uleb128 0xe
+ 1959 012b 3A       		.uleb128 0x3a
+ 1960 012c 0B       		.uleb128 0xb
+ 1961 012d 3B       		.uleb128 0x3b
+ 1962 012e 05       		.uleb128 0x5
+ 1963 012f 49       		.uleb128 0x49
+ 1964 0130 13       		.uleb128 0x13
+ 1965 0131 02       		.uleb128 0x2
+ 1966 0132 0A       		.uleb128 0xa
+ 1967 0133 00       		.byte	0x0
+ 1968 0134 00       		.byte	0x0
+ 1969 0135 14       		.uleb128 0x14
+ 1970 0136 34       		.uleb128 0x34
+ 1971 0137 00       		.byte	0x0
+ 1972 0138 03       		.uleb128 0x3
+ 1973 0139 08       		.uleb128 0x8
+ 1974 013a 3A       		.uleb128 0x3a
+ 1975 013b 0B       		.uleb128 0xb
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 41
+
+
+ 1976 013c 3B       		.uleb128 0x3b
+ 1977 013d 05       		.uleb128 0x5
+ 1978 013e 49       		.uleb128 0x49
+ 1979 013f 13       		.uleb128 0x13
+ 1980 0140 02       		.uleb128 0x2
+ 1981 0141 0A       		.uleb128 0xa
+ 1982 0142 00       		.byte	0x0
+ 1983 0143 00       		.byte	0x0
+ 1984 0144 15       		.uleb128 0x15
+ 1985 0145 0B       		.uleb128 0xb
+ 1986 0146 01       		.byte	0x1
+ 1987 0147 11       		.uleb128 0x11
+ 1988 0148 01       		.uleb128 0x1
+ 1989 0149 12       		.uleb128 0x12
+ 1990 014a 01       		.uleb128 0x1
+ 1991 014b 00       		.byte	0x0
+ 1992 014c 00       		.byte	0x0
+ 1993 014d 16       		.uleb128 0x16
+ 1994 014e 34       		.uleb128 0x34
+ 1995 014f 00       		.byte	0x0
+ 1996 0150 03       		.uleb128 0x3
+ 1997 0151 0E       		.uleb128 0xe
+ 1998 0152 3A       		.uleb128 0x3a
+ 1999 0153 0B       		.uleb128 0xb
+ 2000 0154 3B       		.uleb128 0x3b
+ 2001 0155 05       		.uleb128 0x5
+ 2002 0156 49       		.uleb128 0x49
+ 2003 0157 13       		.uleb128 0x13
+ 2004 0158 3F       		.uleb128 0x3f
+ 2005 0159 0C       		.uleb128 0xc
+ 2006 015a 3C       		.uleb128 0x3c
+ 2007 015b 0C       		.uleb128 0xc
+ 2008 015c 00       		.byte	0x0
+ 2009 015d 00       		.byte	0x0
+ 2010 015e 17       		.uleb128 0x17
+ 2011 015f 35       		.uleb128 0x35
+ 2012 0160 00       		.byte	0x0
+ 2013 0161 49       		.uleb128 0x49
+ 2014 0162 13       		.uleb128 0x13
+ 2015 0163 00       		.byte	0x0
+ 2016 0164 00       		.byte	0x0
+ 2017 0165 18       		.uleb128 0x18
+ 2018 0166 34       		.uleb128 0x34
+ 2019 0167 00       		.byte	0x0
+ 2020 0168 03       		.uleb128 0x3
+ 2021 0169 08       		.uleb128 0x8
+ 2022 016a 3A       		.uleb128 0x3a
+ 2023 016b 0B       		.uleb128 0xb
+ 2024 016c 3B       		.uleb128 0x3b
+ 2025 016d 0B       		.uleb128 0xb
+ 2026 016e 49       		.uleb128 0x49
+ 2027 016f 13       		.uleb128 0x13
+ 2028 0170 3F       		.uleb128 0x3f
+ 2029 0171 0C       		.uleb128 0xc
+ 2030 0172 02       		.uleb128 0x2
+ 2031 0173 0A       		.uleb128 0xa
+ 2032 0174 00       		.byte	0x0
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 42
+
+
+ 2033 0175 00       		.byte	0x0
+ 2034 0176 19       		.uleb128 0x19
+ 2035 0177 34       		.uleb128 0x34
+ 2036 0178 00       		.byte	0x0
+ 2037 0179 03       		.uleb128 0x3
+ 2038 017a 0E       		.uleb128 0xe
+ 2039 017b 3A       		.uleb128 0x3a
+ 2040 017c 0B       		.uleb128 0xb
+ 2041 017d 3B       		.uleb128 0x3b
+ 2042 017e 0B       		.uleb128 0xb
+ 2043 017f 49       		.uleb128 0x49
+ 2044 0180 13       		.uleb128 0x13
+ 2045 0181 3F       		.uleb128 0x3f
+ 2046 0182 0C       		.uleb128 0xc
+ 2047 0183 02       		.uleb128 0x2
+ 2048 0184 0A       		.uleb128 0xa
+ 2049 0185 00       		.byte	0x0
+ 2050 0186 00       		.byte	0x0
+ 2051 0187 00       		.byte	0x0
+ 2052              		.section	.debug_pubnames,"",%progbits
+ 2053 0000 E9000000 		.4byte	0xe9
+ 2054 0004 0200     		.2byte	0x2
+ 2055 0006 00000000 		.4byte	.Ldebug_info0
+ 2056 000a 75030000 		.4byte	0x375
+ 2057 000e 8F000000 		.4byte	0x8f
+ 2058 0012 6D61696E 		.ascii	"main\000"
+ 2058      00
+ 2059 0017 D0000000 		.4byte	0xd0
+ 2060 001b 72616469 		.ascii	"radioWrite\000"
+ 2060      6F577269 
+ 2060      746500
+ 2061 0026 06010000 		.4byte	0x106
+ 2062 002a 72616469 		.ascii	"radioReadBuf\000"
+ 2062      6F526561 
+ 2062      64427566 
+ 2062      00
+ 2063 0037 4C010000 		.4byte	0x14c
+ 2064 003b 73656E64 		.ascii	"sendSerial\000"
+ 2064      53657269 
+ 2064      616C00
+ 2065 0046 D2010000 		.4byte	0x1d2
+ 2066 004a 72616469 		.ascii	"radioRead\000"
+ 2066      6F526561 
+ 2066      6400
+ 2067 0054 18020000 		.4byte	0x218
+ 2068 0058 72616469 		.ascii	"radioInit\000"
+ 2068      6F496E69 
+ 2068      7400
+ 2069 0062 2C020000 		.4byte	0x22c
+ 2070 0066 72616469 		.ascii	"radioStartReceive\000"
+ 2070      6F537461 
+ 2070      72745265 
+ 2070      63656976 
+ 2070      6500
+ 2071 0078 53020000 		.4byte	0x253
+ 2072 007c 72616469 		.ascii	"radioGetState\000"
+ 2072      6F476574 
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 43
+
+
+ 2072      53746174 
+ 2072      6500
+ 2073 008a 7E020000 		.4byte	0x27e
+ 2074 008e 72616469 		.ascii	"radioEndReceive\000"
+ 2074      6F456E64 
+ 2074      52656365 
+ 2074      69766500 
+ 2075 009e F6020000 		.4byte	0x2f6
+ 2076 00a2 72656400 		.ascii	"red\000"
+ 2077 00a6 08030000 		.4byte	0x308
+ 2078 00aa 67726565 		.ascii	"green\000"
+ 2078      6E00
+ 2079 00b0 1A030000 		.4byte	0x31a
+ 2080 00b4 626C7565 		.ascii	"blue\000"
+ 2080      00
+ 2081 00b9 2C030000 		.4byte	0x32c
+ 2082 00bd 6F6C6452 		.ascii	"oldRed\000"
+ 2082      656400
+ 2083 00c4 3E030000 		.4byte	0x33e
+ 2084 00c8 6F6C6447 		.ascii	"oldGreen\000"
+ 2084      7265656E 
+ 2084      00
+ 2085 00d1 50030000 		.4byte	0x350
+ 2086 00d5 6F6C6442 		.ascii	"oldBlue\000"
+ 2086      6C756500 
+ 2087 00dd 62030000 		.4byte	0x362
+ 2088 00e1 6E657744 		.ascii	"newData\000"
+ 2088      61746100 
+ 2089 00e9 00000000 		.4byte	0x0
+ 2090              		.section	.debug_aranges,"",%progbits
+ 2091 0000 5C000000 		.4byte	0x5c
+ 2092 0004 0200     		.2byte	0x2
+ 2093 0006 00000000 		.4byte	.Ldebug_info0
+ 2094 000a 04       		.byte	0x4
+ 2095 000b 00       		.byte	0x0
+ 2096 000c 0000     		.2byte	0x0
+ 2097 000e 0000     		.2byte	0x0
+ 2098 0010 00000000 		.4byte	.LFB29
+ 2099 0014 26010000 		.4byte	.LFE29-.LFB29
+ 2100 0018 00000000 		.4byte	.LFB30
+ 2101 001c 42000000 		.4byte	.LFE30-.LFB30
+ 2102 0020 00000000 		.4byte	.LFB31
+ 2103 0024 A6010000 		.4byte	.LFE31-.LFB31
+ 2104 0028 00000000 		.4byte	.LFB32
+ 2105 002c C2000000 		.4byte	.LFE32-.LFB32
+ 2106 0030 00000000 		.4byte	.LFB33
+ 2107 0034 8A000000 		.4byte	.LFE33-.LFB33
+ 2108 0038 00000000 		.4byte	.LFB34
+ 2109 003c 96000000 		.4byte	.LFE34-.LFB34
+ 2110 0040 00000000 		.4byte	.LFB35
+ 2111 0044 4A000000 		.4byte	.LFE35-.LFB35
+ 2112 0048 00000000 		.4byte	.LFB36
+ 2113 004c 62000000 		.4byte	.LFE36-.LFB36
+ 2114 0050 00000000 		.4byte	.LFB37
+ 2115 0054 D0000000 		.4byte	.LFE37-.LFB37
+ 2116 0058 00000000 		.4byte	0x0
+ 2117 005c 00000000 		.4byte	0x0
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 44
+
+
+ 2118              		.section	.debug_ranges,"",%progbits
+ 2119              	.Ldebug_ranges0:
+ 2120 0000 00000000 		.4byte	.Ltext0
+ 2121 0004 00000000 		.4byte	.Letext0
+ 2122 0008 00000000 		.4byte	.LFB29
+ 2123 000c 26010000 		.4byte	.LFE29
+ 2124 0010 00000000 		.4byte	.LFB30
+ 2125 0014 42000000 		.4byte	.LFE30
+ 2126 0018 00000000 		.4byte	.LFB31
+ 2127 001c A6010000 		.4byte	.LFE31
+ 2128 0020 00000000 		.4byte	.LFB32
+ 2129 0024 C2000000 		.4byte	.LFE32
+ 2130 0028 00000000 		.4byte	.LFB33
+ 2131 002c 8A000000 		.4byte	.LFE33
+ 2132 0030 00000000 		.4byte	.LFB34
+ 2133 0034 96000000 		.4byte	.LFE34
+ 2134 0038 00000000 		.4byte	.LFB35
+ 2135 003c 4A000000 		.4byte	.LFE35
+ 2136 0040 00000000 		.4byte	.LFB36
+ 2137 0044 62000000 		.4byte	.LFE36
+ 2138 0048 00000000 		.4byte	.LFB37
+ 2139 004c D0000000 		.4byte	.LFE37
+ 2140 0050 00000000 		.4byte	0x0
+ 2141 0054 00000000 		.4byte	0x0
+ 2142              		.section	.debug_str,"MS",%progbits,1
+ 2143              	.LASF6:
+ 2144 0000 6C6F6E67 		.ascii	"long long int\000"
+ 2144      206C6F6E 
+ 2144      6720696E 
+ 2144      7400
+ 2145              	.LASF21:
+ 2146 000e 72616469 		.ascii	"radioGetState\000"
+ 2146      6F476574 
+ 2146      53746174 
+ 2146      6500
+ 2147              	.LASF22:
+ 2148 001c 53746174 		.ascii	"Status\000"
+ 2148      757300
+ 2149              	.LASF15:
+ 2150 0023 73656E64 		.ascii	"sendSerial\000"
+ 2150      53657269 
+ 2150      616C00
+ 2151              	.LASF17:
+ 2152 002e 72616469 		.ascii	"radioReadBuf\000"
+ 2152      6F526561 
+ 2152      64427566 
+ 2152      00
+ 2153              	.LASF29:
+ 2154 003b 626C7565 		.ascii	"blue\000"
+ 2154      00
+ 2155              	.LASF30:
+ 2156 0040 6F6C6452 		.ascii	"oldRed\000"
+ 2156      656400
+ 2157              	.LASF24:
+ 2158 0047 52616469 		.ascii	"RadioState\000"
+ 2158      6F537461 
+ 2158      746500
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 45
+
+
+ 2159              	.LASF1:
+ 2160 0052 756E7369 		.ascii	"unsigned char\000"
+ 2160      676E6564 
+ 2160      20636861 
+ 2160      7200
+ 2161              	.LASF31:
+ 2162 0060 6F6C6447 		.ascii	"oldGreen\000"
+ 2162      7265656E 
+ 2162      00
+ 2163              	.LASF5:
+ 2164 0069 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2164      20756E73 
+ 2164      69676E65 
+ 2164      6420696E 
+ 2164      7400
+ 2165              	.LASF36:
+ 2166 007b 453A5C43 		.ascii	"E:\\ControllerKinect\\capController\\Receiver\\Rece"
+ 2166      6F6E7472 
+ 2166      6F6C6C65 
+ 2166      724B696E 
+ 2166      6563745C 
+ 2167 00aa 69766572 		.ascii	"iver.cydsn\000"
+ 2167      2E637964 
+ 2167      736E00
+ 2168              	.LASF13:
+ 2169 00b5 61646472 		.ascii	"addr\000"
+ 2169      00
+ 2170              	.LASF28:
+ 2171 00ba 67726565 		.ascii	"green\000"
+ 2171      6E00
+ 2172              	.LASF27:
+ 2173 00c0 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 2173      52784275 
+ 2173      66666572 
+ 2173      00
+ 2174              	.LASF20:
+ 2175 00cd 72616469 		.ascii	"radioWrite\000"
+ 2175      6F577269 
+ 2175      746500
+ 2176              	.LASF23:
+ 2177 00d8 72616469 		.ascii	"radioEndReceive\000"
+ 2177      6F456E64 
+ 2177      52656365 
+ 2177      69766500 
+ 2178              	.LASF14:
+ 2179 00e8 6D61696E 		.ascii	"main\000"
+ 2179      00
+ 2180              	.LASF11:
+ 2181 00ed 75696E74 		.ascii	"uint16\000"
+ 2181      313600
+ 2182              	.LASF8:
+ 2183 00f4 756E7369 		.ascii	"unsigned int\000"
+ 2183      676E6564 
+ 2183      20696E74 
+ 2183      00
+ 2184              	.LASF12:
+ 2185 0101 72785374 		.ascii	"rxState\000"
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 46
+
+
+ 2185      61746500 
+ 2186              	.LASF7:
+ 2187 0109 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2187      206C6F6E 
+ 2187      6720756E 
+ 2187      7369676E 
+ 2187      65642069 
+ 2188              	.LASF35:
+ 2189 0120 2E2F6D61 		.ascii	"./main.c\000"
+ 2189      696E2E63 
+ 2189      00
+ 2190              	.LASF37:
+ 2191 0129 72616469 		.ascii	"radioInit\000"
+ 2191      6F496E69 
+ 2191      7400
+ 2192              	.LASF32:
+ 2193 0133 6F6C6442 		.ascii	"oldBlue\000"
+ 2193      6C756500 
+ 2194              	.LASF34:
+ 2195 013b 474E5520 		.ascii	"GNU C 4.4.1\000"
+ 2195      4320342E 
+ 2195      342E3100 
+ 2196              	.LASF18:
+ 2197 0147 72616469 		.ascii	"radioRead\000"
+ 2197      6F526561 
+ 2197      6400
+ 2198              	.LASF9:
+ 2199 0151 63686172 		.ascii	"char\000"
+ 2199      00
+ 2200              	.LASF26:
+ 2201 0156 696E6465 		.ascii	"index\000"
+ 2201      7800
+ 2202              	.LASF33:
+ 2203 015c 6E657744 		.ascii	"newData\000"
+ 2203      61746100 
+ 2204              	.LASF2:
+ 2205 0164 73686F72 		.ascii	"short int\000"
+ 2205      7420696E 
+ 2205      7400
+ 2206              	.LASF10:
+ 2207 016e 75696E74 		.ascii	"uint8\000"
+ 2207      3800
+ 2208              	.LASF4:
+ 2209 0174 6C6F6E67 		.ascii	"long int\000"
+ 2209      20696E74 
+ 2209      00
+ 2210              	.LASF19:
+ 2211 017d 72616469 		.ascii	"radioStartReceive\000"
+ 2211      6F537461 
+ 2211      72745265 
+ 2211      63656976 
+ 2211      6500
+ 2212              	.LASF0:
+ 2213 018f 7369676E 		.ascii	"signed char\000"
+ 2213      65642063 
+ 2213      68617200 
+ 2214              	.LASF3:
+ARM GAS  C:\Users\CHARLI~1\AppData\Local\Temp\cc5KUbDa.s 			page 47
+
+
+ 2215 019b 73686F72 		.ascii	"short unsigned int\000"
+ 2215      7420756E 
+ 2215      7369676E 
+ 2215      65642069 
+ 2215      6E7400
+ 2216              	.LASF16:
+ 2217 01ae 72676244 		.ascii	"rgbData\000"
+ 2217      61746100 
+ 2218              	.LASF25:
+ 2219 01b6 436F756E 		.ascii	"Count\000"
+ 2219      7400
+ 2220              		.ident	"GCC: (Sourcery G++ Lite 2010q1-188) 4.4.1"

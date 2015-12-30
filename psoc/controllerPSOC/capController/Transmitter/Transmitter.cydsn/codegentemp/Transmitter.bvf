@@ -1,0 +1,597 @@
+
+----------------------------------------------------------------------
+
+Verifying bitstream.
+
+-----------------------------------------------------------------------
+
+
+---------Mapping jacks.---------
+
+
+---------Processing bitstream.---------
+
+Utilized "udb_hv_a@[Chip=0][UDB Pair=(0,0)]"
+Utilized "udb_hc@[Chip=0][UDB Pair=(0,0)]"
+Utilized "udb_hv_b@[Chip=0][UDB Pair=(0,1)]"
+Utilized "udb_hc@[Chip=0][UDB Pair=(0,1)]"
+Utilized "udb_hv_a@[Chip=0][UDB Pair=(0,2)]"
+Utilized "udb_hc@[Chip=0][UDB Pair=(0,2)]"
+Utilized "udb_hv_b@[Chip=0][UDB Pair=(0,3)]"
+Utilized "udb_hv_a@[Chip=0][UDB Pair=(0,4)]"
+Utilized "udb_hc@[Chip=0][UDB Pair=(0,4)]"
+Utilized "udb_hv_b@[Chip=0][UDB Pair=(0,5)]"
+Utilized "udb_hc@[Chip=0][UDB Pair=(0,5)]"
+Utilized "udb_hv_b@[Chip=0][UDB Pair=(1,0)]"
+Utilized "udb_hv_b@[Chip=0][UDB Pair=(1,2)]"
+Utilized "udb_hv_a@[Chip=0][UDB Pair=(1,3)]"
+Utilized "dsi_hc@[Chip=0][DSI=(0,0)][side=top]"
+Utilized "dsi_hv_b@[Chip=0][DSI=(0,0)][side=top]"
+Utilized "dsi_hc@[Chip=0][DSI=(1,0)][side=bottom]"
+Utilized "dsi_hv_a@[Chip=0][DSI=(1,0)][side=bottom]"
+Utilized "dsi_hv_a@[Chip=0][DSI=(0,1)][side=top]"
+Utilized "dsi_hc@[Chip=0][DSI=(1,1)][side=bottom]"
+Utilized "dsi_hv_b@[Chip=0][DSI=(1,1)][side=bottom]"
+Utilized "dsi_hv_b@[Chip=0][DSI=(0,2)][side=top]"
+Utilized "dsi_hc@[Chip=0][DSI=(1,2)][side=bottom]"
+Utilized "dsi_hv_a@[Chip=0][DSI=(1,2)][side=bottom]"
+Utilized "dsi_hc@[Chip=0][DSI=(0,3)][side=top]"
+Utilized "dsi_hv_a@[Chip=0][DSI=(0,3)][side=top]"
+Utilized "dsi_hc@[Chip=0][DSI=(0,4)][side=top]"
+Utilized "dsi_hv_b@[Chip=0][DSI=(0,4)][side=top]"
+Utilized "dsi_hv_a@[Chip=0][DSI=(1,4)][side=bottom]"
+Utilized "dsi_hc@[Chip=0][DSI=(0,5)][side=top]"
+
+---------Propagating signals.---------
+
+Found signal "\CapSense:MeasureCH0:cs_addr_win_2\" on jack "pld1:out1[Chip=0][UDB=(1,0)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "dp:in5[Chip=0][UDB=(1,0)]"
+    
+    
+
+Found signal "\CapSense:MeasureCH0:cs_addr_cnt_2\" on jack "pld1:out3[Chip=0][UDB=(1,0)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "dp:in4[Chip=0][UDB=(1,1)]"
+    
+    
+
+Found signal "\CapSense:MeasureCH0:zw0\" on jack "dp:out0[Chip=0][UDB=(1,0)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "pld0:in2[Chip=0][UDB=(1,2)]"
+    
+    2. Connected jack name: "pld1:in1[Chip=0][UDB=(1,1)]"
+    
+    
+
+Found signal "\CapSense:MeasureCH0:zw0\" on jack "dp:out1[Chip=0][UDB=(1,0)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "pld1:in0[Chip=0][UDB=(1,2)]"
+    
+    2. Connected jack name: "pld1:in8[Chip=0][UDB=(1,0)]"
+    
+    
+
+Found signal "\CapSense:MeasureCH0:zw0\" on jack "dp:out2[Chip=0][UDB=(1,0)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld0:in4[Chip=0][UDB=(1,1)]"
+    
+    
+
+Found signal "\CapSense:MeasureCH0:zw1\" on jack "dp:out4[Chip=0][UDB=(1,0)]".
+Number of connected bvjacks: 3.
+
+    1. Connected jack name: "pld1:in10[Chip=0][UDB=(1,0)]"
+    
+    2. Connected jack name: "pld1:in10[Chip=0][UDB=(1,2)]"
+    
+    3. Connected jack name: "pld0:in0[Chip=0][UDB=(1,2)]"
+    
+    
+
+Found signal "\CapSense:MeasureCH0:zw1\" on jack "dp:out5[Chip=0][UDB=(1,0)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "pld0:in11[Chip=0][UDB=(1,1)]"
+    
+    2. Connected jack name: "pld1:in8[Chip=0][UDB=(1,1)]"
+    
+    
+
+Found signal "\CapSense:ClockGen:ppulse_equal\" on jack "dp:out0[Chip=0][UDB=(0,1)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld0:in5[Chip=0][UDB=(1,1)]"
+    
+    
+
+Found signal "\CapSense:ClockGen:ppulse_less\" on jack "dp:out1[Chip=0][UDB=(0,1)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld0:in0[Chip=0][UDB=(1,1)]"
+    
+    
+
+Found signal "\CapSense:ClockGen:cs_addr_1\" on jack "dp:out3[Chip=0][UDB=(0,1)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "dp:in1[Chip=0][UDB=(0,1)]"
+    
+    
+
+Found signal "\CapSense:ClockGen:tmp_ppulse_reg\" on jack "pld0:out0[Chip=0][UDB=(1,1)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "pld0:in7[Chip=0][UDB=(0,2)]"
+    
+    2. Connected jack name: "pld0:in6[Chip=0][UDB=(1,1)]"
+    
+    
+
+Found signal "\CapSense:MeasureCH0:cs_addr_cnt_0\" on jack "pld0:out1[Chip=0][UDB=(1,1)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "dp:in2[Chip=0][UDB=(1,1)]"
+    
+    
+
+Found signal "\CapSense:ClockGen:tmp_ppulse_dly\" on jack "pld0:out2[Chip=0][UDB=(1,1)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld0:in6[Chip=0][UDB=(0,2)]"
+    
+    
+
+Found signal "\CapSense:MeasureCH0:cs_addr_win_0\" on jack "pld0:out3[Chip=0][UDB=(1,1)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "dp:in0[Chip=0][UDB=(1,0)]"
+    
+    
+
+Found signal "Net_12" on jack "pld1:out0[Chip=0][UDB=(1,1)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "io_ijack_7[Chip=0][IOP=(2)]"
+    
+    2. Connected jack name: "pld1:in7[Chip=0][UDB=(1,1)]"
+    
+    
+
+Found signal "\CapSense:MeasureCH0:cs_addr_cnt_1\" on jack "pld1:out1[Chip=0][UDB=(1,1)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "dp:in5[Chip=0][UDB=(1,1)]"
+    
+    
+
+Found signal "Net_11" on jack "pld1:out2[Chip=0][UDB=(1,1)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld1:in6[Chip=0][UDB=(1,1)]"
+    
+    
+
+Found signal "Net_11" on jack "pld1:out3[Chip=0][UDB=(1,1)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "io_ijack_6[Chip=0][IOP=(1)]"
+    
+    
+
+Found signal "\CapSense:MeasureCH0:zc0\" on jack "dp:out0[Chip=0][UDB=(1,1)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld1:in5[Chip=0][UDB=(1,1)]"
+    
+    
+
+Found signal "\CapSense:MeasureCH0:zc1\" on jack "dp:out1[Chip=0][UDB=(1,1)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld0:in3[Chip=0][UDB=(1,1)]"
+    
+    
+
+Found signal "\CapSense:ClockGen:inter_reset\" on jack "pld0:out0[Chip=0][UDB=(0,2)]".
+Number of connected bvjacks: 5.
+
+    1. Connected jack name: "dp:in1[Chip=0][UDB=(1,2)]"
+    
+    2. Connected jack name: "clkrst:in0[Chip=0][UDB=(1,2)]"
+    
+    3. Connected jack name: "pld0:in2[Chip=0][UDB=(0,2)]"
+    
+    4. Connected jack name: "dp:in5[Chip=0][UDB=(0,1)]"
+    
+    5. Connected jack name: "dp:in2[Chip=0][UDB=(0,2)]"
+    
+    
+
+Found signal "\CapSense:ClockGen:cstate_2\" on jack "pld0:out1[Chip=0][UDB=(0,2)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "pld0:in9[Chip=0][UDB=(1,2)]"
+    
+    2. Connected jack name: "pld0:in9[Chip=0][UDB=(0,2)]"
+    
+    
+
+Found signal "\CapSense:ClockGen:clock_detect_reg\" on jack "pld0:out2[Chip=0][UDB=(0,2)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "dp:in5[Chip=0][UDB=(1,2)]"
+    
+    2. Connected jack name: "dp:in1[Chip=0][UDB=(0,2)]"
+    
+    
+
+Found signal "\CapSense:mrst\" on jack "pld0:out3[Chip=0][UDB=(0,2)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "pld0:in3[Chip=0][UDB=(0,2)]"
+    
+    2. Connected jack name: "pld0:in4[Chip=0][UDB=(1,2)]"
+    
+    
+
+Found signal "\CapSense:PreChargeClk\" on jack "dp:out5[Chip=0][UDB=(0,2)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "lft[Chip=0][FFB(CapSense,0)]"
+    
+    
+
+Found signal "\CapSense:ClockGen:control_0\" on jack "statctrl:out0[Chip=0][UDB=(0,2)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld0:in8[Chip=0][UDB=(0,2)]"
+    
+    
+
+Found signal "\CapSense:ClockGen:control_1\" on jack "statctrl:out1[Chip=0][UDB=(0,2)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld0:in1[Chip=0][UDB=(0,2)]"
+    
+    
+
+Found signal "\CapSense:ClockGen:control_2\" on jack "statctrl:out2[Chip=0][UDB=(0,2)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld0:in1[Chip=0][UDB=(1,2)]"
+    
+    
+
+Found signal "\CapSense:MeasureCH0:wndState_0\" on jack "pld0:out0[Chip=0][UDB=(1,2)]".
+Number of connected bvjacks: 5.
+
+    1. Connected jack name: "pld1:in3[Chip=0][UDB=(1,0)]"
+    
+    2. Connected jack name: "pld0:in10[Chip=0][UDB=(1,1)]"
+    
+    3. Connected jack name: "pld1:in0[Chip=0][UDB=(1,1)]"
+    
+    4. Connected jack name: "pld0:in10[Chip=0][UDB=(1,2)]"
+    
+    5. Connected jack name: "pld1:in11[Chip=0][UDB=(1,2)]"
+    
+    
+
+Found signal "\CapSense:Net_1603\" on jack "pld0:out1[Chip=0][UDB=(1,2)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "interrupt_jack[Chip=0][IntrHod=(0)][IntrId=(16)]"
+    
+    2. Connected jack name: "pld0:in5[Chip=0][UDB=(1,2)]"
+    
+    
+
+Found signal "\CapSense:MeasureCH0:wndState_1\" on jack "pld0:out2[Chip=0][UDB=(1,2)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld0:in6[Chip=0][UDB=(1,2)]"
+    
+    
+
+Found signal "\CapSense:MeasureCH0:wndState_2\" on jack "pld0:out3[Chip=0][UDB=(1,2)]".
+Number of connected bvjacks: 5.
+
+    1. Connected jack name: "pld1:in4[Chip=0][UDB=(1,1)]"
+    
+    2. Connected jack name: "pld1:in5[Chip=0][UDB=(1,2)]"
+    
+    3. Connected jack name: "pld0:in7[Chip=0][UDB=(1,2)]"
+    
+    4. Connected jack name: "pld0:in9[Chip=0][UDB=(1,1)]"
+    
+    5. Connected jack name: "pld1:in4[Chip=0][UDB=(1,0)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:cnt_enable\" on jack "pld1:out0[Chip=0][UDB=(1,2)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "statctrl:inout3[Chip=0][UDB=(0,4)]"
+    
+    2. Connected jack name: "pld1:in4[Chip=0][UDB=(1,2)]"
+    
+    
+
+Found signal "\CapSense:MeasureCH0:cs_addr_win_1\" on jack "pld1:out1[Chip=0][UDB=(1,2)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "dp:in1[Chip=0][UDB=(1,0)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:state_0\" on jack "pld1:out2[Chip=0][UDB=(1,2)]".
+Number of connected bvjacks: 4.
+
+    1. Connected jack name: "pld1:in9[Chip=0][UDB=(1,2)]"
+    
+    2. Connected jack name: "pld0:in2[Chip=0][UDB=(1,4)]"
+    
+    3. Connected jack name: "pld1:in10[Chip=0][UDB=(1,1)]"
+    
+    4. Connected jack name: "pld1:in5[Chip=0][UDB=(1,4)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:state_0\" on jack "pld1:out3[Chip=0][UDB=(1,2)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "dp:in3[Chip=0][UDB=(1,4)]"
+    
+    
+
+Found signal "\CapSense:DigitalClk\" on jack "statctrl:out7[Chip=0][UDB=(1,2)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "clkrst:in0[Chip=0][UDB=(0,4)]"
+    
+    2. Connected jack name: "pld0:in8[Chip=0][UDB=(1,2)]"
+    
+    
+
+Found signal "\CapSense:Ioff_CH0\" on jack "pld1:out0[Chip=0][UDB=(0,4)]".
+Number of connected bvjacks: 4.
+
+    1. Connected jack name: "ioff[Chip=0][FFB(VIDAC,0)]"
+    
+    2. Connected jack name: "pld0:in2[Chip=0][UDB=(1,1)]"
+    
+    3. Connected jack name: "pld1:in9[Chip=0][UDB=(1,1)]"
+    
+    4. Connected jack name: "pld1:in2[Chip=0][UDB=(1,0)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:rx_status_6\" on jack "pld1:out1[Chip=0][UDB=(0,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "statctrl:inout2[Chip=0][UDB=(1,5)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:load_rx_data\" on jack "pld1:out2[Chip=0][UDB=(0,4)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "statctrl:in3[Chip=0][UDB=(1,4)]"
+    
+    2. Connected jack name: "dp:in5[Chip=0][UDB=(1,4)]"
+    
+    
+
+Found signal "\CapSense:MeasureCH0:pre_cmp_in_reg\" on jack "pld1:out3[Chip=0][UDB=(0,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld1:in0[Chip=0][UDB=(0,4)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:count_0\" on jack "statctrl:out0[Chip=0][UDB=(0,4)]".
+Number of connected bvjacks: 3.
+
+    1. Connected jack name: "pld0:in7[Chip=0][UDB=(1,4)]"
+    
+    2. Connected jack name: "pld1:in3[Chip=0][UDB=(0,4)]"
+    
+    3. Connected jack name: "pld1:in11[Chip=0][UDB=(1,4)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:count_1\" on jack "statctrl:out1[Chip=0][UDB=(0,4)]".
+Number of connected bvjacks: 3.
+
+    1. Connected jack name: "pld0:in8[Chip=0][UDB=(1,4)]"
+    
+    2. Connected jack name: "pld1:in10[Chip=0][UDB=(1,4)]"
+    
+    3. Connected jack name: "pld1:in2[Chip=0][UDB=(0,4)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:count_2\" on jack "statctrl:out2[Chip=0][UDB=(0,4)]".
+Number of connected bvjacks: 3.
+
+    1. Connected jack name: "pld0:in6[Chip=0][UDB=(1,4)]"
+    
+    2. Connected jack name: "pld1:in1[Chip=0][UDB=(1,4)]"
+    
+    3. Connected jack name: "pld1:in1[Chip=0][UDB=(0,4)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:count_3\" on jack "statctrl:out3[Chip=0][UDB=(0,4)]".
+Number of connected bvjacks: 3.
+
+    1. Connected jack name: "pld1:in8[Chip=0][UDB=(1,4)]"
+    
+    2. Connected jack name: "pld1:in4[Chip=0][UDB=(0,4)]"
+    
+    3. Connected jack name: "pld0:in0[Chip=0][UDB=(1,4)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:count_4\" on jack "statctrl:out4[Chip=0][UDB=(0,4)]".
+Number of connected bvjacks: 3.
+
+    1. Connected jack name: "pld1:in11[Chip=0][UDB=(0,4)]"
+    
+    2. Connected jack name: "pld1:in7[Chip=0][UDB=(1,4)]"
+    
+    3. Connected jack name: "pld0:in11[Chip=0][UDB=(1,4)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:count_5\" on jack "statctrl:out5[Chip=0][UDB=(0,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld1:in9[Chip=0][UDB=(0,4)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:count_6\" on jack "statctrl:out6[Chip=0][UDB=(0,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld1:in5[Chip=0][UDB=(0,4)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:state_1\" on jack "pld0:out0[Chip=0][UDB=(1,4)]".
+Number of connected bvjacks: 5.
+
+    1. Connected jack name: "pld0:in3[Chip=0][UDB=(1,4)]"
+    
+    2. Connected jack name: "pld1:in3[Chip=0][UDB=(1,4)]"
+    
+    3. Connected jack name: "dp:in1[Chip=0][UDB=(1,4)]"
+    
+    4. Connected jack name: "pld1:in8[Chip=0][UDB=(1,2)]"
+    
+    5. Connected jack name: "pld1:in3[Chip=0][UDB=(1,1)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:ld_ident\" on jack "pld0:out2[Chip=0][UDB=(1,4)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "pld0:in5[Chip=0][UDB=(1,4)]"
+    
+    2. Connected jack name: "pld1:in9[Chip=0][UDB=(1,4)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:state_2\" on jack "pld0:out3[Chip=0][UDB=(1,4)]".
+Number of connected bvjacks: 5.
+
+    1. Connected jack name: "dp:in0[Chip=0][UDB=(1,4)]"
+    
+    2. Connected jack name: "pld1:in2[Chip=0][UDB=(1,4)]"
+    
+    3. Connected jack name: "pld1:in11[Chip=0][UDB=(1,1)]"
+    
+    4. Connected jack name: "pld1:in1[Chip=0][UDB=(1,2)]"
+    
+    5. Connected jack name: "pld0:in9[Chip=0][UDB=(1,4)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:tx_status_0\" on jack "pld1:out0[Chip=0][UDB=(1,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "statctrl:in0[Chip=0][UDB=(1,4)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:tx_status_4\" on jack "pld1:out1[Chip=0][UDB=(1,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "statctrl:inout0[Chip=0][UDB=(1,4)]"
+    
+    
+
+Found signal "Net_10" on jack "pld1:out2[Chip=0][UDB=(1,4)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "io_ijack_7[Chip=0][IOP=(1)]"
+    
+    2. Connected jack name: "pld1:in6[Chip=0][UDB=(1,4)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:mosi_from_dp\" on jack "dp:out1[Chip=0][UDB=(1,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld1:in4[Chip=0][UDB=(1,4)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:rx_status_4\" on jack "dp:out2[Chip=0][UDB=(1,4)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "statctrl:inout0[Chip=0][UDB=(1,5)]"
+    
+    2. Connected jack name: "pld1:in8[Chip=0][UDB=(0,4)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:tx_status_2\" on jack "dp:out3[Chip=0][UDB=(1,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "statctrl:in2[Chip=0][UDB=(1,4)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:tx_status_1\" on jack "dp:out4[Chip=0][UDB=(1,4)]".
+Number of connected bvjacks: 3.
+
+    1. Connected jack name: "pld1:in2[Chip=0][UDB=(1,2)]"
+    
+    2. Connected jack name: "pld0:in10[Chip=0][UDB=(1,4)]"
+    
+    3. Connected jack name: "statctrl:in1[Chip=0][UDB=(1,4)]"
+    
+    
+
+Found signal "\SPIM:BSPIM:rx_status_5\" on jack "dp:out5[Chip=0][UDB=(1,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "statctrl:inout1[Chip=0][UDB=(1,5)]"
+    
+    
+
+Found signal "Net_13" on jack "io_ojack_4[Chip=0][IOP=(1)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "dp:in4[Chip=0][UDB=(1,4)]"
+    
+    
+
+Found signal "\CapSense:Cmp_CH0\" on jack "out[Chip=0][FFB(Comparator,0)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld1:in10[Chip=0][UDB=(0,4)]"
+    
+    
+
+
+---------Verifying signals (routing).---------
+
+
+---------Verifying configuration.---------
+
+
+
+----------------------------------------------------------------------
+
+Bitstream verification passed.
+
+-----------------------------------------------------------------------
+

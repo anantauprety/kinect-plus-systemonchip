@@ -1,0 +1,2108 @@
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 18, 4
+  12              		.thumb
+  13              		.file	"main.c"
+  14              		.section	.debug_abbrev,"",%progbits
+  15              	.Ldebug_abbrev0:
+  16              		.section	.debug_info,"",%progbits
+  17              	.Ldebug_info0:
+  18              		.section	.debug_line,"",%progbits
+  19              	.Ldebug_line0:
+  20 0000 5B010000 		.text
+  20      02005300 
+  20      00000201 
+  20      FB0E0D00 
+  20      01010101 
+  21              	.Ltext0:
+  22              		.cfi_sections	.debug_frame
+  23              		.section	.rodata
+  24              		.align	2
+  25              	.LC0:
+  26 0000 525800   		.ascii	"RX\000"
+  27 0003 00       		.align	2
+  28              	.LC1:
+  29 0004 5300     		.ascii	"S\000"
+  30 0006 0000     		.align	2
+  31              	.LC2:
+  32 0008 4100     		.ascii	"A\000"
+  33 000a 0000     		.section	.text.main,"ax",%progbits
+  34              		.align	2
+  35              		.global	main
+  36              		.thumb
+  37              		.thumb_func
+  38              		.type	main, %function
+  39              	main:
+  40              	.LFB29:
+  41              		.file 1 ".\\main.c"
+   1:.\main.c      **** /* ========================================
+   2:.\main.c      ****  *
+   3:.\main.c      ****  * Copyright YOUR COMPANY, THE YEAR
+   4:.\main.c      ****  * All Rights Reserved
+   5:.\main.c      ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\main.c      ****  *
+   7:.\main.c      ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\main.c      ****  * WHICH IS THE PROPERTY OF your company.
+   9:.\main.c      ****  *
+  10:.\main.c      ****  * ========================================
+  11:.\main.c      **** */
+  12:.\main.c      **** #include <device.h>
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 2
+
+
+  13:.\main.c      **** #include <lpregs.h>
+  14:.\main.c      **** 
+  15:.\main.c      **** void radioWrite(uint16,uint16);
+  16:.\main.c      **** uint16 radioRead(uint16);
+  17:.\main.c      **** void radioInit();
+  18:.\main.c      **** void radioStartReceive();
+  19:.\main.c      **** uint8 radioGetState();
+  20:.\main.c      **** uint8 radioEndReceive(uint8);
+  21:.\main.c      **** uint16 radioReadBuf(uint16);
+  22:.\main.c      **** 
+  23:.\main.c      **** void main()
+  24:.\main.c      **** {
+  42              		.loc 1 24 0
+  43              		.cfi_startproc
+  44              		@ args = 0, pretend = 0, frame = 8
+  45              		@ frame_needed = 1, uses_anonymous_args = 0
+  46 0000 80B5     		push	{r7, lr}
+  47              	.LCFI0:
+  48              		.cfi_def_cfa_offset 8
+  49 0002 82B0     		sub	sp, sp, #8
+  50              	.LCFI1:
+  51              		.cfi_def_cfa_offset 16
+  52 0004 00AF     		add	r7, sp, #0
+  53              		.cfi_offset 14, -4
+  54              		.cfi_offset 7, -8
+  55              	.LCFI2:
+  56              		.cfi_def_cfa_register 7
+  25:.\main.c      ****     CYGlobalIntEnable;  /* Uncomment this line to enable global interrupts. */
+  57              		.loc 1 25 0
+  58              	@ 25 ".\main.c" 1
+  59 0006 62B6     		CPSIE   i
+  60              	@ 0 "" 2
+  26:.\main.c      **** 	uint16 rxState=0x00;	
+  61              		.loc 1 26 0
+  62              		.thumb
+  63 0008 4FF00003 		mov	r3, #0
+  64 000c 7B80     		strh	r3, [r7, #2]	@ movhi
+  27:.\main.c      **** 	uint16 val=0x00;
+  65              		.loc 1 27 0
+  66 000e 4FF00003 		mov	r3, #0
+  67 0012 BB80     		strh	r3, [r7, #4]	@ movhi
+  28:.\main.c      **** 	uint16 i=0x00;
+  68              		.loc 1 28 0
+  69 0014 4FF00003 		mov	r3, #0
+  70 0018 FB80     		strh	r3, [r7, #6]	@ movhi
+  29:.\main.c      **** 	
+  30:.\main.c      **** 	 LCD_Start();
+  71              		.loc 1 30 0
+  72 001a FFF7FEFF 		bl	LCD_Start
+  31:.\main.c      **** 	 LCD_ClearDisplay();
+  73              		.loc 1 31 0
+  74 001e 4FF00100 		mov	r0, #1
+  75 0022 FFF7FEFF 		bl	LCD_WriteControl
+  32:.\main.c      **** 	 LCD_Position(0,0);
+  76              		.loc 1 32 0
+  77 0026 4FF00000 		mov	r0, #0
+  78 002a 4FF00001 		mov	r1, #0
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 3
+
+
+  79 002e FFF7FEFF 		bl	LCD_Position
+  33:.\main.c      **** 	 LCD_PrintString("RX");
+  80              		.loc 1 33 0
+  81 0032 40F20000 		movw	r0, #:lower16:.LC0
+  82 0036 C0F20000 		movt	r0, #:upper16:.LC0
+  83 003a FFF7FEFF 		bl	LCD_PrintString
+  34:.\main.c      **** 	 
+  35:.\main.c      **** 	 SPIM_Start();
+  84              		.loc 1 35 0
+  85 003e FFF7FEFF 		bl	SPIM_Start
+  36:.\main.c      **** 	 SPIM_ClearRxBuffer();
+  86              		.loc 1 36 0
+  87 0042 FFF7FEFF 		bl	SPIM_ClearRxBuffer
+  37:.\main.c      **** 	 SPIM_ClearTxBuffer();
+  88              		.loc 1 37 0
+  89 0046 FFF7FEFF 		bl	SPIM_ClearTxBuffer
+  38:.\main.c      **** 	 SPIM_ClearFIFO();
+  90              		.loc 1 38 0
+  91 004a FFF7FEFF 		bl	SPIM_ClearFIFO
+  39:.\main.c      **** 	
+  40:.\main.c      **** 	radioInit();
+  92              		.loc 1 40 0
+  93 004e FFF7FEFF 		bl	radioInit
+  41:.\main.c      **** 	
+  42:.\main.c      **** 	radioWrite(0x01,0x02);
+  94              		.loc 1 42 0
+  95 0052 4FF00100 		mov	r0, #1
+  96 0056 4FF00201 		mov	r1, #2
+  97 005a FFF7FEFF 		bl	radioWrite
+  43:.\main.c      **** 	val=radioRead(0x01);
+  98              		.loc 1 43 0
+  99 005e 4FF00100 		mov	r0, #1
+ 100 0062 FFF7FEFF 		bl	radioRead
+ 101 0066 0346     		mov	r3, r0
+ 102 0068 BB80     		strh	r3, [r7, #4]	@ movhi
+  44:.\main.c      **** 	if (val==0x02){
+ 103              		.loc 1 44 0
+ 104 006a BB88     		ldrh	r3, [r7, #4]
+ 105 006c 022B     		cmp	r3, #2
+ 106 006e 0BD1     		bne	.L2
+  45:.\main.c      **** 	LCD_Position(1,0);
+ 107              		.loc 1 45 0
+ 108 0070 4FF00100 		mov	r0, #1
+ 109 0074 4FF00001 		mov	r1, #0
+ 110 0078 FFF7FEFF 		bl	LCD_Position
+  46:.\main.c      **** 	LCD_PrintString("S");
+ 111              		.loc 1 46 0
+ 112 007c 40F20000 		movw	r0, #:lower16:.LC1
+ 113 0080 C0F20000 		movt	r0, #:upper16:.LC1
+ 114 0084 FFF7FEFF 		bl	LCD_PrintString
+ 115              	.L2:
+  47:.\main.c      **** 	}
+  48:.\main.c      **** 		
+  49:.\main.c      **** 		
+  50:.\main.c      **** 	radioStartReceive();
+ 116              		.loc 1 50 0
+ 117 0088 FFF7FEFF 		bl	radioStartReceive
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 4
+
+
+ 118 008c 00E0     		b	.L7
+ 119              	.L9:
+  51:.\main.c      **** 	
+  52:.\main.c      **** 	while (1){
+  53:.\main.c      **** 	
+  54:.\main.c      **** 	rxState=radioGetState();
+  55:.\main.c      **** 	   // store the packet onto a local buffer if
+  56:.\main.c      **** 	   LCD_Position(1,5);
+  57:.\main.c      **** 	   LCD_PrintInt8(rxState);
+  58:.\main.c      **** 	   
+  59:.\main.c      **** 	   if (rxState==8 || rxState==7){
+  60:.\main.c      **** 		radioStartReceive();
+  61:.\main.c      **** 		 LCD_Position(1,4);
+  62:.\main.c      **** 		LCD_PrintString("A");
+  63:.\main.c      **** 		}
+  64:.\main.c      ****    //receive operation complete
+  65:.\main.c      ****    if (rxState & RXC_IRQ)
+  66:.\main.c      ****     {
+  67:.\main.c      **** 	
+  68:.\main.c      ****    if (radioEndReceive(rxState))
+  69:.\main.c      ****     {
+  70:.\main.c      **** 	
+  71:.\main.c      ****     val=radioReadBuf(RX_BUFFER_ADR);
+  72:.\main.c      **** 	//retrieved data displayed on the LCD screen
+  73:.\main.c      **** 
+  74:.\main.c      ****     LCD_Position(0,3);
+  75:.\main.c      **** 	LCD_PrintInt8(val);
+  76:.\main.c      ****     //generate a small delay before receiving the next data
+  77:.\main.c      **** 	//CyDelay(100);
+  78:.\main.c      **** 	
+  79:.\main.c      **** 	}
+  80:.\main.c      **** 	//restart the receive operation
+  81:.\main.c      **** 	radioStartReceive();
+  82:.\main.c      **** 	i++;
+  83:.\main.c      **** 	 // store the packet onto a local buffer if
+  84:.\main.c      **** 	LCD_Position(0,14);
+  85:.\main.c      **** 	LCD_PrintInt8(i);
+  86:.\main.c      **** 	}
+  87:.\main.c      ****     }
+ 120              		.loc 1 87 0
+ 121 008e 00BF     		nop
+ 122              	.L7:
+ 123              		.loc 1 54 0
+ 124 0090 FFF7FEFF 		bl	radioGetState
+ 125 0094 0346     		mov	r3, r0
+ 126 0096 7B80     		strh	r3, [r7, #2]	@ movhi
+ 127              		.loc 1 56 0
+ 128 0098 4FF00100 		mov	r0, #1
+ 129 009c 4FF00501 		mov	r1, #5
+ 130 00a0 FFF7FEFF 		bl	LCD_Position
+ 131              		.loc 1 57 0
+ 132 00a4 7B88     		ldrh	r3, [r7, #2]	@ movhi
+ 133 00a6 DBB2     		uxtb	r3, r3
+ 134 00a8 1846     		mov	r0, r3
+ 135 00aa FFF7FEFF 		bl	LCD_PrintHexUint8
+ 136              		.loc 1 59 0
+ 137 00ae 7B88     		ldrh	r3, [r7, #2]
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 5
+
+
+ 138 00b0 082B     		cmp	r3, #8
+ 139 00b2 02D0     		beq	.L3
+ 140 00b4 7B88     		ldrh	r3, [r7, #2]
+ 141 00b6 072B     		cmp	r3, #7
+ 142 00b8 0DD1     		bne	.L4
+ 143              	.L3:
+ 144              		.loc 1 60 0
+ 145 00ba FFF7FEFF 		bl	radioStartReceive
+ 146              		.loc 1 61 0
+ 147 00be 4FF00100 		mov	r0, #1
+ 148 00c2 4FF00401 		mov	r1, #4
+ 149 00c6 FFF7FEFF 		bl	LCD_Position
+ 150              		.loc 1 62 0
+ 151 00ca 40F20000 		movw	r0, #:lower16:.LC2
+ 152 00ce C0F20000 		movt	r0, #:upper16:.LC2
+ 153 00d2 FFF7FEFF 		bl	LCD_PrintString
+ 154              	.L4:
+ 155              		.loc 1 65 0
+ 156 00d6 7B88     		ldrh	r3, [r7, #2]
+ 157 00d8 03F00203 		and	r3, r3, #2
+ 158 00dc 002B     		cmp	r3, #0
+ 159 00de D6D0     		beq	.L9
+ 160              		.loc 1 68 0
+ 161 00e0 7B88     		ldrh	r3, [r7, #2]	@ movhi
+ 162 00e2 DBB2     		uxtb	r3, r3
+ 163 00e4 1846     		mov	r0, r3
+ 164 00e6 FFF7FEFF 		bl	radioEndReceive
+ 165 00ea 0346     		mov	r3, r0
+ 166 00ec 002B     		cmp	r3, #0
+ 167 00ee 10D0     		beq	.L6
+ 168              		.loc 1 71 0
+ 169 00f0 4FF02100 		mov	r0, #33
+ 170 00f4 FFF7FEFF 		bl	radioReadBuf
+ 171 00f8 0346     		mov	r3, r0
+ 172 00fa BB80     		strh	r3, [r7, #4]	@ movhi
+ 173              		.loc 1 74 0
+ 174 00fc 4FF00000 		mov	r0, #0
+ 175 0100 4FF00301 		mov	r1, #3
+ 176 0104 FFF7FEFF 		bl	LCD_Position
+ 177              		.loc 1 75 0
+ 178 0108 BB88     		ldrh	r3, [r7, #4]	@ movhi
+ 179 010a DBB2     		uxtb	r3, r3
+ 180 010c 1846     		mov	r0, r3
+ 181 010e FFF7FEFF 		bl	LCD_PrintHexUint8
+ 182              	.L6:
+ 183              		.loc 1 81 0
+ 184 0112 FFF7FEFF 		bl	radioStartReceive
+ 185              		.loc 1 82 0
+ 186 0116 FB88     		ldrh	r3, [r7, #6]	@ movhi
+ 187 0118 03F10103 		add	r3, r3, #1
+ 188 011c FB80     		strh	r3, [r7, #6]	@ movhi
+ 189              		.loc 1 84 0
+ 190 011e 4FF00000 		mov	r0, #0
+ 191 0122 4FF00E01 		mov	r1, #14
+ 192 0126 FFF7FEFF 		bl	LCD_Position
+ 193              		.loc 1 85 0
+ 194 012a FB88     		ldrh	r3, [r7, #6]	@ movhi
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 6
+
+
+ 195 012c DBB2     		uxtb	r3, r3
+ 196 012e 1846     		mov	r0, r3
+ 197 0130 FFF7FEFF 		bl	LCD_PrintHexUint8
+ 198              		.loc 1 87 0
+ 199 0134 ACE7     		b	.L7
+ 200              		.cfi_endproc
+ 201              	.LFE29:
+ 202              		.size	main, .-main
+ 203 0136 00BF     		.section	.text.radioWrite,"ax",%progbits
+ 204              		.align	2
+ 205              		.global	radioWrite
+ 206              		.thumb
+ 207              		.thumb_func
+ 208              		.type	radioWrite, %function
+ 209              	radioWrite:
+ 210              	.LFB30:
+  88:.\main.c      **** }
+  89:.\main.c      **** 
+  90:.\main.c      **** 	 
+  91:.\main.c      **** 	
+  92:.\main.c      **** 
+  93:.\main.c      **** 
+  94:.\main.c      **** void radioWrite(uint16 addr,uint16 dat){
+ 211              		.loc 1 94 0
+ 212              		.cfi_startproc
+ 213              		@ args = 0, pretend = 0, frame = 8
+ 214              		@ frame_needed = 1, uses_anonymous_args = 0
+ 215 0000 80B5     		push	{r7, lr}
+ 216              	.LCFI3:
+ 217              		.cfi_def_cfa_offset 8
+ 218 0002 82B0     		sub	sp, sp, #8
+ 219              	.LCFI4:
+ 220              		.cfi_def_cfa_offset 16
+ 221 0004 00AF     		add	r7, sp, #0
+ 222              		.cfi_offset 14, -4
+ 223              		.cfi_offset 7, -8
+ 224              	.LCFI5:
+ 225              		.cfi_def_cfa_register 7
+ 226 0006 0246     		mov	r2, r0
+ 227 0008 0B46     		mov	r3, r1
+ 228 000a FA80     		strh	r2, [r7, #6]	@ movhi
+ 229 000c BB80     		strh	r3, [r7, #4]	@ movhi
+  95:.\main.c      **** 	SPIM_ClearRxBuffer();
+ 230              		.loc 1 95 0
+ 231 000e FFF7FEFF 		bl	SPIM_ClearRxBuffer
+  96:.\main.c      **** 	SPIM_ClearTxBuffer();
+ 232              		.loc 1 96 0
+ 233 0012 FFF7FEFF 		bl	SPIM_ClearTxBuffer
+  97:.\main.c      **** 	
+  98:.\main.c      **** 	SPIM_WriteTxData(0x80+addr);
+ 234              		.loc 1 98 0
+ 235 0016 FB88     		ldrh	r3, [r7, #6]	@ movhi
+ 236 0018 DBB2     		uxtb	r3, r3
+ 237 001a A3F18003 		sub	r3, r3, #128
+ 238 001e DBB2     		uxtb	r3, r3
+ 239 0020 1846     		mov	r0, r3
+ 240 0022 FFF7FEFF 		bl	SPIM_WriteTxData
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 7
+
+
+  99:.\main.c      **** 	SPIM_WriteTxData(dat);
+ 241              		.loc 1 99 0
+ 242 0026 BB88     		ldrh	r3, [r7, #4]	@ movhi
+ 243 0028 DBB2     		uxtb	r3, r3
+ 244 002a 1846     		mov	r0, r3
+ 245 002c FFF7FEFF 		bl	SPIM_WriteTxData
+ 246              	.L11:
+ 100:.\main.c      **** 	while(!SPIM_ReadTxStatus() & SPIM_STS_SPI_DONE);
+ 247              		.loc 1 100 0
+ 248 0030 FFF7FEFF 		bl	SPIM_ReadTxStatus
+ 249 0034 0346     		mov	r3, r0
+ 250 0036 002B     		cmp	r3, #0
+ 251 0038 FAD0     		beq	.L11
+ 101:.\main.c      **** }
+ 252              		.loc 1 101 0
+ 253 003a 07F10807 		add	r7, r7, #8
+ 254 003e BD46     		mov	sp, r7
+ 255 0040 80BD     		pop	{r7, pc}
+ 256              		.cfi_endproc
+ 257              	.LFE30:
+ 258              		.size	radioWrite, .-radioWrite
+ 259 0042 00BF     		.section	.text.radioReadBuf,"ax",%progbits
+ 260              		.align	2
+ 261              		.global	radioReadBuf
+ 262              		.thumb
+ 263              		.thumb_func
+ 264              		.type	radioReadBuf, %function
+ 265              	radioReadBuf:
+ 266              	.LFB31:
+ 102:.\main.c      **** 
+ 103:.\main.c      **** uint16 radioReadBuf(uint16 addr){
+ 267              		.loc 1 103 0
+ 268              		.cfi_startproc
+ 269              		@ args = 0, pretend = 0, frame = 16
+ 270              		@ frame_needed = 1, uses_anonymous_args = 0
+ 271 0000 80B5     		push	{r7, lr}
+ 272              	.LCFI6:
+ 273              		.cfi_def_cfa_offset 8
+ 274 0002 84B0     		sub	sp, sp, #16
+ 275              	.LCFI7:
+ 276              		.cfi_def_cfa_offset 24
+ 277 0004 00AF     		add	r7, sp, #0
+ 278              		.cfi_offset 14, -4
+ 279              		.cfi_offset 7, -8
+ 280              	.LCFI8:
+ 281              		.cfi_def_cfa_register 7
+ 282 0006 0346     		mov	r3, r0
+ 283 0008 FB80     		strh	r3, [r7, #6]	@ movhi
+ 104:.\main.c      **** 	uint16 val=0x00;
+ 284              		.loc 1 104 0
+ 285 000a 4FF00003 		mov	r3, #0
+ 286 000e BB81     		strh	r3, [r7, #12]	@ movhi
+ 105:.\main.c      **** 	uint16 i=0;
+ 287              		.loc 1 105 0
+ 288 0010 4FF00003 		mov	r3, #0
+ 289 0014 FB81     		strh	r3, [r7, #14]	@ movhi
+ 106:.\main.c      **** 	SPIM_ClearRxBuffer();
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 8
+
+
+ 290              		.loc 1 106 0
+ 291 0016 FFF7FEFF 		bl	SPIM_ClearRxBuffer
+ 107:.\main.c      **** 	SPIM_ClearTxBuffer();
+ 292              		.loc 1 107 0
+ 293 001a FFF7FEFF 		bl	SPIM_ClearTxBuffer
+ 108:.\main.c      **** 	
+ 109:.\main.c      **** 	SPIM_WriteTxData(addr);
+ 294              		.loc 1 109 0
+ 295 001e FB88     		ldrh	r3, [r7, #6]	@ movhi
+ 296 0020 DBB2     		uxtb	r3, r3
+ 297 0022 1846     		mov	r0, r3
+ 298 0024 FFF7FEFF 		bl	SPIM_WriteTxData
+ 110:.\main.c      **** 	SPIM_WriteTxData(0x00);
+ 299              		.loc 1 110 0
+ 300 0028 4FF00000 		mov	r0, #0
+ 301 002c FFF7FEFF 		bl	SPIM_WriteTxData
+ 111:.\main.c      **** 	SPIM_WriteTxData(0x00);
+ 302              		.loc 1 111 0
+ 303 0030 4FF00000 		mov	r0, #0
+ 304 0034 FFF7FEFF 		bl	SPIM_WriteTxData
+ 112:.\main.c      **** 	SPIM_WriteTxData(0x00);
+ 305              		.loc 1 112 0
+ 306 0038 4FF00000 		mov	r0, #0
+ 307 003c FFF7FEFF 		bl	SPIM_WriteTxData
+ 308              	.L14:
+ 113:.\main.c      **** 
+ 114:.\main.c      **** 	while(!SPIM_ReadTxStatus() & SPIM_STS_SPI_DONE);
+ 309              		.loc 1 114 0
+ 310 0040 FFF7FEFF 		bl	SPIM_ReadTxStatus
+ 311 0044 0346     		mov	r3, r0
+ 312 0046 002B     		cmp	r3, #0
+ 313 0048 FAD0     		beq	.L14
+ 115:.\main.c      **** 	
+ 116:.\main.c      **** 	//for (i=0;i<4;i++){
+ 117:.\main.c      **** 			val=SPIM_ReadRxData();
+ 314              		.loc 1 117 0
+ 315 004a FFF7FEFF 		bl	SPIM_ReadRxData
+ 316 004e 0346     		mov	r3, r0
+ 317 0050 BB81     		strh	r3, [r7, #12]	@ movhi
+ 118:.\main.c      **** 			LCD_Position(0,5);
+ 318              		.loc 1 118 0
+ 319 0052 4FF00000 		mov	r0, #0
+ 320 0056 4FF00501 		mov	r1, #5
+ 321 005a FFF7FEFF 		bl	LCD_Position
+ 119:.\main.c      **** 			LCD_PrintInt8(val);
+ 322              		.loc 1 119 0
+ 323 005e BB89     		ldrh	r3, [r7, #12]	@ movhi
+ 324 0060 DBB2     		uxtb	r3, r3
+ 325 0062 1846     		mov	r0, r3
+ 326 0064 FFF7FEFF 		bl	LCD_PrintHexUint8
+ 120:.\main.c      **** 			i=SPIM_ReadRxData();
+ 327              		.loc 1 120 0
+ 328 0068 FFF7FEFF 		bl	SPIM_ReadRxData
+ 329 006c 0346     		mov	r3, r0
+ 330 006e FB81     		strh	r3, [r7, #14]	@ movhi
+ 121:.\main.c      **** 			LCD_Position(0,7);
+ 331              		.loc 1 121 0
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 9
+
+
+ 332 0070 4FF00000 		mov	r0, #0
+ 333 0074 4FF00701 		mov	r1, #7
+ 334 0078 FFF7FEFF 		bl	LCD_Position
+ 122:.\main.c      **** 			LCD_PrintInt8(i);
+ 335              		.loc 1 122 0
+ 336 007c FB89     		ldrh	r3, [r7, #14]	@ movhi
+ 337 007e DBB2     		uxtb	r3, r3
+ 338 0080 1846     		mov	r0, r3
+ 339 0082 FFF7FEFF 		bl	LCD_PrintHexUint8
+ 123:.\main.c      **** 			val=SPIM_ReadRxData();
+ 340              		.loc 1 123 0
+ 341 0086 FFF7FEFF 		bl	SPIM_ReadRxData
+ 342 008a 0346     		mov	r3, r0
+ 343 008c BB81     		strh	r3, [r7, #12]	@ movhi
+ 124:.\main.c      **** 			LCD_Position(0,9);
+ 344              		.loc 1 124 0
+ 345 008e 4FF00000 		mov	r0, #0
+ 346 0092 4FF00901 		mov	r1, #9
+ 347 0096 FFF7FEFF 		bl	LCD_Position
+ 125:.\main.c      **** 			LCD_PrintInt8(val);
+ 348              		.loc 1 125 0
+ 349 009a BB89     		ldrh	r3, [r7, #12]	@ movhi
+ 350 009c DBB2     		uxtb	r3, r3
+ 351 009e 1846     		mov	r0, r3
+ 352 00a0 FFF7FEFF 		bl	LCD_PrintHexUint8
+ 126:.\main.c      **** 			val=SPIM_ReadRxData();
+ 353              		.loc 1 126 0
+ 354 00a4 FFF7FEFF 		bl	SPIM_ReadRxData
+ 355 00a8 0346     		mov	r3, r0
+ 356 00aa BB81     		strh	r3, [r7, #12]	@ movhi
+ 127:.\main.c      **** 			LCD_Position(0,11);
+ 357              		.loc 1 127 0
+ 358 00ac 4FF00000 		mov	r0, #0
+ 359 00b0 4FF00B01 		mov	r1, #11
+ 360 00b4 FFF7FEFF 		bl	LCD_Position
+ 128:.\main.c      **** 			LCD_PrintInt8(val);
+ 361              		.loc 1 128 0
+ 362 00b8 BB89     		ldrh	r3, [r7, #12]	@ movhi
+ 363 00ba DBB2     		uxtb	r3, r3
+ 364 00bc 1846     		mov	r0, r3
+ 365 00be FFF7FEFF 		bl	LCD_PrintHexUint8
+ 129:.\main.c      **** 	return i;
+ 366              		.loc 1 129 0
+ 367 00c2 FB89     		ldrh	r3, [r7, #14]
+ 130:.\main.c      **** }
+ 368              		.loc 1 130 0
+ 369 00c4 1846     		mov	r0, r3
+ 370 00c6 07F11007 		add	r7, r7, #16
+ 371 00ca BD46     		mov	sp, r7
+ 372 00cc 80BD     		pop	{r7, pc}
+ 373              		.cfi_endproc
+ 374              	.LFE31:
+ 375              		.size	radioReadBuf, .-radioReadBuf
+ 376 00ce 00BF     		.section	.text.radioRead,"ax",%progbits
+ 377              		.align	2
+ 378              		.global	radioRead
+ 379              		.thumb
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 10
+
+
+ 380              		.thumb_func
+ 381              		.type	radioRead, %function
+ 382              	radioRead:
+ 383              	.LFB32:
+ 131:.\main.c      **** 
+ 132:.\main.c      **** 
+ 133:.\main.c      **** 
+ 134:.\main.c      **** 
+ 135:.\main.c      **** 
+ 136:.\main.c      **** uint16 radioRead(uint16 addr){
+ 384              		.loc 1 136 0
+ 385              		.cfi_startproc
+ 386              		@ args = 0, pretend = 0, frame = 16
+ 387              		@ frame_needed = 1, uses_anonymous_args = 0
+ 388 0000 80B5     		push	{r7, lr}
+ 389              	.LCFI9:
+ 390              		.cfi_def_cfa_offset 8
+ 391 0002 84B0     		sub	sp, sp, #16
+ 392              	.LCFI10:
+ 393              		.cfi_def_cfa_offset 24
+ 394 0004 00AF     		add	r7, sp, #0
+ 395              		.cfi_offset 14, -4
+ 396              		.cfi_offset 7, -8
+ 397              	.LCFI11:
+ 398              		.cfi_def_cfa_register 7
+ 399 0006 0346     		mov	r3, r0
+ 400 0008 FB80     		strh	r3, [r7, #6]	@ movhi
+ 137:.\main.c      **** 	uint16 val=0x00;
+ 401              		.loc 1 137 0
+ 402 000a 4FF00003 		mov	r3, #0
+ 403 000e BB81     		strh	r3, [r7, #12]	@ movhi
+ 138:.\main.c      **** 	uint16 i=0;
+ 404              		.loc 1 138 0
+ 405 0010 4FF00003 		mov	r3, #0
+ 406 0014 FB81     		strh	r3, [r7, #14]	@ movhi
+ 139:.\main.c      **** 	SPIM_ClearRxBuffer();
+ 407              		.loc 1 139 0
+ 408 0016 FFF7FEFF 		bl	SPIM_ClearRxBuffer
+ 140:.\main.c      **** 	SPIM_ClearTxBuffer();
+ 409              		.loc 1 140 0
+ 410 001a FFF7FEFF 		bl	SPIM_ClearTxBuffer
+ 141:.\main.c      **** 	
+ 142:.\main.c      **** 	SPIM_WriteTxData(addr);
+ 411              		.loc 1 142 0
+ 412 001e FB88     		ldrh	r3, [r7, #6]	@ movhi
+ 413 0020 DBB2     		uxtb	r3, r3
+ 414 0022 1846     		mov	r0, r3
+ 415 0024 FFF7FEFF 		bl	SPIM_WriteTxData
+ 143:.\main.c      **** 	SPIM_WriteTxData(0x00);
+ 416              		.loc 1 143 0
+ 417 0028 4FF00000 		mov	r0, #0
+ 418 002c FFF7FEFF 		bl	SPIM_WriteTxData
+ 144:.\main.c      **** 	SPIM_WriteTxData(0x00);
+ 419              		.loc 1 144 0
+ 420 0030 4FF00000 		mov	r0, #0
+ 421 0034 FFF7FEFF 		bl	SPIM_WriteTxData
+ 145:.\main.c      **** 	SPIM_WriteTxData(0x00);
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 11
+
+
+ 422              		.loc 1 145 0
+ 423 0038 4FF00000 		mov	r0, #0
+ 424 003c FFF7FEFF 		bl	SPIM_WriteTxData
+ 425              	.L17:
+ 146:.\main.c      **** 
+ 147:.\main.c      **** 	while(!SPIM_ReadTxStatus() & SPIM_STS_SPI_DONE);
+ 426              		.loc 1 147 0
+ 427 0040 FFF7FEFF 		bl	SPIM_ReadTxStatus
+ 428 0044 0346     		mov	r3, r0
+ 429 0046 002B     		cmp	r3, #0
+ 430 0048 FAD0     		beq	.L17
+ 148:.\main.c      **** 	
+ 149:.\main.c      **** 	for (i=0;i<2;i++){
+ 431              		.loc 1 149 0
+ 432 004a 4FF00003 		mov	r3, #0
+ 433 004e FB81     		strh	r3, [r7, #14]	@ movhi
+ 434 0050 12E0     		b	.L18
+ 435              	.L19:
+ 150:.\main.c      **** 			val=SPIM_ReadRxData();
+ 436              		.loc 1 150 0
+ 437 0052 FFF7FEFF 		bl	SPIM_ReadRxData
+ 438 0056 0346     		mov	r3, r0
+ 439 0058 BB81     		strh	r3, [r7, #12]	@ movhi
+ 151:.\main.c      **** 			LCD_Position(1,14);
+ 440              		.loc 1 151 0
+ 441 005a 4FF00100 		mov	r0, #1
+ 442 005e 4FF00E01 		mov	r1, #14
+ 443 0062 FFF7FEFF 		bl	LCD_Position
+ 152:.\main.c      **** 			LCD_PrintInt8(val);
+ 444              		.loc 1 152 0
+ 445 0066 BB89     		ldrh	r3, [r7, #12]	@ movhi
+ 446 0068 DBB2     		uxtb	r3, r3
+ 447 006a 1846     		mov	r0, r3
+ 448 006c FFF7FEFF 		bl	LCD_PrintHexUint8
+ 449              		.loc 1 149 0
+ 450 0070 FB89     		ldrh	r3, [r7, #14]	@ movhi
+ 451 0072 03F10103 		add	r3, r3, #1
+ 452 0076 FB81     		strh	r3, [r7, #14]	@ movhi
+ 453              	.L18:
+ 454 0078 FB89     		ldrh	r3, [r7, #14]
+ 455 007a 012B     		cmp	r3, #1
+ 456 007c E9D9     		bls	.L19
+ 153:.\main.c      **** 		//	CyDelay(1000);
+ 154:.\main.c      **** 		}
+ 155:.\main.c      **** 	return val;
+ 457              		.loc 1 155 0
+ 458 007e BB89     		ldrh	r3, [r7, #12]
+ 156:.\main.c      **** }
+ 459              		.loc 1 156 0
+ 460 0080 1846     		mov	r0, r3
+ 461 0082 07F11007 		add	r7, r7, #16
+ 462 0086 BD46     		mov	sp, r7
+ 463 0088 80BD     		pop	{r7, pc}
+ 464              		.cfi_endproc
+ 465              	.LFE32:
+ 466              		.size	radioRead, .-radioRead
+ 467 008a 00BF     		.section	.text.radioInit,"ax",%progbits
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 12
+
+
+ 468              		.align	2
+ 469              		.global	radioInit
+ 470              		.thumb
+ 471              		.thumb_func
+ 472              		.type	radioInit, %function
+ 473              	radioInit:
+ 474              	.LFB33:
+ 157:.\main.c      **** 
+ 158:.\main.c      **** void radioInit(){
+ 475              		.loc 1 158 0
+ 476              		.cfi_startproc
+ 477              		@ args = 0, pretend = 0, frame = 0
+ 478              		@ frame_needed = 1, uses_anonymous_args = 0
+ 479 0000 80B5     		push	{r7, lr}
+ 480              	.LCFI12:
+ 481              		.cfi_def_cfa_offset 8
+ 482 0002 00AF     		add	r7, sp, #0
+ 483              		.cfi_offset 14, -4
+ 484              		.cfi_offset 7, -8
+ 485              	.LCFI13:
+ 486              		.cfi_def_cfa_register 7
+ 159:.\main.c      ****  
+ 160:.\main.c      **** 	 /* Reset the LP through the SPI (soft reset). */
+ 161:.\main.c      **** 	radioWrite(MODE_OVERRIDE_ADR, RST);
+ 487              		.loc 1 161 0
+ 488 0004 4FF01D00 		mov	r0, #29
+ 489 0008 4FF00101 		mov	r1, #1
+ 490 000c FFF7FEFF 		bl	radioWrite
+ 162:.\main.c      **** 
+ 163:.\main.c      ****     /* Set up to use auto-cal for VCO. */
+ 164:.\main.c      ****    radioWrite(AUTO_CAL_TIME_ADR, AUTO_CAL_TIME_MAX); /* Extend autoCal time to max. */
+ 491              		.loc 1 164 0
+ 492 0010 4FF03200 		mov	r0, #50
+ 493 0014 4FF03C01 		mov	r1, #60
+ 494 0018 FFF7FEFF 		bl	radioWrite
+ 165:.\main.c      **** 
+ 166:.\main.c      ****     radioWrite(AUTO_CAL_OFFSET_ADR, AUTO_CAL_OFFSET_MINUS_4); /* AutoCal offset to -4. */
+ 495              		.loc 1 166 0
+ 496 001c 4FF03500 		mov	r0, #53
+ 497 0020 4FF01401 		mov	r1, #20
+ 498 0024 FFF7FEFF 		bl	radioWrite
+ 167:.\main.c      **** 
+ 168:.\main.c      ****     /* Set IRQ polarity to positive. */
+ 169:.\main.c      ****     radioWrite(IO_CFG_ADR, IRQ_POL);
+ 499              		.loc 1 169 0
+ 500 0028 4FF00D00 		mov	r0, #13
+ 501 002c 4FF04001 		mov	r1, #64
+ 502 0030 FFF7FEFF 		bl	radioWrite
+ 170:.\main.c      **** 
+ 171:.\main.c      ****     /* Set the XTAL Startup delay to 150uSec to handle warm restarts of the XTAL. */
+ 172:.\main.c      ****    radioWrite(XTAL_CFG_ADR, 0x08);
+ 503              		.loc 1 172 0
+ 504 0034 4FF02600 		mov	r0, #38
+ 505 0038 4FF00801 		mov	r1, #8
+ 506 003c FFF7FEFF 		bl	radioWrite
+ 173:.\main.c      ****    radioWrite(XACT_CFG_ADR, 0x90);
+ 507              		.loc 1 173 0
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 13
+
+
+ 508 0040 4FF00F00 		mov	r0, #15
+ 509 0044 4FF09001 		mov	r1, #144
+ 510 0048 FFF7FEFF 		bl	radioWrite
+ 174:.\main.c      **** 	
+ 175:.\main.c      **** 	/*
+ 176:.\main.c      ****      * Enable HiLo for quick-turn-around. Use low side injection for receive 
+ 177:.\main.c      ****      * this should result in non-inverted data, so no need to hit the invert
+ 178:.\main.c      ****      * bit. Turn off AGC and force the LNA on.
+ 179:.\main.c      ****      */
+ 180:.\main.c      ****    radioWrite(RX_CFG_ADR,
+ 511              		.loc 1 180 0
+ 512 004c 4FF00600 		mov	r0, #6
+ 513 0050 4FF04801 		mov	r1, #72
+ 514 0054 FFF7FEFF 		bl	radioWrite
+ 181:.\main.c      ****                  ((RX_CFG_RST | FASTTURN_EN | LNA_EN ) & ~( HI | RXOW_EN | AUTO_AGC_EN)));
+ 182:.\main.c      **** 
+ 183:.\main.c      ****     /*
+ 184:.\main.c      ****      * Set the TX Offset to +1MHz.
+ 185:.\main.c      ****      * THIS MEANS THE ACTUAL TRANSMIT CARRIER WILL BE 1MHz ABOVE THE PLL
+ 186:.\main.c      ****      * FREQUENCY PROGRAMMED IN THE CHANNEL OR A & N REGISTERS.
+ 187:.\main.c      ****      * RadioSetFrequency COMPENSATES FOR THIS OFFSET.
+ 188:.\main.c      ****      */
+ 189:.\main.c      ****     radioWrite(TX_OFFSET_LSB_ADR, 0x55);
+ 515              		.loc 1 189 0
+ 516 0058 4FF01B00 		mov	r0, #27
+ 517 005c 4FF05501 		mov	r1, #85
+ 518 0060 FFF7FEFF 		bl	radioWrite
+ 190:.\main.c      ****     radioWrite(TX_OFFSET_MSB_ADR, 0x05);
+ 519              		.loc 1 190 0
+ 520 0064 4FF01C00 		mov	r0, #28
+ 521 0068 4FF00501 		mov	r1, #5
+ 522 006c FFF7FEFF 		bl	radioWrite
+ 191:.\main.c      **** 	radioWrite(DATA32_THOLD_ADR,0x05);
+ 523              		.loc 1 191 0
+ 524 0070 4FF01100 		mov	r0, #17
+ 525 0074 4FF00501 		mov	r1, #5
+ 526 0078 FFF7FEFF 		bl	radioWrite
+ 192:.\main.c      **** 	radioWrite(FRAMING_CFG_ADR,0xA4);
+ 527              		.loc 1 192 0
+ 528 007c 4FF01000 		mov	r0, #16
+ 529 0080 4FF0A401 		mov	r1, #164
+ 530 0084 FFF7FEFF 		bl	radioWrite
+ 193:.\main.c      **** 	
+ 194:.\main.c      ****     /* Set Data Mode to 250kbps */
+ 195:.\main.c      ****    radioWrite(TX_CFG_ADR, TX_CFG_RST | DATMODE_8DR);
+ 531              		.loc 1 195 0
+ 532 0088 4FF00300 		mov	r0, #3
+ 533 008c 4FF00D01 		mov	r1, #13
+ 534 0090 FFF7FEFF 		bl	radioWrite
+ 196:.\main.c      **** }
+ 535              		.loc 1 196 0
+ 536 0094 80BD     		pop	{r7, pc}
+ 537              		.cfi_endproc
+ 538              	.LFE33:
+ 539              		.size	radioInit, .-radioInit
+ 540 0096 00BF     		.section	.text.radioStartReceive,"ax",%progbits
+ 541              		.align	2
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 14
+
+
+ 542              		.global	radioStartReceive
+ 543              		.thumb
+ 544              		.thumb_func
+ 545              		.type	radioStartReceive, %function
+ 546              	radioStartReceive:
+ 547              	.LFB34:
+ 197:.\main.c      **** 
+ 198:.\main.c      **** void radioStartReceive(){
+ 548              		.loc 1 198 0
+ 549              		.cfi_startproc
+ 550              		@ args = 0, pretend = 0, frame = 8
+ 551              		@ frame_needed = 1, uses_anonymous_args = 0
+ 552 0000 80B5     		push	{r7, lr}
+ 553              	.LCFI14:
+ 554              		.cfi_def_cfa_offset 8
+ 555 0002 82B0     		sub	sp, sp, #8
+ 556              	.LCFI15:
+ 557              		.cfi_def_cfa_offset 16
+ 558 0004 00AF     		add	r7, sp, #0
+ 559              		.cfi_offset 14, -4
+ 560              		.cfi_offset 7, -8
+ 561              	.LCFI16:
+ 562              		.cfi_def_cfa_register 7
+ 199:.\main.c      **** 	uint16 val=0x00;
+ 563              		.loc 1 199 0
+ 564 0006 4FF00003 		mov	r3, #0
+ 565 000a FB80     		strh	r3, [r7, #6]	@ movhi
+ 200:.\main.c      ****     radioWrite(RX_CTRL_ADR, (RX_GO | RXC_IRQ | RXE_IRQ));
+ 566              		.loc 1 200 0
+ 567 000c 4FF00500 		mov	r0, #5
+ 568 0010 4FF08301 		mov	r1, #131
+ 569 0014 FFF7FEFF 		bl	radioWrite
+ 201:.\main.c      ****     /* Clear RSSI */
+ 202:.\main.c      ****     radioRead(RSSI_ADR);
+ 570              		.loc 1 202 0
+ 571 0018 4FF01300 		mov	r0, #19
+ 572 001c FFF7FEFF 		bl	radioRead
+ 203:.\main.c      **** 	val=radioRead(RX_CTRL_ADR);
+ 573              		.loc 1 203 0
+ 574 0020 4FF00500 		mov	r0, #5
+ 575 0024 FFF7FEFF 		bl	radioRead
+ 576 0028 0346     		mov	r3, r0
+ 577 002a FB80     		strh	r3, [r7, #6]	@ movhi
+ 204:.\main.c      **** 	LCD_Position(1,2);
+ 578              		.loc 1 204 0
+ 579 002c 4FF00100 		mov	r0, #1
+ 580 0030 4FF00201 		mov	r1, #2
+ 581 0034 FFF7FEFF 		bl	LCD_Position
+ 205:.\main.c      **** 	LCD_PrintInt8(val);
+ 582              		.loc 1 205 0
+ 583 0038 FB88     		ldrh	r3, [r7, #6]	@ movhi
+ 584 003a DBB2     		uxtb	r3, r3
+ 585 003c 1846     		mov	r0, r3
+ 586 003e FFF7FEFF 		bl	LCD_PrintHexUint8
+ 206:.\main.c      **** }
+ 587              		.loc 1 206 0
+ 588 0042 07F10807 		add	r7, r7, #8
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 15
+
+
+ 589 0046 BD46     		mov	sp, r7
+ 590 0048 80BD     		pop	{r7, pc}
+ 591              		.cfi_endproc
+ 592              	.LFE34:
+ 593              		.size	radioStartReceive, .-radioStartReceive
+ 594 004a 00BF     		.section	.text.radioGetState,"ax",%progbits
+ 595              		.align	2
+ 596              		.global	radioGetState
+ 597              		.thumb
+ 598              		.thumb_func
+ 599              		.type	radioGetState, %function
+ 600              	radioGetState:
+ 601              	.LFB35:
+ 207:.\main.c      **** 
+ 208:.\main.c      **** uint8 radioGetState()
+ 209:.\main.c      **** {
+ 602              		.loc 1 209 0
+ 603              		.cfi_startproc
+ 604              		@ args = 0, pretend = 0, frame = 8
+ 605              		@ frame_needed = 1, uses_anonymous_args = 0
+ 606 0000 80B5     		push	{r7, lr}
+ 607              	.LCFI17:
+ 608              		.cfi_def_cfa_offset 8
+ 609 0002 82B0     		sub	sp, sp, #8
+ 610              	.LCFI18:
+ 611              		.cfi_def_cfa_offset 16
+ 612 0004 00AF     		add	r7, sp, #0
+ 613              		.cfi_offset 14, -4
+ 614              		.cfi_offset 7, -8
+ 615              	.LCFI19:
+ 616              		.cfi_def_cfa_register 7
+ 210:.\main.c      ****     uint8 Status = 0;
+ 617              		.loc 1 210 0
+ 618 0006 4FF00003 		mov	r3, #0
+ 619 000a FB71     		strb	r3, [r7, #7]
+ 211:.\main.c      ****    
+ 212:.\main.c      **** 	/* This register needs to be debounced. */
+ 213:.\main.c      ****      Status  = radioRead(RX_IRQ_STATUS_ADR);
+ 620              		.loc 1 213 0
+ 621 000c 4FF00700 		mov	r0, #7
+ 622 0010 FFF7FEFF 		bl	radioRead
+ 623 0014 0346     		mov	r3, r0
+ 624 0016 FB71     		strb	r3, [r7, #7]
+ 214:.\main.c      ****      Status |= radioRead(RX_IRQ_STATUS_ADR);
+ 625              		.loc 1 214 0
+ 626 0018 4FF00700 		mov	r0, #7
+ 627 001c FFF7FEFF 		bl	radioRead
+ 628 0020 0346     		mov	r3, r0
+ 629 0022 DAB2     		uxtb	r2, r3
+ 630 0024 FB79     		ldrb	r3, [r7, #7]
+ 631 0026 42EA0303 		orr	r3, r2, r3
+ 632 002a FB71     		strb	r3, [r7, #7]
+ 215:.\main.c      ****      if (Status & (RXBERR_IRQ | RXE_IRQ))
+ 633              		.loc 1 215 0
+ 634 002c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 635 002e 03F00503 		and	r3, r3, #5
+ 636 0032 002B     		cmp	r3, #0
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 16
+
+
+ 637 0034 03D0     		beq	.L26
+ 216:.\main.c      ****         {
+ 217:.\main.c      ****              /* If overflow, set the completion bit to force the end of packet. */
+ 218:.\main.c      ****             Status |= (RXC_IRQ | RXE_IRQ);
+ 638              		.loc 1 218 0
+ 639 0036 FB79     		ldrb	r3, [r7, #7]
+ 640 0038 43F00303 		orr	r3, r3, #3
+ 641 003c FB71     		strb	r3, [r7, #7]
+ 642              	.L26:
+ 219:.\main.c      ****         }
+ 220:.\main.c      ****     
+ 221:.\main.c      ****     return Status;
+ 643              		.loc 1 221 0
+ 644 003e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 222:.\main.c      **** }	
+ 645              		.loc 1 222 0
+ 646 0040 1846     		mov	r0, r3
+ 647 0042 07F10807 		add	r7, r7, #8
+ 648 0046 BD46     		mov	sp, r7
+ 649 0048 80BD     		pop	{r7, pc}
+ 650              		.cfi_endproc
+ 651              	.LFE35:
+ 652              		.size	radioGetState, .-radioGetState
+ 653 004a 00BF     		.section	.text.radioEndReceive,"ax",%progbits
+ 654              		.align	2
+ 655              		.global	radioEndReceive
+ 656              		.thumb
+ 657              		.thumb_func
+ 658              		.type	radioEndReceive, %function
+ 659              	radioEndReceive:
+ 660              	.LFB36:
+ 223:.\main.c      **** 
+ 224:.\main.c      **** uint8 radioEndReceive(uint8 RadioState)
+ 225:.\main.c      **** {
+ 661              		.loc 1 225 0
+ 662              		.cfi_startproc
+ 663              		@ args = 0, pretend = 0, frame = 16
+ 664              		@ frame_needed = 1, uses_anonymous_args = 0
+ 665 0000 80B5     		push	{r7, lr}
+ 666              	.LCFI20:
+ 667              		.cfi_def_cfa_offset 8
+ 668 0002 84B0     		sub	sp, sp, #16
+ 669              	.LCFI21:
+ 670              		.cfi_def_cfa_offset 24
+ 671 0004 00AF     		add	r7, sp, #0
+ 672              		.cfi_offset 14, -4
+ 673              		.cfi_offset 7, -8
+ 674              	.LCFI22:
+ 675              		.cfi_def_cfa_register 7
+ 676 0006 0346     		mov	r3, r0
+ 677 0008 FB71     		strb	r3, [r7, #7]
+ 226:.\main.c      ****     uint8 Count;
+ 227:.\main.c      **** 	uint8 val=0x00;
+ 678              		.loc 1 227 0
+ 679 000a 4FF00003 		mov	r3, #0
+ 680 000e BB73     		strb	r3, [r7, #14]
+ 228:.\main.c      ****     Count = radioRead(RX_LENGTH_ADR);
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 17
+
+
+ 681              		.loc 1 228 0
+ 682 0010 4FF00A00 		mov	r0, #10
+ 683 0014 FFF7FEFF 		bl	radioRead
+ 684 0018 0346     		mov	r3, r0
+ 685 001a 7B73     		strb	r3, [r7, #13]
+ 229:.\main.c      **** 	LCD_Position(1,11);
+ 686              		.loc 1 229 0
+ 687 001c 4FF00100 		mov	r0, #1
+ 688 0020 4FF00B01 		mov	r1, #11
+ 689 0024 FFF7FEFF 		bl	LCD_Position
+ 230:.\main.c      **** 	LCD_PrintInt8(Count);
+ 690              		.loc 1 230 0
+ 691 0028 7B7B     		ldrb	r3, [r7, #13]	@ zero_extendqisi2
+ 692 002a 1846     		mov	r0, r3
+ 693 002c FFF7FEFF 		bl	LCD_PrintHexUint8
+ 231:.\main.c      ****     
+ 232:.\main.c      **** 	if (RadioState & RXE_IRQ)
+ 694              		.loc 1 232 0
+ 695 0030 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 696 0032 03F00103 		and	r3, r3, #1
+ 697 0036 DBB2     		uxtb	r3, r3
+ 698 0038 002B     		cmp	r3, #0
+ 699 003a 11D0     		beq	.L29
+ 700              	.LBB2:
+ 233:.\main.c      ****     {
+ 234:.\main.c      ****         uint8 index;
+ 235:.\main.c      **** 
+ 236:.\main.c      ****         /* burp the buffer */
+ 237:.\main.c      ****         for (index = 15; index; --index)
+ 701              		.loc 1 237 0
+ 702 003c 4FF00F03 		mov	r3, #15
+ 703 0040 FB73     		strb	r3, [r7, #15]
+ 704 0042 07E0     		b	.L30
+ 705              	.L31:
+ 238:.\main.c      ****         {
+ 239:.\main.c      ****             radioRead(RX_BUFFER_ADR);
+ 706              		.loc 1 239 0
+ 707 0044 4FF02100 		mov	r0, #33
+ 708 0048 FFF7FEFF 		bl	radioRead
+ 709              		.loc 1 237 0
+ 710 004c FB7B     		ldrb	r3, [r7, #15]
+ 711 004e 03F1FF33 		add	r3, r3, #-1
+ 712 0052 FB73     		strb	r3, [r7, #15]
+ 713              	.L30:
+ 714 0054 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 715 0056 002B     		cmp	r3, #0
+ 716 0058 F4D1     		bne	.L31
+ 240:.\main.c      ****         }
+ 241:.\main.c      ****         /* Packet was bad. */
+ 242:.\main.c      ****         Count = 0;
+ 717              		.loc 1 242 0
+ 718 005a 4FF00003 		mov	r3, #0
+ 719 005e 7B73     		strb	r3, [r7, #13]
+ 720              	.L29:
+ 721              	.LBE2:
+ 243:.\main.c      ****     }
+ 244:.\main.c      ****     /* Abort by writing the FRC_END_STATE bit in the XACT_CFG register. */
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 18
+
+
+ 245:.\main.c      ****    radioWrite(XACT_CFG_ADR, radioRead(XACT_CFG_ADR) | FRC_END_STATE);
+ 722              		.loc 1 245 0
+ 723 0060 4FF00F00 		mov	r0, #15
+ 724 0064 FFF7FEFF 		bl	radioRead
+ 725 0068 0346     		mov	r3, r0
+ 726 006a 43F02003 		orr	r3, r3, #32
+ 727 006e 9BB2     		uxth	r3, r3
+ 728 0070 4FF00F00 		mov	r0, #15
+ 729 0074 1946     		mov	r1, r3
+ 730 0076 FFF7FEFF 		bl	radioWrite
+ 731              	.L32:
+ 246:.\main.c      ****     /*
+ 247:.\main.c      ****      * Wait for the FRC_END_STATE bit in the XACT_CFG register to clear
+ 248:.\main.c      ****      * indicating the force has completed.
+ 249:.\main.c      ****      */
+ 250:.\main.c      **** 
+ 251:.\main.c      ****     while(radioRead( XACT_CFG_ADR) &  FRC_END_STATE) {};
+ 732              		.loc 1 251 0
+ 733 007a 4FF00F00 		mov	r0, #15
+ 734 007e FFF7FEFF 		bl	radioRead
+ 735 0082 0346     		mov	r3, r0
+ 736 0084 03F02003 		and	r3, r3, #32
+ 737 0088 002B     		cmp	r3, #0
+ 738 008a F6D1     		bne	.L32
+ 252:.\main.c      **** 	
+ 253:.\main.c      **** 	val=radioRead(RX_STATUS_ADR);
+ 739              		.loc 1 253 0
+ 740 008c 4FF00800 		mov	r0, #8
+ 741 0090 FFF7FEFF 		bl	radioRead
+ 742 0094 0346     		mov	r3, r0
+ 743 0096 BB73     		strb	r3, [r7, #14]
+ 254:.\main.c      **** 	LCD_Position(1,8);
+ 744              		.loc 1 254 0
+ 745 0098 4FF00100 		mov	r0, #1
+ 746 009c 4FF00801 		mov	r1, #8
+ 747 00a0 FFF7FEFF 		bl	LCD_Position
+ 255:.\main.c      **** 	LCD_PrintInt8(val);
+ 748              		.loc 1 255 0
+ 749 00a4 BB7B     		ldrb	r3, [r7, #14]	@ zero_extendqisi2
+ 750 00a6 1846     		mov	r0, r3
+ 751 00a8 FFF7FEFF 		bl	LCD_PrintHexUint8
+ 256:.\main.c      **** 	
+ 257:.\main.c      **** 	
+ 258:.\main.c      **** 	
+ 259:.\main.c      ****     return Count;
+ 752              		.loc 1 259 0
+ 753 00ac 7B7B     		ldrb	r3, [r7, #13]	@ zero_extendqisi2
+ 260:.\main.c      **** }
+ 754              		.loc 1 260 0
+ 755 00ae 1846     		mov	r0, r3
+ 756 00b0 07F11007 		add	r7, r7, #16
+ 757 00b4 BD46     		mov	sp, r7
+ 758 00b6 80BD     		pop	{r7, pc}
+ 759              		.cfi_endproc
+ 760              	.LFE36:
+ 761              		.size	radioEndReceive, .-radioEndReceive
+ 762              		.text
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 19
+
+
+ 763              	.Letext0:
+ 764              		.section	.debug_loc,"",%progbits
+ 765              	.Ldebug_loc0:
+ 766              	.LLST0:
+ 767 0000 00000000 		.4byte	.LFB29
+ 768 0004 02000000 		.4byte	.LCFI0
+ 769 0008 0100     		.2byte	0x1
+ 770 000a 5D       		.byte	0x5d
+ 771 000b 02000000 		.4byte	.LCFI0
+ 772 000f 04000000 		.4byte	.LCFI1
+ 773 0013 0200     		.2byte	0x2
+ 774 0015 7D       		.byte	0x7d
+ 775 0016 08       		.sleb128 8
+ 776 0017 04000000 		.4byte	.LCFI1
+ 777 001b 06000000 		.4byte	.LCFI2
+ 778 001f 0200     		.2byte	0x2
+ 779 0021 7D       		.byte	0x7d
+ 780 0022 10       		.sleb128 16
+ 781 0023 06000000 		.4byte	.LCFI2
+ 782 0027 36010000 		.4byte	.LFE29
+ 783 002b 0200     		.2byte	0x2
+ 784 002d 77       		.byte	0x77
+ 785 002e 10       		.sleb128 16
+ 786 002f 00000000 		.4byte	0x0
+ 787 0033 00000000 		.4byte	0x0
+ 788              	.LLST1:
+ 789 0037 00000000 		.4byte	.LFB30
+ 790 003b 02000000 		.4byte	.LCFI3
+ 791 003f 0100     		.2byte	0x1
+ 792 0041 5D       		.byte	0x5d
+ 793 0042 02000000 		.4byte	.LCFI3
+ 794 0046 04000000 		.4byte	.LCFI4
+ 795 004a 0200     		.2byte	0x2
+ 796 004c 7D       		.byte	0x7d
+ 797 004d 08       		.sleb128 8
+ 798 004e 04000000 		.4byte	.LCFI4
+ 799 0052 06000000 		.4byte	.LCFI5
+ 800 0056 0200     		.2byte	0x2
+ 801 0058 7D       		.byte	0x7d
+ 802 0059 10       		.sleb128 16
+ 803 005a 06000000 		.4byte	.LCFI5
+ 804 005e 42000000 		.4byte	.LFE30
+ 805 0062 0200     		.2byte	0x2
+ 806 0064 77       		.byte	0x77
+ 807 0065 10       		.sleb128 16
+ 808 0066 00000000 		.4byte	0x0
+ 809 006a 00000000 		.4byte	0x0
+ 810              	.LLST2:
+ 811 006e 00000000 		.4byte	.LFB31
+ 812 0072 02000000 		.4byte	.LCFI6
+ 813 0076 0100     		.2byte	0x1
+ 814 0078 5D       		.byte	0x5d
+ 815 0079 02000000 		.4byte	.LCFI6
+ 816 007d 04000000 		.4byte	.LCFI7
+ 817 0081 0200     		.2byte	0x2
+ 818 0083 7D       		.byte	0x7d
+ 819 0084 08       		.sleb128 8
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 20
+
+
+ 820 0085 04000000 		.4byte	.LCFI7
+ 821 0089 06000000 		.4byte	.LCFI8
+ 822 008d 0200     		.2byte	0x2
+ 823 008f 7D       		.byte	0x7d
+ 824 0090 18       		.sleb128 24
+ 825 0091 06000000 		.4byte	.LCFI8
+ 826 0095 CE000000 		.4byte	.LFE31
+ 827 0099 0200     		.2byte	0x2
+ 828 009b 77       		.byte	0x77
+ 829 009c 18       		.sleb128 24
+ 830 009d 00000000 		.4byte	0x0
+ 831 00a1 00000000 		.4byte	0x0
+ 832              	.LLST3:
+ 833 00a5 00000000 		.4byte	.LFB32
+ 834 00a9 02000000 		.4byte	.LCFI9
+ 835 00ad 0100     		.2byte	0x1
+ 836 00af 5D       		.byte	0x5d
+ 837 00b0 02000000 		.4byte	.LCFI9
+ 838 00b4 04000000 		.4byte	.LCFI10
+ 839 00b8 0200     		.2byte	0x2
+ 840 00ba 7D       		.byte	0x7d
+ 841 00bb 08       		.sleb128 8
+ 842 00bc 04000000 		.4byte	.LCFI10
+ 843 00c0 06000000 		.4byte	.LCFI11
+ 844 00c4 0200     		.2byte	0x2
+ 845 00c6 7D       		.byte	0x7d
+ 846 00c7 18       		.sleb128 24
+ 847 00c8 06000000 		.4byte	.LCFI11
+ 848 00cc 8A000000 		.4byte	.LFE32
+ 849 00d0 0200     		.2byte	0x2
+ 850 00d2 77       		.byte	0x77
+ 851 00d3 18       		.sleb128 24
+ 852 00d4 00000000 		.4byte	0x0
+ 853 00d8 00000000 		.4byte	0x0
+ 854              	.LLST4:
+ 855 00dc 00000000 		.4byte	.LFB33
+ 856 00e0 02000000 		.4byte	.LCFI12
+ 857 00e4 0100     		.2byte	0x1
+ 858 00e6 5D       		.byte	0x5d
+ 859 00e7 02000000 		.4byte	.LCFI12
+ 860 00eb 04000000 		.4byte	.LCFI13
+ 861 00ef 0200     		.2byte	0x2
+ 862 00f1 7D       		.byte	0x7d
+ 863 00f2 08       		.sleb128 8
+ 864 00f3 04000000 		.4byte	.LCFI13
+ 865 00f7 96000000 		.4byte	.LFE33
+ 866 00fb 0200     		.2byte	0x2
+ 867 00fd 77       		.byte	0x77
+ 868 00fe 08       		.sleb128 8
+ 869 00ff 00000000 		.4byte	0x0
+ 870 0103 00000000 		.4byte	0x0
+ 871              	.LLST5:
+ 872 0107 00000000 		.4byte	.LFB34
+ 873 010b 02000000 		.4byte	.LCFI14
+ 874 010f 0100     		.2byte	0x1
+ 875 0111 5D       		.byte	0x5d
+ 876 0112 02000000 		.4byte	.LCFI14
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 21
+
+
+ 877 0116 04000000 		.4byte	.LCFI15
+ 878 011a 0200     		.2byte	0x2
+ 879 011c 7D       		.byte	0x7d
+ 880 011d 08       		.sleb128 8
+ 881 011e 04000000 		.4byte	.LCFI15
+ 882 0122 06000000 		.4byte	.LCFI16
+ 883 0126 0200     		.2byte	0x2
+ 884 0128 7D       		.byte	0x7d
+ 885 0129 10       		.sleb128 16
+ 886 012a 06000000 		.4byte	.LCFI16
+ 887 012e 4A000000 		.4byte	.LFE34
+ 888 0132 0200     		.2byte	0x2
+ 889 0134 77       		.byte	0x77
+ 890 0135 10       		.sleb128 16
+ 891 0136 00000000 		.4byte	0x0
+ 892 013a 00000000 		.4byte	0x0
+ 893              	.LLST6:
+ 894 013e 00000000 		.4byte	.LFB35
+ 895 0142 02000000 		.4byte	.LCFI17
+ 896 0146 0100     		.2byte	0x1
+ 897 0148 5D       		.byte	0x5d
+ 898 0149 02000000 		.4byte	.LCFI17
+ 899 014d 04000000 		.4byte	.LCFI18
+ 900 0151 0200     		.2byte	0x2
+ 901 0153 7D       		.byte	0x7d
+ 902 0154 08       		.sleb128 8
+ 903 0155 04000000 		.4byte	.LCFI18
+ 904 0159 06000000 		.4byte	.LCFI19
+ 905 015d 0200     		.2byte	0x2
+ 906 015f 7D       		.byte	0x7d
+ 907 0160 10       		.sleb128 16
+ 908 0161 06000000 		.4byte	.LCFI19
+ 909 0165 4A000000 		.4byte	.LFE35
+ 910 0169 0200     		.2byte	0x2
+ 911 016b 77       		.byte	0x77
+ 912 016c 10       		.sleb128 16
+ 913 016d 00000000 		.4byte	0x0
+ 914 0171 00000000 		.4byte	0x0
+ 915              	.LLST7:
+ 916 0175 00000000 		.4byte	.LFB36
+ 917 0179 02000000 		.4byte	.LCFI20
+ 918 017d 0100     		.2byte	0x1
+ 919 017f 5D       		.byte	0x5d
+ 920 0180 02000000 		.4byte	.LCFI20
+ 921 0184 04000000 		.4byte	.LCFI21
+ 922 0188 0200     		.2byte	0x2
+ 923 018a 7D       		.byte	0x7d
+ 924 018b 08       		.sleb128 8
+ 925 018c 04000000 		.4byte	.LCFI21
+ 926 0190 06000000 		.4byte	.LCFI22
+ 927 0194 0200     		.2byte	0x2
+ 928 0196 7D       		.byte	0x7d
+ 929 0197 18       		.sleb128 24
+ 930 0198 06000000 		.4byte	.LCFI22
+ 931 019c B8000000 		.4byte	.LFE36
+ 932 01a0 0200     		.2byte	0x2
+ 933 01a2 77       		.byte	0x77
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 22
+
+
+ 934 01a3 18       		.sleb128 24
+ 935 01a4 00000000 		.4byte	0x0
+ 936 01a8 00000000 		.4byte	0x0
+ 937              		.file 2 "./Generated_Source/PSoC5/cytypes.h"
+ 938              		.file 3 "./Generated_Source/PSoC5/core_cm3.h"
+ 939              		.section	.debug_info
+ 940 0000 68020000 		.4byte	0x268
+ 941 0004 0200     		.2byte	0x2
+ 942 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 943 000a 04       		.byte	0x4
+ 944 000b 01       		.uleb128 0x1
+ 945 000c 12010000 		.4byte	.LASF25
+ 946 0010 01       		.byte	0x1
+ 947 0011 BC000000 		.4byte	.LASF26
+ 948 0015 90000000 		.4byte	.LASF27
+ 949 0019 00000000 		.4byte	0x0
+ 950 001d 00000000 		.4byte	0x0
+ 951 0021 00000000 		.4byte	.Ldebug_ranges0+0x0
+ 952 0025 00000000 		.4byte	.Ldebug_line0
+ 953 0029 02       		.uleb128 0x2
+ 954 002a 01       		.byte	0x1
+ 955 002b 06       		.byte	0x6
+ 956 002c 54010000 		.4byte	.LASF0
+ 957 0030 02       		.uleb128 0x2
+ 958 0031 01       		.byte	0x1
+ 959 0032 08       		.byte	0x8
+ 960 0033 53000000 		.4byte	.LASF1
+ 961 0037 02       		.uleb128 0x2
+ 962 0038 02       		.byte	0x2
+ 963 0039 05       		.byte	0x5
+ 964 003a 29010000 		.4byte	.LASF2
+ 965 003e 02       		.uleb128 0x2
+ 966 003f 02       		.byte	0x2
+ 967 0040 07       		.byte	0x7
+ 968 0041 2D000000 		.4byte	.LASF3
+ 969 0045 02       		.uleb128 0x2
+ 970 0046 04       		.byte	0x4
+ 971 0047 05       		.byte	0x5
+ 972 0048 39010000 		.4byte	.LASF4
+ 973 004c 02       		.uleb128 0x2
+ 974 004d 04       		.byte	0x4
+ 975 004e 07       		.byte	0x7
+ 976 004f 61000000 		.4byte	.LASF5
+ 977 0053 02       		.uleb128 0x2
+ 978 0054 08       		.byte	0x8
+ 979 0055 05       		.byte	0x5
+ 980 0056 00000000 		.4byte	.LASF6
+ 981 005a 02       		.uleb128 0x2
+ 982 005b 08       		.byte	0x8
+ 983 005c 07       		.byte	0x7
+ 984 005d E6000000 		.4byte	.LASF7
+ 985 0061 03       		.uleb128 0x3
+ 986 0062 04       		.byte	0x4
+ 987 0063 05       		.byte	0x5
+ 988 0064 696E7400 		.ascii	"int\000"
+ 989 0068 02       		.uleb128 0x2
+ 990 0069 04       		.byte	0x4
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 23
+
+
+ 991 006a 07       		.byte	0x7
+ 992 006b D1000000 		.4byte	.LASF8
+ 993 006f 02       		.uleb128 0x2
+ 994 0070 01       		.byte	0x1
+ 995 0071 08       		.byte	0x8
+ 996 0072 1E010000 		.4byte	.LASF9
+ 997 0076 04       		.uleb128 0x4
+ 998 0077 33010000 		.4byte	.LASF10
+ 999 007b 02       		.byte	0x2
+ 1000 007c 2A       		.byte	0x2a
+ 1001 007d 30000000 		.4byte	0x30
+ 1002 0081 04       		.uleb128 0x4
+ 1003 0082 C5000000 		.4byte	.LASF11
+ 1004 0086 02       		.byte	0x2
+ 1005 0087 2B       		.byte	0x2b
+ 1006 0088 3E000000 		.4byte	0x3e
+ 1007 008c 05       		.uleb128 0x5
+ 1008 008d 04       		.byte	0x4
+ 1009 008e 07       		.byte	0x7
+ 1010 008f 06       		.uleb128 0x6
+ 1011 0090 01       		.byte	0x1
+ 1012 0091 CC000000 		.4byte	.LASF16
+ 1013 0095 01       		.byte	0x1
+ 1014 0096 17       		.byte	0x17
+ 1015 0097 00000000 		.4byte	.LFB29
+ 1016 009b 36010000 		.4byte	.LFE29
+ 1017 009f 00000000 		.4byte	.LLST0
+ 1018 00a3 D0000000 		.4byte	0xd0
+ 1019 00a7 07       		.uleb128 0x7
+ 1020 00a8 DE000000 		.4byte	.LASF12
+ 1021 00ac 01       		.byte	0x1
+ 1022 00ad 1A       		.byte	0x1a
+ 1023 00ae 81000000 		.4byte	0x81
+ 1024 00b2 02       		.byte	0x2
+ 1025 00b3 91       		.byte	0x91
+ 1026 00b4 72       		.sleb128 -14
+ 1027 00b5 08       		.uleb128 0x8
+ 1028 00b6 76616C00 		.ascii	"val\000"
+ 1029 00ba 01       		.byte	0x1
+ 1030 00bb 1B       		.byte	0x1b
+ 1031 00bc 81000000 		.4byte	0x81
+ 1032 00c0 02       		.byte	0x2
+ 1033 00c1 91       		.byte	0x91
+ 1034 00c2 74       		.sleb128 -12
+ 1035 00c3 08       		.uleb128 0x8
+ 1036 00c4 6900     		.ascii	"i\000"
+ 1037 00c6 01       		.byte	0x1
+ 1038 00c7 1C       		.byte	0x1c
+ 1039 00c8 81000000 		.4byte	0x81
+ 1040 00cc 02       		.byte	0x2
+ 1041 00cd 91       		.byte	0x91
+ 1042 00ce 76       		.sleb128 -10
+ 1043 00cf 00       		.byte	0x0
+ 1044 00d0 09       		.uleb128 0x9
+ 1045 00d1 01       		.byte	0x1
+ 1046 00d2 85000000 		.4byte	.LASF18
+ 1047 00d6 01       		.byte	0x1
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 24
+
+
+ 1048 00d7 5E       		.byte	0x5e
+ 1049 00d8 01       		.byte	0x1
+ 1050 00d9 00000000 		.4byte	.LFB30
+ 1051 00dd 42000000 		.4byte	.LFE30
+ 1052 00e1 37000000 		.4byte	.LLST1
+ 1053 00e5 06010000 		.4byte	0x106
+ 1054 00e9 0A       		.uleb128 0xa
+ 1055 00ea 73000000 		.4byte	.LASF13
+ 1056 00ee 01       		.byte	0x1
+ 1057 00ef 5E       		.byte	0x5e
+ 1058 00f0 81000000 		.4byte	0x81
+ 1059 00f4 02       		.byte	0x2
+ 1060 00f5 91       		.byte	0x91
+ 1061 00f6 76       		.sleb128 -10
+ 1062 00f7 0B       		.uleb128 0xb
+ 1063 00f8 64617400 		.ascii	"dat\000"
+ 1064 00fc 01       		.byte	0x1
+ 1065 00fd 5E       		.byte	0x5e
+ 1066 00fe 81000000 		.4byte	0x81
+ 1067 0102 02       		.byte	0x2
+ 1068 0103 91       		.byte	0x91
+ 1069 0104 74       		.sleb128 -12
+ 1070 0105 00       		.byte	0x0
+ 1071 0106 0C       		.uleb128 0xc
+ 1072 0107 01       		.byte	0x1
+ 1073 0108 40000000 		.4byte	.LASF14
+ 1074 010c 01       		.byte	0x1
+ 1075 010d 67       		.byte	0x67
+ 1076 010e 01       		.byte	0x1
+ 1077 010f 81000000 		.4byte	0x81
+ 1078 0113 00000000 		.4byte	.LFB31
+ 1079 0117 CE000000 		.4byte	.LFE31
+ 1080 011b 6E000000 		.4byte	.LLST2
+ 1081 011f 4C010000 		.4byte	0x14c
+ 1082 0123 0A       		.uleb128 0xa
+ 1083 0124 73000000 		.4byte	.LASF13
+ 1084 0128 01       		.byte	0x1
+ 1085 0129 67       		.byte	0x67
+ 1086 012a 81000000 		.4byte	0x81
+ 1087 012e 02       		.byte	0x2
+ 1088 012f 91       		.byte	0x91
+ 1089 0130 6E       		.sleb128 -18
+ 1090 0131 08       		.uleb128 0x8
+ 1091 0132 76616C00 		.ascii	"val\000"
+ 1092 0136 01       		.byte	0x1
+ 1093 0137 68       		.byte	0x68
+ 1094 0138 81000000 		.4byte	0x81
+ 1095 013c 02       		.byte	0x2
+ 1096 013d 91       		.byte	0x91
+ 1097 013e 74       		.sleb128 -12
+ 1098 013f 08       		.uleb128 0x8
+ 1099 0140 6900     		.ascii	"i\000"
+ 1100 0142 01       		.byte	0x1
+ 1101 0143 69       		.byte	0x69
+ 1102 0144 81000000 		.4byte	0x81
+ 1103 0148 02       		.byte	0x2
+ 1104 0149 91       		.byte	0x91
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 25
+
+
+ 1105 014a 76       		.sleb128 -10
+ 1106 014b 00       		.byte	0x0
+ 1107 014c 0C       		.uleb128 0xc
+ 1108 014d 01       		.byte	0x1
+ 1109 014e 1C000000 		.4byte	.LASF15
+ 1110 0152 01       		.byte	0x1
+ 1111 0153 88       		.byte	0x88
+ 1112 0154 01       		.byte	0x1
+ 1113 0155 81000000 		.4byte	0x81
+ 1114 0159 00000000 		.4byte	.LFB32
+ 1115 015d 8A000000 		.4byte	.LFE32
+ 1116 0161 A5000000 		.4byte	.LLST3
+ 1117 0165 92010000 		.4byte	0x192
+ 1118 0169 0A       		.uleb128 0xa
+ 1119 016a 73000000 		.4byte	.LASF13
+ 1120 016e 01       		.byte	0x1
+ 1121 016f 88       		.byte	0x88
+ 1122 0170 81000000 		.4byte	0x81
+ 1123 0174 02       		.byte	0x2
+ 1124 0175 91       		.byte	0x91
+ 1125 0176 6E       		.sleb128 -18
+ 1126 0177 08       		.uleb128 0x8
+ 1127 0178 76616C00 		.ascii	"val\000"
+ 1128 017c 01       		.byte	0x1
+ 1129 017d 89       		.byte	0x89
+ 1130 017e 81000000 		.4byte	0x81
+ 1131 0182 02       		.byte	0x2
+ 1132 0183 91       		.byte	0x91
+ 1133 0184 74       		.sleb128 -12
+ 1134 0185 08       		.uleb128 0x8
+ 1135 0186 6900     		.ascii	"i\000"
+ 1136 0188 01       		.byte	0x1
+ 1137 0189 8A       		.byte	0x8a
+ 1138 018a 81000000 		.4byte	0x81
+ 1139 018e 02       		.byte	0x2
+ 1140 018f 91       		.byte	0x91
+ 1141 0190 76       		.sleb128 -10
+ 1142 0191 00       		.byte	0x0
+ 1143 0192 0D       		.uleb128 0xd
+ 1144 0193 01       		.byte	0x1
+ 1145 0194 FD000000 		.4byte	.LASF28
+ 1146 0198 01       		.byte	0x1
+ 1147 0199 9E       		.byte	0x9e
+ 1148 019a 00000000 		.4byte	.LFB33
+ 1149 019e 96000000 		.4byte	.LFE33
+ 1150 01a2 DC000000 		.4byte	.LLST4
+ 1151 01a6 06       		.uleb128 0x6
+ 1152 01a7 01       		.byte	0x1
+ 1153 01a8 42010000 		.4byte	.LASF17
+ 1154 01ac 01       		.byte	0x1
+ 1155 01ad C6       		.byte	0xc6
+ 1156 01ae 00000000 		.4byte	.LFB34
+ 1157 01b2 4A000000 		.4byte	.LFE34
+ 1158 01b6 07010000 		.4byte	.LLST5
+ 1159 01ba CD010000 		.4byte	0x1cd
+ 1160 01be 08       		.uleb128 0x8
+ 1161 01bf 76616C00 		.ascii	"val\000"
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 26
+
+
+ 1162 01c3 01       		.byte	0x1
+ 1163 01c4 C7       		.byte	0xc7
+ 1164 01c5 81000000 		.4byte	0x81
+ 1165 01c9 02       		.byte	0x2
+ 1166 01ca 91       		.byte	0x91
+ 1167 01cb 76       		.sleb128 -10
+ 1168 01cc 00       		.byte	0x0
+ 1169 01cd 0E       		.uleb128 0xe
+ 1170 01ce 01       		.byte	0x1
+ 1171 01cf 0E000000 		.4byte	.LASF19
+ 1172 01d3 01       		.byte	0x1
+ 1173 01d4 D0       		.byte	0xd0
+ 1174 01d5 76000000 		.4byte	0x76
+ 1175 01d9 00000000 		.4byte	.LFB35
+ 1176 01dd 4A000000 		.4byte	.LFE35
+ 1177 01e1 3E010000 		.4byte	.LLST6
+ 1178 01e5 F8010000 		.4byte	0x1f8
+ 1179 01e9 07       		.uleb128 0x7
+ 1180 01ea 26000000 		.4byte	.LASF20
+ 1181 01ee 01       		.byte	0x1
+ 1182 01ef D2       		.byte	0xd2
+ 1183 01f0 76000000 		.4byte	0x76
+ 1184 01f4 02       		.byte	0x2
+ 1185 01f5 91       		.byte	0x91
+ 1186 01f6 77       		.sleb128 -9
+ 1187 01f7 00       		.byte	0x0
+ 1188 01f8 0C       		.uleb128 0xc
+ 1189 01f9 01       		.byte	0x1
+ 1190 01fa 60010000 		.4byte	.LASF21
+ 1191 01fe 01       		.byte	0x1
+ 1192 01ff E0       		.byte	0xe0
+ 1193 0200 01       		.byte	0x1
+ 1194 0201 76000000 		.4byte	0x76
+ 1195 0205 00000000 		.4byte	.LFB36
+ 1196 0209 B8000000 		.4byte	.LFE36
+ 1197 020d 75010000 		.4byte	.LLST7
+ 1198 0211 58020000 		.4byte	0x258
+ 1199 0215 0A       		.uleb128 0xa
+ 1200 0216 07010000 		.4byte	.LASF22
+ 1201 021a 01       		.byte	0x1
+ 1202 021b E0       		.byte	0xe0
+ 1203 021c 76000000 		.4byte	0x76
+ 1204 0220 02       		.byte	0x2
+ 1205 0221 91       		.byte	0x91
+ 1206 0222 6F       		.sleb128 -17
+ 1207 0223 07       		.uleb128 0x7
+ 1208 0224 4D000000 		.4byte	.LASF23
+ 1209 0228 01       		.byte	0x1
+ 1210 0229 E2       		.byte	0xe2
+ 1211 022a 76000000 		.4byte	0x76
+ 1212 022e 02       		.byte	0x2
+ 1213 022f 91       		.byte	0x91
+ 1214 0230 75       		.sleb128 -11
+ 1215 0231 08       		.uleb128 0x8
+ 1216 0232 76616C00 		.ascii	"val\000"
+ 1217 0236 01       		.byte	0x1
+ 1218 0237 E3       		.byte	0xe3
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 27
+
+
+ 1219 0238 76000000 		.4byte	0x76
+ 1220 023c 02       		.byte	0x2
+ 1221 023d 91       		.byte	0x91
+ 1222 023e 76       		.sleb128 -10
+ 1223 023f 0F       		.uleb128 0xf
+ 1224 0240 3C000000 		.4byte	.LBB2
+ 1225 0244 60000000 		.4byte	.LBE2
+ 1226 0248 07       		.uleb128 0x7
+ 1227 0249 23010000 		.4byte	.LASF24
+ 1228 024d 01       		.byte	0x1
+ 1229 024e EA       		.byte	0xea
+ 1230 024f 76000000 		.4byte	0x76
+ 1231 0253 02       		.byte	0x2
+ 1232 0254 91       		.byte	0x91
+ 1233 0255 77       		.sleb128 -9
+ 1234 0256 00       		.byte	0x0
+ 1235 0257 00       		.byte	0x0
+ 1236 0258 10       		.uleb128 0x10
+ 1237 0259 78000000 		.4byte	.LASF29
+ 1238 025d 03       		.byte	0x3
+ 1239 025e CE06     		.2byte	0x6ce
+ 1240 0260 66020000 		.4byte	0x266
+ 1241 0264 01       		.byte	0x1
+ 1242 0265 01       		.byte	0x1
+ 1243 0266 11       		.uleb128 0x11
+ 1244 0267 61000000 		.4byte	0x61
+ 1245 026b 00       		.byte	0x0
+ 1246              		.section	.debug_abbrev
+ 1247 0000 01       		.uleb128 0x1
+ 1248 0001 11       		.uleb128 0x11
+ 1249 0002 01       		.byte	0x1
+ 1250 0003 25       		.uleb128 0x25
+ 1251 0004 0E       		.uleb128 0xe
+ 1252 0005 13       		.uleb128 0x13
+ 1253 0006 0B       		.uleb128 0xb
+ 1254 0007 03       		.uleb128 0x3
+ 1255 0008 0E       		.uleb128 0xe
+ 1256 0009 1B       		.uleb128 0x1b
+ 1257 000a 0E       		.uleb128 0xe
+ 1258 000b 11       		.uleb128 0x11
+ 1259 000c 01       		.uleb128 0x1
+ 1260 000d 52       		.uleb128 0x52
+ 1261 000e 01       		.uleb128 0x1
+ 1262 000f 55       		.uleb128 0x55
+ 1263 0010 06       		.uleb128 0x6
+ 1264 0011 10       		.uleb128 0x10
+ 1265 0012 06       		.uleb128 0x6
+ 1266 0013 00       		.byte	0x0
+ 1267 0014 00       		.byte	0x0
+ 1268 0015 02       		.uleb128 0x2
+ 1269 0016 24       		.uleb128 0x24
+ 1270 0017 00       		.byte	0x0
+ 1271 0018 0B       		.uleb128 0xb
+ 1272 0019 0B       		.uleb128 0xb
+ 1273 001a 3E       		.uleb128 0x3e
+ 1274 001b 0B       		.uleb128 0xb
+ 1275 001c 03       		.uleb128 0x3
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 28
+
+
+ 1276 001d 0E       		.uleb128 0xe
+ 1277 001e 00       		.byte	0x0
+ 1278 001f 00       		.byte	0x0
+ 1279 0020 03       		.uleb128 0x3
+ 1280 0021 24       		.uleb128 0x24
+ 1281 0022 00       		.byte	0x0
+ 1282 0023 0B       		.uleb128 0xb
+ 1283 0024 0B       		.uleb128 0xb
+ 1284 0025 3E       		.uleb128 0x3e
+ 1285 0026 0B       		.uleb128 0xb
+ 1286 0027 03       		.uleb128 0x3
+ 1287 0028 08       		.uleb128 0x8
+ 1288 0029 00       		.byte	0x0
+ 1289 002a 00       		.byte	0x0
+ 1290 002b 04       		.uleb128 0x4
+ 1291 002c 16       		.uleb128 0x16
+ 1292 002d 00       		.byte	0x0
+ 1293 002e 03       		.uleb128 0x3
+ 1294 002f 0E       		.uleb128 0xe
+ 1295 0030 3A       		.uleb128 0x3a
+ 1296 0031 0B       		.uleb128 0xb
+ 1297 0032 3B       		.uleb128 0x3b
+ 1298 0033 0B       		.uleb128 0xb
+ 1299 0034 49       		.uleb128 0x49
+ 1300 0035 13       		.uleb128 0x13
+ 1301 0036 00       		.byte	0x0
+ 1302 0037 00       		.byte	0x0
+ 1303 0038 05       		.uleb128 0x5
+ 1304 0039 24       		.uleb128 0x24
+ 1305 003a 00       		.byte	0x0
+ 1306 003b 0B       		.uleb128 0xb
+ 1307 003c 0B       		.uleb128 0xb
+ 1308 003d 3E       		.uleb128 0x3e
+ 1309 003e 0B       		.uleb128 0xb
+ 1310 003f 00       		.byte	0x0
+ 1311 0040 00       		.byte	0x0
+ 1312 0041 06       		.uleb128 0x6
+ 1313 0042 2E       		.uleb128 0x2e
+ 1314 0043 01       		.byte	0x1
+ 1315 0044 3F       		.uleb128 0x3f
+ 1316 0045 0C       		.uleb128 0xc
+ 1317 0046 03       		.uleb128 0x3
+ 1318 0047 0E       		.uleb128 0xe
+ 1319 0048 3A       		.uleb128 0x3a
+ 1320 0049 0B       		.uleb128 0xb
+ 1321 004a 3B       		.uleb128 0x3b
+ 1322 004b 0B       		.uleb128 0xb
+ 1323 004c 11       		.uleb128 0x11
+ 1324 004d 01       		.uleb128 0x1
+ 1325 004e 12       		.uleb128 0x12
+ 1326 004f 01       		.uleb128 0x1
+ 1327 0050 40       		.uleb128 0x40
+ 1328 0051 06       		.uleb128 0x6
+ 1329 0052 01       		.uleb128 0x1
+ 1330 0053 13       		.uleb128 0x13
+ 1331 0054 00       		.byte	0x0
+ 1332 0055 00       		.byte	0x0
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 29
+
+
+ 1333 0056 07       		.uleb128 0x7
+ 1334 0057 34       		.uleb128 0x34
+ 1335 0058 00       		.byte	0x0
+ 1336 0059 03       		.uleb128 0x3
+ 1337 005a 0E       		.uleb128 0xe
+ 1338 005b 3A       		.uleb128 0x3a
+ 1339 005c 0B       		.uleb128 0xb
+ 1340 005d 3B       		.uleb128 0x3b
+ 1341 005e 0B       		.uleb128 0xb
+ 1342 005f 49       		.uleb128 0x49
+ 1343 0060 13       		.uleb128 0x13
+ 1344 0061 02       		.uleb128 0x2
+ 1345 0062 0A       		.uleb128 0xa
+ 1346 0063 00       		.byte	0x0
+ 1347 0064 00       		.byte	0x0
+ 1348 0065 08       		.uleb128 0x8
+ 1349 0066 34       		.uleb128 0x34
+ 1350 0067 00       		.byte	0x0
+ 1351 0068 03       		.uleb128 0x3
+ 1352 0069 08       		.uleb128 0x8
+ 1353 006a 3A       		.uleb128 0x3a
+ 1354 006b 0B       		.uleb128 0xb
+ 1355 006c 3B       		.uleb128 0x3b
+ 1356 006d 0B       		.uleb128 0xb
+ 1357 006e 49       		.uleb128 0x49
+ 1358 006f 13       		.uleb128 0x13
+ 1359 0070 02       		.uleb128 0x2
+ 1360 0071 0A       		.uleb128 0xa
+ 1361 0072 00       		.byte	0x0
+ 1362 0073 00       		.byte	0x0
+ 1363 0074 09       		.uleb128 0x9
+ 1364 0075 2E       		.uleb128 0x2e
+ 1365 0076 01       		.byte	0x1
+ 1366 0077 3F       		.uleb128 0x3f
+ 1367 0078 0C       		.uleb128 0xc
+ 1368 0079 03       		.uleb128 0x3
+ 1369 007a 0E       		.uleb128 0xe
+ 1370 007b 3A       		.uleb128 0x3a
+ 1371 007c 0B       		.uleb128 0xb
+ 1372 007d 3B       		.uleb128 0x3b
+ 1373 007e 0B       		.uleb128 0xb
+ 1374 007f 27       		.uleb128 0x27
+ 1375 0080 0C       		.uleb128 0xc
+ 1376 0081 11       		.uleb128 0x11
+ 1377 0082 01       		.uleb128 0x1
+ 1378 0083 12       		.uleb128 0x12
+ 1379 0084 01       		.uleb128 0x1
+ 1380 0085 40       		.uleb128 0x40
+ 1381 0086 06       		.uleb128 0x6
+ 1382 0087 01       		.uleb128 0x1
+ 1383 0088 13       		.uleb128 0x13
+ 1384 0089 00       		.byte	0x0
+ 1385 008a 00       		.byte	0x0
+ 1386 008b 0A       		.uleb128 0xa
+ 1387 008c 05       		.uleb128 0x5
+ 1388 008d 00       		.byte	0x0
+ 1389 008e 03       		.uleb128 0x3
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 30
+
+
+ 1390 008f 0E       		.uleb128 0xe
+ 1391 0090 3A       		.uleb128 0x3a
+ 1392 0091 0B       		.uleb128 0xb
+ 1393 0092 3B       		.uleb128 0x3b
+ 1394 0093 0B       		.uleb128 0xb
+ 1395 0094 49       		.uleb128 0x49
+ 1396 0095 13       		.uleb128 0x13
+ 1397 0096 02       		.uleb128 0x2
+ 1398 0097 0A       		.uleb128 0xa
+ 1399 0098 00       		.byte	0x0
+ 1400 0099 00       		.byte	0x0
+ 1401 009a 0B       		.uleb128 0xb
+ 1402 009b 05       		.uleb128 0x5
+ 1403 009c 00       		.byte	0x0
+ 1404 009d 03       		.uleb128 0x3
+ 1405 009e 08       		.uleb128 0x8
+ 1406 009f 3A       		.uleb128 0x3a
+ 1407 00a0 0B       		.uleb128 0xb
+ 1408 00a1 3B       		.uleb128 0x3b
+ 1409 00a2 0B       		.uleb128 0xb
+ 1410 00a3 49       		.uleb128 0x49
+ 1411 00a4 13       		.uleb128 0x13
+ 1412 00a5 02       		.uleb128 0x2
+ 1413 00a6 0A       		.uleb128 0xa
+ 1414 00a7 00       		.byte	0x0
+ 1415 00a8 00       		.byte	0x0
+ 1416 00a9 0C       		.uleb128 0xc
+ 1417 00aa 2E       		.uleb128 0x2e
+ 1418 00ab 01       		.byte	0x1
+ 1419 00ac 3F       		.uleb128 0x3f
+ 1420 00ad 0C       		.uleb128 0xc
+ 1421 00ae 03       		.uleb128 0x3
+ 1422 00af 0E       		.uleb128 0xe
+ 1423 00b0 3A       		.uleb128 0x3a
+ 1424 00b1 0B       		.uleb128 0xb
+ 1425 00b2 3B       		.uleb128 0x3b
+ 1426 00b3 0B       		.uleb128 0xb
+ 1427 00b4 27       		.uleb128 0x27
+ 1428 00b5 0C       		.uleb128 0xc
+ 1429 00b6 49       		.uleb128 0x49
+ 1430 00b7 13       		.uleb128 0x13
+ 1431 00b8 11       		.uleb128 0x11
+ 1432 00b9 01       		.uleb128 0x1
+ 1433 00ba 12       		.uleb128 0x12
+ 1434 00bb 01       		.uleb128 0x1
+ 1435 00bc 40       		.uleb128 0x40
+ 1436 00bd 06       		.uleb128 0x6
+ 1437 00be 01       		.uleb128 0x1
+ 1438 00bf 13       		.uleb128 0x13
+ 1439 00c0 00       		.byte	0x0
+ 1440 00c1 00       		.byte	0x0
+ 1441 00c2 0D       		.uleb128 0xd
+ 1442 00c3 2E       		.uleb128 0x2e
+ 1443 00c4 00       		.byte	0x0
+ 1444 00c5 3F       		.uleb128 0x3f
+ 1445 00c6 0C       		.uleb128 0xc
+ 1446 00c7 03       		.uleb128 0x3
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 31
+
+
+ 1447 00c8 0E       		.uleb128 0xe
+ 1448 00c9 3A       		.uleb128 0x3a
+ 1449 00ca 0B       		.uleb128 0xb
+ 1450 00cb 3B       		.uleb128 0x3b
+ 1451 00cc 0B       		.uleb128 0xb
+ 1452 00cd 11       		.uleb128 0x11
+ 1453 00ce 01       		.uleb128 0x1
+ 1454 00cf 12       		.uleb128 0x12
+ 1455 00d0 01       		.uleb128 0x1
+ 1456 00d1 40       		.uleb128 0x40
+ 1457 00d2 06       		.uleb128 0x6
+ 1458 00d3 00       		.byte	0x0
+ 1459 00d4 00       		.byte	0x0
+ 1460 00d5 0E       		.uleb128 0xe
+ 1461 00d6 2E       		.uleb128 0x2e
+ 1462 00d7 01       		.byte	0x1
+ 1463 00d8 3F       		.uleb128 0x3f
+ 1464 00d9 0C       		.uleb128 0xc
+ 1465 00da 03       		.uleb128 0x3
+ 1466 00db 0E       		.uleb128 0xe
+ 1467 00dc 3A       		.uleb128 0x3a
+ 1468 00dd 0B       		.uleb128 0xb
+ 1469 00de 3B       		.uleb128 0x3b
+ 1470 00df 0B       		.uleb128 0xb
+ 1471 00e0 49       		.uleb128 0x49
+ 1472 00e1 13       		.uleb128 0x13
+ 1473 00e2 11       		.uleb128 0x11
+ 1474 00e3 01       		.uleb128 0x1
+ 1475 00e4 12       		.uleb128 0x12
+ 1476 00e5 01       		.uleb128 0x1
+ 1477 00e6 40       		.uleb128 0x40
+ 1478 00e7 06       		.uleb128 0x6
+ 1479 00e8 01       		.uleb128 0x1
+ 1480 00e9 13       		.uleb128 0x13
+ 1481 00ea 00       		.byte	0x0
+ 1482 00eb 00       		.byte	0x0
+ 1483 00ec 0F       		.uleb128 0xf
+ 1484 00ed 0B       		.uleb128 0xb
+ 1485 00ee 01       		.byte	0x1
+ 1486 00ef 11       		.uleb128 0x11
+ 1487 00f0 01       		.uleb128 0x1
+ 1488 00f1 12       		.uleb128 0x12
+ 1489 00f2 01       		.uleb128 0x1
+ 1490 00f3 00       		.byte	0x0
+ 1491 00f4 00       		.byte	0x0
+ 1492 00f5 10       		.uleb128 0x10
+ 1493 00f6 34       		.uleb128 0x34
+ 1494 00f7 00       		.byte	0x0
+ 1495 00f8 03       		.uleb128 0x3
+ 1496 00f9 0E       		.uleb128 0xe
+ 1497 00fa 3A       		.uleb128 0x3a
+ 1498 00fb 0B       		.uleb128 0xb
+ 1499 00fc 3B       		.uleb128 0x3b
+ 1500 00fd 05       		.uleb128 0x5
+ 1501 00fe 49       		.uleb128 0x49
+ 1502 00ff 13       		.uleb128 0x13
+ 1503 0100 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 32
+
+
+ 1504 0101 0C       		.uleb128 0xc
+ 1505 0102 3C       		.uleb128 0x3c
+ 1506 0103 0C       		.uleb128 0xc
+ 1507 0104 00       		.byte	0x0
+ 1508 0105 00       		.byte	0x0
+ 1509 0106 11       		.uleb128 0x11
+ 1510 0107 35       		.uleb128 0x35
+ 1511 0108 00       		.byte	0x0
+ 1512 0109 49       		.uleb128 0x49
+ 1513 010a 13       		.uleb128 0x13
+ 1514 010b 00       		.byte	0x0
+ 1515 010c 00       		.byte	0x0
+ 1516 010d 00       		.byte	0x0
+ 1517              		.section	.debug_pubnames,"",%progbits
+ 1518 0000 8F000000 		.4byte	0x8f
+ 1519 0004 0200     		.2byte	0x2
+ 1520 0006 00000000 		.4byte	.Ldebug_info0
+ 1521 000a 6C020000 		.4byte	0x26c
+ 1522 000e 8F000000 		.4byte	0x8f
+ 1523 0012 6D61696E 		.ascii	"main\000"
+ 1523      00
+ 1524 0017 D0000000 		.4byte	0xd0
+ 1525 001b 72616469 		.ascii	"radioWrite\000"
+ 1525      6F577269 
+ 1525      746500
+ 1526 0026 06010000 		.4byte	0x106
+ 1527 002a 72616469 		.ascii	"radioReadBuf\000"
+ 1527      6F526561 
+ 1527      64427566 
+ 1527      00
+ 1528 0037 4C010000 		.4byte	0x14c
+ 1529 003b 72616469 		.ascii	"radioRead\000"
+ 1529      6F526561 
+ 1529      6400
+ 1530 0045 92010000 		.4byte	0x192
+ 1531 0049 72616469 		.ascii	"radioInit\000"
+ 1531      6F496E69 
+ 1531      7400
+ 1532 0053 A6010000 		.4byte	0x1a6
+ 1533 0057 72616469 		.ascii	"radioStartReceive\000"
+ 1533      6F537461 
+ 1533      72745265 
+ 1533      63656976 
+ 1533      6500
+ 1534 0069 CD010000 		.4byte	0x1cd
+ 1535 006d 72616469 		.ascii	"radioGetState\000"
+ 1535      6F476574 
+ 1535      53746174 
+ 1535      6500
+ 1536 007b F8010000 		.4byte	0x1f8
+ 1537 007f 72616469 		.ascii	"radioEndReceive\000"
+ 1537      6F456E64 
+ 1537      52656365 
+ 1537      69766500 
+ 1538 008f 00000000 		.4byte	0x0
+ 1539              		.section	.debug_aranges,"",%progbits
+ 1540 0000 54000000 		.4byte	0x54
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 33
+
+
+ 1541 0004 0200     		.2byte	0x2
+ 1542 0006 00000000 		.4byte	.Ldebug_info0
+ 1543 000a 04       		.byte	0x4
+ 1544 000b 00       		.byte	0x0
+ 1545 000c 0000     		.2byte	0x0
+ 1546 000e 0000     		.2byte	0x0
+ 1547 0010 00000000 		.4byte	.LFB29
+ 1548 0014 36010000 		.4byte	.LFE29-.LFB29
+ 1549 0018 00000000 		.4byte	.LFB30
+ 1550 001c 42000000 		.4byte	.LFE30-.LFB30
+ 1551 0020 00000000 		.4byte	.LFB31
+ 1552 0024 CE000000 		.4byte	.LFE31-.LFB31
+ 1553 0028 00000000 		.4byte	.LFB32
+ 1554 002c 8A000000 		.4byte	.LFE32-.LFB32
+ 1555 0030 00000000 		.4byte	.LFB33
+ 1556 0034 96000000 		.4byte	.LFE33-.LFB33
+ 1557 0038 00000000 		.4byte	.LFB34
+ 1558 003c 4A000000 		.4byte	.LFE34-.LFB34
+ 1559 0040 00000000 		.4byte	.LFB35
+ 1560 0044 4A000000 		.4byte	.LFE35-.LFB35
+ 1561 0048 00000000 		.4byte	.LFB36
+ 1562 004c B8000000 		.4byte	.LFE36-.LFB36
+ 1563 0050 00000000 		.4byte	0x0
+ 1564 0054 00000000 		.4byte	0x0
+ 1565              		.section	.debug_ranges,"",%progbits
+ 1566              	.Ldebug_ranges0:
+ 1567 0000 00000000 		.4byte	.Ltext0
+ 1568 0004 00000000 		.4byte	.Letext0
+ 1569 0008 00000000 		.4byte	.LFB29
+ 1570 000c 36010000 		.4byte	.LFE29
+ 1571 0010 00000000 		.4byte	.LFB30
+ 1572 0014 42000000 		.4byte	.LFE30
+ 1573 0018 00000000 		.4byte	.LFB31
+ 1574 001c CE000000 		.4byte	.LFE31
+ 1575 0020 00000000 		.4byte	.LFB32
+ 1576 0024 8A000000 		.4byte	.LFE32
+ 1577 0028 00000000 		.4byte	.LFB33
+ 1578 002c 96000000 		.4byte	.LFE33
+ 1579 0030 00000000 		.4byte	.LFB34
+ 1580 0034 4A000000 		.4byte	.LFE34
+ 1581 0038 00000000 		.4byte	.LFB35
+ 1582 003c 4A000000 		.4byte	.LFE35
+ 1583 0040 00000000 		.4byte	.LFB36
+ 1584 0044 B8000000 		.4byte	.LFE36
+ 1585 0048 00000000 		.4byte	0x0
+ 1586 004c 00000000 		.4byte	0x0
+ 1587              		.section	.debug_str,"MS",%progbits,1
+ 1588              	.LASF6:
+ 1589 0000 6C6F6E67 		.ascii	"long long int\000"
+ 1589      206C6F6E 
+ 1589      6720696E 
+ 1589      7400
+ 1590              	.LASF19:
+ 1591 000e 72616469 		.ascii	"radioGetState\000"
+ 1591      6F476574 
+ 1591      53746174 
+ 1591      6500
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 34
+
+
+ 1592              	.LASF15:
+ 1593 001c 72616469 		.ascii	"radioRead\000"
+ 1593      6F526561 
+ 1593      6400
+ 1594              	.LASF20:
+ 1595 0026 53746174 		.ascii	"Status\000"
+ 1595      757300
+ 1596              	.LASF3:
+ 1597 002d 73686F72 		.ascii	"short unsigned int\000"
+ 1597      7420756E 
+ 1597      7369676E 
+ 1597      65642069 
+ 1597      6E7400
+ 1598              	.LASF14:
+ 1599 0040 72616469 		.ascii	"radioReadBuf\000"
+ 1599      6F526561 
+ 1599      64427566 
+ 1599      00
+ 1600              	.LASF23:
+ 1601 004d 436F756E 		.ascii	"Count\000"
+ 1601      7400
+ 1602              	.LASF1:
+ 1603 0053 756E7369 		.ascii	"unsigned char\000"
+ 1603      676E6564 
+ 1603      20636861 
+ 1603      7200
+ 1604              	.LASF5:
+ 1605 0061 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1605      20756E73 
+ 1605      69676E65 
+ 1605      6420696E 
+ 1605      7400
+ 1606              	.LASF13:
+ 1607 0073 61646472 		.ascii	"addr\000"
+ 1607      00
+ 1608              	.LASF29:
+ 1609 0078 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1609      52784275 
+ 1609      66666572 
+ 1609      00
+ 1610              	.LASF18:
+ 1611 0085 72616469 		.ascii	"radioWrite\000"
+ 1611      6F577269 
+ 1611      746500
+ 1612              	.LASF27:
+ 1613 0090 493A5C43 		.ascii	"I:\\ControllerKinect\\Receiver\\Receiver.cydsn\000"
+ 1613      6F6E7472 
+ 1613      6F6C6C65 
+ 1613      724B696E 
+ 1613      6563745C 
+ 1614              	.LASF26:
+ 1615 00bc 2E5C6D61 		.ascii	".\\main.c\000"
+ 1615      696E2E63 
+ 1615      00
+ 1616              	.LASF11:
+ 1617 00c5 75696E74 		.ascii	"uint16\000"
+ 1617      313600
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 35
+
+
+ 1618              	.LASF16:
+ 1619 00cc 6D61696E 		.ascii	"main\000"
+ 1619      00
+ 1620              	.LASF8:
+ 1621 00d1 756E7369 		.ascii	"unsigned int\000"
+ 1621      676E6564 
+ 1621      20696E74 
+ 1621      00
+ 1622              	.LASF12:
+ 1623 00de 72785374 		.ascii	"rxState\000"
+ 1623      61746500 
+ 1624              	.LASF7:
+ 1625 00e6 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1625      206C6F6E 
+ 1625      6720756E 
+ 1625      7369676E 
+ 1625      65642069 
+ 1626              	.LASF28:
+ 1627 00fd 72616469 		.ascii	"radioInit\000"
+ 1627      6F496E69 
+ 1627      7400
+ 1628              	.LASF22:
+ 1629 0107 52616469 		.ascii	"RadioState\000"
+ 1629      6F537461 
+ 1629      746500
+ 1630              	.LASF25:
+ 1631 0112 474E5520 		.ascii	"GNU C 4.4.1\000"
+ 1631      4320342E 
+ 1631      342E3100 
+ 1632              	.LASF9:
+ 1633 011e 63686172 		.ascii	"char\000"
+ 1633      00
+ 1634              	.LASF24:
+ 1635 0123 696E6465 		.ascii	"index\000"
+ 1635      7800
+ 1636              	.LASF2:
+ 1637 0129 73686F72 		.ascii	"short int\000"
+ 1637      7420696E 
+ 1637      7400
+ 1638              	.LASF10:
+ 1639 0133 75696E74 		.ascii	"uint8\000"
+ 1639      3800
+ 1640              	.LASF4:
+ 1641 0139 6C6F6E67 		.ascii	"long int\000"
+ 1641      20696E74 
+ 1641      00
+ 1642              	.LASF17:
+ 1643 0142 72616469 		.ascii	"radioStartReceive\000"
+ 1643      6F537461 
+ 1643      72745265 
+ 1643      63656976 
+ 1643      6500
+ 1644              	.LASF0:
+ 1645 0154 7369676E 		.ascii	"signed char\000"
+ 1645      65642063 
+ 1645      68617200 
+ 1646              	.LASF21:
+ARM GAS  C:\Users\awkward\AppData\Local\Temp\ccGxpKjT.s 			page 36
+
+
+ 1647 0160 72616469 		.ascii	"radioEndReceive\000"
+ 1647      6F456E64 
+ 1647      52656365 
+ 1647      69766500 
+ 1648              		.ident	"GCC: (Sourcery G++ Lite 2010q1-188) 4.4.1"

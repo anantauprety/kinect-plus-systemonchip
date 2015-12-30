@@ -1,0 +1,146 @@
+E:/ControllerKinect/Receiver/Receiver.cydsn/ARM_GCC_441/Debug/Clock_1.o : E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/Clock_1.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice_trm.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyfitter.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cytypes.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/Clock_1.c 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/Clock_1.h : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice.h : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice_trm.h : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyfitter.h : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cytypes.h : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/Clock_1.c : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/ARM_GCC_441/Debug/Cm3Start.o : E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYDEVICE_TRM.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYDMAC.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYFITTER.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYFITTER_CFG.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYLIB.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYSPC.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYTYPES.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CyFlash.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CyLib.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyPm.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice_trm.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyfitter.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cytypes.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/Cm3Start.c 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYDEVICE_TRM.H : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYDMAC.H : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYFITTER.H : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYFITTER_CFG.H : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYLIB.H : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYSPC.H : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYTYPES.H : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CyFlash.h : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CyLib.h : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyPm.h : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/Cm3Start.c : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/ARM_GCC_441/Debug/CyDmac.o : E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYDEVICE_TRM.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYDMAC.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYFITTER.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYLIB.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYSPC.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYTYPES.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CyFlash.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CyLib.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyPm.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice_trm.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyfitter.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cytypes.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CyDmac.c 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CyDmac.c : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/ARM_GCC_441/Debug/CyFlash.o : E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYFLASH.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYLIB.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYSPC.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYTYPES.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CyFlash.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CyLib.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/Cydevice_trm.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyPm.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice_trm.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyfitter.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cytypes.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CyFlash.c 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYFLASH.H : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/Cydevice_trm.h : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CyFlash.c : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/ARM_GCC_441/Debug/CyLib.o : E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYLIB.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYSPC.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYTYPES.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CyFlash.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CyLib.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyPm.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice_trm.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyfitter.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cytypes.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CyLib.c 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CyLib.c : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/ARM_GCC_441/Debug/CySpc.o : E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYLIB.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYSPC.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYTYPES.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CyFlash.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CyLib.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CySpc.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyPm.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice_trm.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyfitter.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cytypes.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CySpc.c 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CySpc.h : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CySpc.c : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/ARM_GCC_441/Debug/LCD.o : E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYLIB.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYSPC.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYTYPES.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CyFlash.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CyLib.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/LCD.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyPm.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice_trm.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyfitter.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cytypes.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/LCD.c 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/LCD.h : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/LCD.c : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/ARM_GCC_441/Debug/LCD_LCDPort.o : E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/LCD_LCDPort.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/LCD_LCDPort_aliases.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice_trm.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyfitter.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cypins.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cytypes.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/LCD_LCDPort.c 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/LCD_LCDPort.h : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/LCD_LCDPort_aliases.h : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cypins.h : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/LCD_LCDPort.c : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/ARM_GCC_441/Debug/LCD_PM.o : E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/LCD.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice_trm.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyfitter.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cytypes.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/LCD_PM.c 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/LCD_PM.c : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/ARM_GCC_441/Debug/MISO.o : E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/MISO.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/MISO_aliases.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice_trm.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyfitter.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cypins.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cytypes.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/MISO.c 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/MISO.h : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/MISO_aliases.h : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/MISO.c : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/ARM_GCC_441/Debug/MOSI.o : E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/MOSI.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/MOSI_aliases.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice_trm.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyfitter.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cypins.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cytypes.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/MOSI.c 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/MOSI.h : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/MOSI_aliases.h : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/MOSI.c : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/ARM_GCC_441/Debug/RST.o : E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/RST.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/RST_aliases.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice_trm.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyfitter.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cypins.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cytypes.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/RST.c 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/RST.h : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/RST_aliases.h : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/RST.c : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/ARM_GCC_441/Debug/SCLK.o : E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/SCLK.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/SCLK_aliases.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice_trm.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyfitter.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cypins.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cytypes.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/SCLK.c 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/SCLK.h : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/SCLK_aliases.h : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/SCLK.c : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/ARM_GCC_441/Debug/SPIM.o : E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYLIB.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYSPC.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYTYPES.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CyFlash.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CyLib.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/SPIM.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyPm.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice_trm.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyfitter.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cytypes.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/SPIM.c 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/SPIM.h : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/SPIM.c : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/ARM_GCC_441/Debug/SPIM_INT.o : E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/SPIM.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice_trm.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyfitter.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cytypes.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/SPIM_INT.c 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/SPIM_INT.c : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/ARM_GCC_441/Debug/SPIM_PM.o : E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/SPIM.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice_trm.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyfitter.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cytypes.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/SPIM_PM.c 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/SPIM_PM.c : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/ARM_GCC_441/Debug/cyPm.o : E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYLIB.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYSPC.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYTYPES.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CyFlash.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CyLib.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyPm.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice_trm.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyfitter.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cytypes.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyPm.c 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyPm.c : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/ARM_GCC_441/Debug/cyfitter_cfg.o : E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYDEVICE_TRM.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYFITTER.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYLIB.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYSPC.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CYTYPES.H E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CyDmac.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CyFlash.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CyLib.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyPm.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice_trm.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyfitter.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cytypes.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyfitter_cfg.c 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/CyDmac.h : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyfitter_cfg.c : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/ARM_GCC_441/Debug/nSS.o : E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cydevice_trm.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cyfitter.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cypins.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/cytypes.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/nSS.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/nSS_aliases.h E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/nSS.c 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/nSS.h : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/nSS_aliases.h : 
+
+E:/ControllerKinect/Receiver/Receiver.cydsn/Generated_Source/PSoC5/nSS.c : 
+
